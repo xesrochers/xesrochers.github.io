@@ -1,0 +1,593 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+html {color: #eee; background: no-repeat top left #444; font-size: 20px;}
+body {font-family:courier,monospace; background-color: rgba(22,22,22,.9);  color: #aaa; }
+
+div#wrapper{ padding: .5em 2em; }
+
+
+div#content{ margin-bottom: 2em;}
+
+footer{ padding: 1em 0em 5em 0em; font-style: italic; }
+footer p a {font-family: Orbitron; font-style: normal; text-decoration: none;}
+footer p a:hover {text-decoration: underline;}
+
+.spacer { padding-top: 1em;}
+
+h1,h2,h3{font-family: Courier;}
+h1 {font-size: 1.5em; margin: 1em 0;}
+h2 {font-size: 1.2em; padding: 1em 0 0 0; margin-bottom: 1em;}
+h3 {font-size: 1.0em; padding: 1em 0 .5em 0; margin-bottom: 1em; color: orange;}
+hr { display: block; height: 1px; border: 0; border-top: 2px solid #444; margin: 2em 0; padding: 0; }
+
+b {font-weight: bold;}
+p {margin: .2em 0 1em 0;}
+a {text-decoration: none; color: #eee;}
+a:hover {color: #fff;}
+ul { margin: 1em; list-style-type: none;}
+li { margin: 1em; list-style-type: none;}
+
+header{padding-top: 1em; border-bottom:  2px solid #444}
+header h1.brand { font-size: 2em; margin: 0 0 .3em 0; display: inline-block; }
+header h1 a {text-decoration: none; }
+
+blockquote {
+	color: orange;
+	margin: .5em;
+	font-style: italic;
+}
+
+blockquote::before {
+  content: "\00AB\00a0";
+}
+
+blockquote::after {
+  content: "\00a0\00BB";
+}
+
+h1 a {
+	color: inherit;
+}
+
+.children ul { margin-left: 0 }
+.children li { margin-left: 0 }
+
+.box {border: 1px solid #eee; margin: 1em 0; padding: 0 1em; border-radius: 6px;}
+
+.home ul { font-size: .8em; background-color: #222; border-radius: .3em; padding: 1em; margin: 0;}
+.home ul a { color: #ddd;}
+.home ul a:hover { color: #fff;}
+
+.small {
+	font-size: 0.8em;
+}
+
+.big {
+	font-size: 2.5em;
+}
+
+.help b {
+	color:  orange;
+	font-style: italic;
+}
+
+.help dt {
+	margin-top: 1.5em;
+}
+
+.help dd {
+	margin-left: 1em;
+}
+
+ul.menu {list-style: none; margin: 1em 0; padding: 0; }
+ul.menu li {margin: 0 .5em 0 0; display: inline-block;}
+ul.menu li a {text-decoration: none; }
+ul.menu li:hover {color: #fff;}
+
+.hidden {
+	display: none;	
+}
+
+.wide {
+	margin-bottom: 1em;
+}
+
+b.group {
+	color: orange;
+	font-weight: normal;
+	font-size: 0.7em;
+}
+
+.bracket { // line starts with square bracket 
+	font-style: italic;
+}
+
+.comment { // line starts with round bracket 
+	color: orange;
+}
+
+i.zzz, i.zzz b.group {
+	font-style: italic;
+	color: #444;
+}
+
+.song .intro {
+	
+}
+
+.chord {
+	color: orange;
+	font-style: italic;
+	white-space: pre;
+	margin: 0;
+	overflow: hidden;
+}
+
+.lyrics {
+	color: white;
+	margin-top: .1em
+	;
+}
+
+.voix {
+	font-style: italic;
+}
+
+.voix2 {
+	color: #b0bf70;
+}
+
+.voix3 {
+	color: #b7b7f7;
+}
+
+.md ul li {
+	list-style-type: disc;
+	margin: 0.3em 1em;
+}
+
+/**************************
+ * Song tablature
+ **************************/
+
+.song h2 {
+    padding: 0;
+}
+
+/**************************
+ * Tablature
+ **************************/
+.song #tablature-control {
+	display: none;
+}
+
+.song #tablature-block {
+	position: relative;
+	clear: both;
+	float: none;
+	overflow: auto; /*This is what we added!*/
+}
+
+.song #tablature-block:after { /* clear float recepie */
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.song #harmony-block {
+	padding-bottom: 1em;
+    display: none;
+}
+
+.clear {
+	clear: both; /* to clear the floating divs */
+}
+
+.song .tablature {
+	color: orange;
+	font-size: .6em;
+	font-style: italic;
+	font: courier;
+	padding: 1em 2em 1em 0;
+	float: left;
+}
+
+.song .tablature h4{
+	font-weight: bold;
+	margin-bottom: .5em;
+}
+
+.song .tablature .small{
+	font-size: .8em;
+}
+
+.song .tablature .neck {
+	color: #555;
+	font-family: courier, monospace;
+	padding: 0 0 1px 0;
+	margin: 0;
+	white-space: pre;
+	font-style: normal;
+}
+
+.song .tablature .finger {
+	color: orange;
+}
+
+.song .harmony {
+	color: orange;
+	margin: .2em 0;
+}
+
+.song .harmony span {
+	display: inline-block;
+	border-radius: 2px;
+	padding: .2em .3em;
+	background-color: #333;
+	margin-right: .1em;
+	font-style: italic;
+	font-size: .8em;
+}
+
+.song .harmony span i {
+	display: inline-block;
+	padding: 0 2px;
+}
+
+.note {
+	font-size: 0.6em;
+	font-style: italic;
+	color: white;
+	margin-bottom: 1em;
+}
+
+.hidden {
+	display: none;
+}
+
+.button.toggle {
+	font-size: 1.3em;
+	margin-top: 1em;
+}
+
+#historique .button.toggle {
+	font-size: .8em;
+	margin-top: 0;
+}
+
+form { margin: 1em 0;}
+form div { margin: .5em 0;}
+form label {width: 20%; display: inline-block;}
+form input {width: 50%;}
+
+.wide {
+	width: 95%;
+}
+
+/**************************
+ * Search Box
+ **************************/
+input.searchbox {
+	float: right;
+	width: 80px;
+	height: 25px;
+	display: inline-block; /* to live next to the H1.brand */
+}
+
+/**************************
+ * Static vs Server tag 
+ **************************/
+.local { 
+	display: none;
+}
+
+.static .server { 
+	display: none;
+}
+
+.static .local { 
+	display: inline;
+}
+
+
+select.wide {
+	width: 100%;
+}
+
+.partition {
+	color #fff;
+	background-color: #555;
+	border-radius: .5em;
+	padding: 5px;
+	font-size: .7em;
+}
+
+
+.tab-slide {
+	padding: 10px;
+	width: 250px;
+	background-color: #000;
+	border: 1px solid orange;
+	font-size: .8em;
+    z-index: 200;	
+}  
+
+.tab-slide-handle {
+	background-color: orange;
+	border-radius: 3px 0 0 3px;
+	border: 1px solid orange;
+	padding: 20px 7px 20px 7px;
+	color: #000;
+	font-weight: bold;
+}
+
+.tab-slide h2 {
+   color: orange;
+}
+
+.tab-slide label {
+	margin: 1em 0 .5em 0;
+}  
+
+.tab-slide input{
+	width: 100%;
+	margin-bottom: .5em;
+}  
+
+.tab-slide input[type=checkbox]{
+	width: 1em;
+	margin-right: .5em;
+	background-color: skyblue;
+}  
+
+.tab-slide .number {
+	color: orange;
+}
+
+.tab-slide .transpose {
+	width:  100%;
+	height: 1.5em;
+	margin-top: 1em;
+}
+
+.tab-slide .transpose a {
+	border: 2px solid orange;
+	padding: 6px 0px 0px 4px;
+	border-radius: 3px;
+	color: orange;
+}
+
+.tab-slide .transpose .center {
+	width: 100px;
+	text-align: center;
+	display: inline-block;
+}
+
+.tab-slide .show-big-play a {
+	color:  orange;
+	border-color: orange;
+}
+
+.tab-slide .show-big-play a.selected {
+	color:  black;
+	background-color: orange;
+}
+
+.big-play {
+	position: fixed;
+	top: 45%;
+	left: 33%;
+}
+
+.big-play .circle {
+	display: inline-block;
+	border: 4px solid #eee;
+	border-radius: 2em;
+    padding: .7em;
+	font-size: 300%;
+	background: rgb(90, 90, 90) transparent; /* default fallback */
+	background: rgba(90, 90, 90, 0.6);
+}
+
+.big-play i {
+	color: #eee;
+	margin-left: 0.4em;	
+}
+
+
+.controls {
+	position: fixed;
+	bottom: 0;
+	right: 2%;
+	width: 96%;
+}
+
+.controls .button {
+	width: 100%;
+	color: orange;
+	border-color: orange;
+	background-color: #000;
+}
+
+.controls .button i {
+	font-size: 150%;
+}
+
+.controls #refresh, .controls #top, .controls #back { 
+	display: none; 
+}
+
+.controls .play { 
+	margin-bottom: 4px; 
+}
+
+.play {
+	color: green;
+}
+
+.play.scroll {
+	color: inherit;
+}
+
+.play.snoozing {
+	color: inherit;
+}
+
+.play.disabled {
+	color: grey;
+}
+
+
+.disabled {
+	opacity: .2;
+}
+
+.gig {
+	padding-bottom: 3em;
+}
+
+.song-list {
+	margin-left: 0em;
+	border-bottom: 2px solid #444;
+}
+
+.song-list li {
+	margin-left: 0em;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.rappel a {
+	font-style: italic;
+	color: #b0bf70;
+}
+
+
+/***************************
+ * Historique
+ **************************/
+#historique .note {
+	font-size: .8em;
+	font-style: italic;
+}
+
+.space {
+	margin-bottom: 6em;
+}
+
+/***************************
+ * Blink animation
+ **************************/
+@keyframes fade {
+    from { opacity: 1.0; }
+    30% { opacity: 0.3; }
+    to { opacity: 1.0; }
+}                                                                                                                                                                                                                                  
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    30% { opacity: 0.3; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+  animation:fade 2000ms infinite;
+  -webkit-animation:fade 2000ms infinite;
+}
+
+
+.bijou-spectacles-manue2019 .note {
+	font-size: .8em;
+}
+
+.bijou-spectacles-manue2019 .chord,  .bijou-spectacles-manue2019 .lyrics {
+	margin: 0 0 0 1em;
+	font-size: .8em;
+}
+
+.bijou-spectacles-manue2019  h3 {
+	margin: 0;
+}
+
+/***************************
+ * Skeleton Media Queries
+ * Skeleton is Mobile first
+ **************************/
+
+
+/* iPhone V */
+@media (max-width: 320px) {
+	.small { font-size: .7em;}
+	.big { font-size: 1.6em;}
+	b.group { font-size: .6em;}
+}
+
+/* iPhone X */
+@media (max-width: 375px) {
+	.group { font-size: .6em;}
+}
+
+@media (max-width: 400px) {
+	.chord {font-size: .6rem;}
+}
+
+
+/* Thinner than phablet */
+@media (max-width: 550px) {
+	header h1.brand { font-size: 1.4em; margin: 0; display: inline-block;}
+	hr { margin: 10px 0; }
+	h1,h2,h3 { font-size: 1.1em; margin: 1em 0;}
+	h1 a { display: inline-block;}
+	p, li, blockquote { font-size: .7em;}
+	hr > hr { display: none; }
+	b.group { font-weight: normal;}
+	.chord { font-size: .6rem; }
+	bogus.tab-slide { display: none; }
+	#harmony-control, #harmony-block { display: none; }
+	input.searchbox { display: none; }
+	.show-big-play { display: none; }
+	.big { font-size: 1.7em;}
+	.server h1 { margin-bottom: 1em;}
+
+}
+
+/* Playbook vertical (and larger) */
+@media (min-width: 550px) {
+	.controls #refresh, .controls #top, .controls #back { 
+		display: inline-block; 
+	}
+
+	.controls .play { margin-bottom: inherit; }
+
+	.song .tablature {font-size: .8em; }
+
+	.tab-slide {
+		width: 300px;
+		padding: 20px;
+		font-size: 1em;
+	}  
+
+	.tab-slide-handle {
+		border-radius: 5px 0 0 5px;
+		padding: 50px 15px 50px 15px;
+	}
+}
+
+/* Tablet and above */
+@media (min-width: 500px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+@media (max-width: 800px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+
