@@ -1,0 +1,156 @@
+
+main {
+	margin-top: 3.5em; /* hack */
+}
+
+
+/**************************
+ * Static notice 
+ **************************/
+.notice { 
+	display: none;
+	font-size: .7em;
+	font-style: italic;
+}
+
+.static .notice { 
+	display: inline;
+}
+
+
+/**************************
+ * Hero section
+ **************************/
+.hero {
+	color: #fff;
+	background: url(../img/western.jpg) no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+
+	height: 280px;
+}
+
+.hero .pane {
+	float: right;
+	margin: 5%;
+	width: 55%;
+	padding: .6em;
+	background-color: #111;
+	color: #fff;
+	opacity: .9;
+	border-radius: .4em;
+}
+
+.hero .pane h1 {
+	color: #fff;
+}
+
+
+.thumbnail img {
+	border: 1px solid #ccc;
+	margin-top: 1em;
+	border-radius: 3px;
+}
+
+.no-padding {
+	margin: 0;
+	padding: 0;
+}
+
+
+.link .btn {
+	margin: 1px;
+}
+
+
+@media (max-device-width: 480px)  { 
+	.link li a {
+		display: block;
+		overflow: hidden;
+	}
+
+	.link .btn-primary {
+		padding: 5px;
+	}
+}
+
+
+.recipes ul.no-padding li {
+	list-style: none;
+}
+
+.recipes li a {
+	display: block;
+	margin: 0;
+	padding: .5em;
+	color: #000;
+	border: 1px solid #ddd;
+	border-radius: .4em;
+	background-color: #e8e8e8;
+	margin: .5em 0;
+	
+	background-image: -webkit-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
+    background-image: -o-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#e8e8e8));
+    background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
+    background-repeat: repeat-x;
+}
+
+.recipes a.link {
+	display: inline;
+	margin: auto;
+	padding: 0;
+	color: #428bca;
+	border: none;
+	border-radius: 0;
+	background: none;
+	text-decoration: underline;
+}
+
+.recipes li a:hover {
+	text-decoration: none;
+	background-image: none;
+	background-color: #ddd;
+}
+
+.recipes h1 {
+	font-size: 2em;
+}
+
+.recipes h2 {
+	font-size: 1.3em;
+}
+
+.rcp-collection, .rcp-home ul {
+	padding-left: 0;
+}
+
+.rcp-collection li, .rcp-home li {
+	list-style: none;
+}
+
+
+@media print {
+	h1 { 
+		font-size: 2em;
+    }
+
+	.navbar {
+		display: none; 
+	}
+
+	main, .container {
+		margin: 1em 1em 1em 2em;
+		width: 60em
+	}
+}
+
+
+
+
