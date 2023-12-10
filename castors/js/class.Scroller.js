@@ -7,127 +7,67 @@ function Scroller() {
 /************************************************
  * Scroller attributes
  ************************************************/
-Scroller.height = 50;
-Scroller.minHeight = 50;
-Scroller.maxHeight = 200;
-Scroller.pace = 50; // In percent
-Scroller.reference = 0;
-Scroller.sleep = 5000;
-Scroller.sleepTop = 11000;
+Scroller.rate = 5000; 
 Scroller.snooze = 5000;
-Scroller.snoozeTop = 11000;
-Scroller.lag = 1000;
-Scroller.maxLag = 1000;
-Scroller.interval;
-Scroller.blinkval;
+Scroller.timeout = null;
+
 
 /************************************************
- * setPace()
- * Adjusts the context for fast pace songs
+ * getState()
  ************************************************/
-Scroller.setPace = function(sleep) {
-	var result = sleep;
-	if (result <= Scroller.lag) {
-		result = Scroller.lag; 
-		Scroller.lag =  Scroller.maxLag * Scroller.pace/100;
-		Scroller.height = Scroller.maxHeight * Scroller.pace/100;
-		//console.log("SetPace: sleep is " + sleep + " result is " + result + " lag is " + Scroller.lag + " height is " + Scroller.maxHeight);
-	} else {
-		Scroller.lag =  Scroller.maxLag;
-		Scroller.height = Scroller.minHeight;
+Scroller.getState = function(state) {
+	var playBtn = $('.play.button');
+   return playBtn.attr('state');
+}
+
+/************************************************
+ * setState()
+ ************************************************/
+Scroller.setState = function(state) {
+	var playBtn = $('.play.button');
+   playBtn.attr('state', state);
+   console.log('state changed to ' + state);
+
+}
+
+
+/************************************************
+ * setControls()
+ ************************************************/
+Scroller.setControls = function(state) {
+
+	var playBtn = $('.play.button');
+	if (state == 'reset') {
+		playBtn.removeClass("blink");
+		playBtn.attr('title', 'play');
+		playBtn.find('i').attr("class", "").addClass('icon-play');
+		$('.tab-slide').removeClass("hidden");
+	} else if (state == 'snoozing') {
+		playBtn.addClass("blink");
+		playBtn.attr('title', 'pause');
+		playBtn.find('i').attr("class", "").addClass('icon-timer');
+		$('.tab-slide').addClass("hidden");
+	} else if (state == 'paused') {
+		playBtn.removeClass("blink");
+		playBtn.attr('title', 'play');
+		playBtn.find('i').attr("class", "").addClass('icon-play');
+		$('.tab-slide').removeClass("hidden");
+	} else if (state == 'playing') {
+		playBtn.addClass('blink');
+		playBtn.attr('title', 'pause');
+		playBtn.find('i').attr("class", "").addClass('icon-pause');
+		$('.tab-slide').addClass("hidden");
+		$('.tablature').addClass('hidden');
+		$('#harmony-control').addClass('hidden');
+	} else if (state == 'completed') {
+		playBtn.removeClass("blink");
+		playBtn.attr('title', 'reset');
+		playBtn.find('i').attr("class", "").addClass('icon-arrow-up');
+		$('.tab-slide').removeClass("hidden");
+		$('.tablature').addClass('hidden');
+		$('#harmony-control').addClass('hidden');
 	}
-	return result;
-}
 
-/************************************************
- * scroll()
- ************************************************/
-Scroller.scroll = function() {
-	Scroller.reference += Scroller.height;
-	$('html, body').animate({ scrollTop: Scroller.reference }, Scroller.lag);
-}
-
-/************************************************
- * autoScroll()
- ************************************************/
-Scroller.autoScroll = function() {
-	var scroll = Scroller.reference != 0; // 
-
-	//if (Scroller.interval >= 0) clearInterval(Scroller.interval);
-
-	var sleeper = Scroller.sleepTop-Scroller.sleep;
-
-	if (scroll) { // Scroll mode
-		$('.play.button i').attr("class", "").addClass('icon-pause');
-		$('.play.button').removeClass('snoozing');
-		$('.play.button').attr('title', 'pause');
-	} else { // Snooze mode
-		sleeper = Scroller.snooze;
-		$('.play.button i').attr("class", "").addClass('icon-circle-blank');
-		$('.play.button').addClass('snoozing');
-		$('.play.button').attr('title', 'snooze');
-	}
-
-	if (Scroller.atBottom()) {
-		// Stop everything
-		clearInterval(Scroller.interval); // stop everything
-		$('.play.button').click();
-	} else {
-		// Schedule the next autoScroll event
-		sleeper = Scroller.setPace(sleeper);
-		clearInterval(Scroller.interval); // clear pending intervals before adding another
-		Scroller.interval = setInterval(Scroller.autoScroll, sleeper);		
-
-		if (scroll) {
-			// Scroll it
-			Scroller.scroll();
-		} else {
-			// Snooze it (for now)
-			Scroller.reference = 1; // Leave snooze mode
-		}
-	}
-}
-
-/************************************************
- * onScroll()
- ************************************************/
-Scroller.onScroll = function() {
-	Scroller.reference = window.pageYOffset;
-	Scroller.showHideBigplay();
-	if (Scroller.reference == 0) {
-		$('.play').removeClass('disabled');
-		Scroller.showHideBigplay();
-	} 
-	// console.log("Page Offset" + window.pageYOffset);
-}
-
-/************************************************
- * blinker()
- ************************************************/
-Scroller.blinker = function() {
-    var rate = (Scroller.sleepTop-Scroller.sleep)/10;
-    $('.play.button').addClass("blink");
-}
-
-/************************************************
- * atBottom()
- ************************************************/
-Scroller.atBottom = function() {
-	var result = false;
-	var scrollHeight = $(document).height();
-	var scrollPosition = $(window).height() + $(window).scrollTop();
-	if ((scrollHeight - scrollPosition) < 50) {
-	    result = true;
-	}
-	return result;
-}
-
-/************************************************
- * bigplay()
- ************************************************/
-Scroller.bigplay = function(e) {
-	e.preventDefault();
-	$('.play.button').click();
 }
 
 /************************************************
@@ -135,62 +75,103 @@ Scroller.bigplay = function(e) {
  ************************************************/
 Scroller.play = function(e) {
 	e.preventDefault();
-	var self = $(this);
+   
+	var state = Scroller.getState(state);
 
-	//$('body').removeClass("top");
+	console.log('current state is ' + state);
 
-	if (!self.hasClass('disabled')) {
-		$('.big-play').addClass('hidden');
-		if (self.hasClass('scroll')) {
-			self.find('i').attr("class", "").addClass('icon-play');
-			self.removeClass('scroll');
-			$('.tab-slide').removeClass("hidden");
-			$('.play.button').removeClass("blink");
-			$('.play.button').attr('title', 'play');
-
-			if (!Scroller.atBottom()) {
-				$('.tablature').removeClass('hidden');
-				$('#harmony-control').removeClass('hidden');			
-			}
-
-			clearInterval(Scroller.interval);
-		} else {
-			self.find('i').attr("class", "").addClass('icon-pause');
-			self.addClass('scroll');
-			$('.tab-slide').addClass("hidden");
-			$('.tablature').addClass('hidden');
-			$('#harmony-control').addClass('hidden');
-			$('.play.button').addClass("blink");
-
-			if (!Scroller.atBottom()) {
-				Scroller.autoScroll();
-				Scroller.blinker();
-			}
-		}
+	if (state == 'reset') {
+		Scroller.timeout = setTimeout(Scroller.start, Scroller.snooze);
+		Scroller.setState('snoozing');
+		Scroller.setControls('snoozing');
+	} else if (state == 'playing') {
+		Scroller.pause();
+	} else if (state == 'paused') {
+		Scroller.start();			
+	} else if (state == 'completed') {
+		Scroller.reset();			
 	}
-
-	if (Scroller.atBottom()) {
-		$('.play.button').addClass("disabled");
-	}
+}
 
 
-
+/************************************************
+ * reset()
+ ************************************************/
+Scroller.reset = function(e) {
+	Scroller.setState('reset');
+	Scroller.setControls('reset');
+	$('html, body').animate({ scrollTop: 0 }, 1000);
 }
 
 /************************************************
- * doSnooze()
+ * start()
  ************************************************/
-Scroller.doSnooze = function() {
-	var val = $('.snooze').val();
-	Scroller.setSnooze(val);
-	localStorage.setItem(Scroller.getPath() +"-Snooze", val);
+Scroller.start = function() {
+	var max = parseInt($('input.rate').attr('max'));
+	console.log('rate is  ' + Scroller.rate);
+	var val = parseInt(max - Scroller.rate);
+	console.log('smooth scroller started ' + val);
+	SmoothScroller.setCallback(Scroller.completed);
+	SmoothScroller.setPace(val);
+	SmoothScroller.start();
+
+	Scroller.setState('playing');
+	Scroller.setControls('playing');
 }
+
+/************************************************
+ * pause()
+ ************************************************/
+Scroller.pause = function() {
+	SmoothScroller.pause();
+	Scroller.clearTimeouts();
+	Scroller.setState('paused');
+	Scroller.setControls('paused');
+}
+
+
+/************************************************
+ * completed()
+ ************************************************/
+Scroller.completed = function() {
+	Scroller.clearTimeouts();
+	SmoothScroller.reset();	
+	Scroller.setState('completed');
+	Scroller.setControls('completed');
+}
+
+
+/************************************************
+ * clearTimeouts()
+ ************************************************/
+Scroller.clearTimeouts = function() {
+
+	var state = Scroller.getState();
+	if (state == 'snoozing') {
+		if (Scroller.timeout != null) {
+			clearTimeout(Scroller.timeout);
+		}
+	}	
+
+}
+
 
 /************************************************
  * getPath()
  ************************************************/
 Scroller.getPath = function() {
 	return window.location.pathname.replace(".html","");
+}
+
+/************************************************
+ * updateSnooze()
+ * 
+ ************************************************/
+Scroller.updateSnooze = function(e) {
+	e.preventDefault();
+	var val = $('.snooze').val();
+	Scroller.setSnooze(val);
+	localStorage.setItem(Scroller.getPath() +"-snooze", val);
 }
 
 /************************************************
@@ -203,23 +184,22 @@ Scroller.setSnooze = function(val) {
 	$('.snooze').val(val);
 }
 
-
 /************************************************
- * doSleep()
+ * updateRate()
  ************************************************/
-Scroller.doSleep = function() {
-	var val = $('.rate').val();
+Scroller.updateRate = function(e) {
+	e.preventDefault();
+	var val = parseInt($('.rate').val());
 	Scroller.setRate(val);
-	localStorage.setItem(Scroller.getPath() +"-Sleep", val);
+	localStorage.setItem(Scroller.getPath() +"-rate", val);
 }
 
 /************************************************
  * setRate()
  ************************************************/
 Scroller.setRate = function(val) {
-	Scroller.sleep = val;
 	console.log('rate changed to ' + val);
-	Scroller.pace = Math.floor((val/Scroller.sleepTop) * 100);
+	Scroller.rate = val;
 	$("#rate").html(Math.floor(val/1000) + " pet");
 	$('.rate').val(val);
 }
@@ -232,19 +212,6 @@ Scroller.refresh = function(e) {
 	e.preventDefault();
 	location.reload(true); // loads CSS and JS
 	window.location.replace(window.location.href); // go top
-}
-
-/************************************************
- * reset()
- ************************************************/
-Scroller.reset = function(e) {
-
-	// if ($('.play.button').hasClass("scroll") || $('.play.button').hasClass("done")) {
-	// 	$('.play.button').click(); // stop scroller
-	// }
-	//$('body').addClass("top");
-	$('html, body').animate({ scrollTop: 0 }, Scroller.lag);
-	Scroller.reference = 0;
 }
 
 
@@ -276,70 +243,24 @@ Scroller.readStorage = function(key, def) {
 	return result;
 }
 
-/************************************************
- * toggleBigplay()
- * Bigplay button preference (setting)
- ************************************************/
-Scroller.toggleBigplay = function() {
-	var self = $(this); 
-	if (self.hasClass('yes')) {
-		localStorage.setItem("bigplay", 1);
-	} else {
-		localStorage.setItem("bigplay", 0);
-	}
-
-	Scroller.showHideBigplay();
-}
-
-/************************************************
- * showHideBigplay()
- ************************************************/
-Scroller.showHideBigplay = function() {
-	var result = (Scroller.reference == 0); 
-
-	// check settings
-	test = localStorage.getItem("bigplay");
-	if (test !== null) {
-		result = result && (test == 1);
-		if (result) {
-			$(".big-play").removeClass("hidden");
-		} else {
-			$(".big-play").addClass("hidden");
-		}
-		$("#.show-big-play a").removeClass("selected");
-		if (test == 1) {
-			$("#.show-big-play a.yes").addClass("selected");
-		} else {
-			$("#.show-big-play a.no").addClass("selected");			
-		}
-	}
-
-	// if (result) {
-	// 	$("body").addClass("top"); // show big play
-	// } else {
-	// 	$("body").removeClass("top"); // hide big play
-	// }
-
-	return result;
-}
 
 /************************************************
  * init()
  ************************************************/
 Scroller.init = function() {
-	var sleep = Scroller.sleep;
+	var rate = Scroller.rate;
 	var snooze = Scroller.snooze;
 
 	if (typeof(Storage) !== "undefined") {
-		sleep = Scroller.readStorage("Sleep", Scroller.sleep);
-		snooze = Scroller.readStorage("Snooze", Scroller.snooze);
+		rate = Scroller.readStorage("rate", Scroller.rate);
+		snooze = Scroller.readStorage("snooze", Scroller.snooze);
 	} else {
 		$(".rate").hide(500);
 	}
 
    var config = $('#config');
 	if (config.length) {
-	   	sleep  = Scroller.readServer("rate", Scroller.sleep);
+	   	rate  = Scroller.readServer("rate", Scroller.rate);
 	   	snooze = Scroller.readServer('snooze', Scroller.snooze);
 	   	console.log('rate and snooze restored from configuration');
 	   	Scroller.disableControls(false);
@@ -348,7 +269,7 @@ Scroller.init = function() {
 	   	$('#js-server-option').hide();
 	}
 
-	Scroller.setRate(sleep);
+	Scroller.setRate(rate);
 	Scroller.setSnooze(snooze);
 }
 
@@ -373,12 +294,12 @@ Scroller.disableControls = function(view) {
  ************************************************/
 Scroller.flipConfig = function(e) {
 	if (this.checked) {
-		Scroller.setRate(Scroller.readServer("rate", Scroller.sleep));
+		Scroller.setRate(Scroller.readServer("rate", Scroller.rate));
 		Scroller.setSnooze(Scroller.readServer("snooze", Scroller.snooze));
 		Scroller.disableControls(false);
 	} else {
-		Scroller.setRate(Scroller.readStorage("Sleep", Scroller.sleep));
-		Scroller.setSnooze(Scroller.readStorage("Snooze", Scroller.snooze));		
+		Scroller.setRate(Scroller.readStorage("rate", Scroller.rate));
+		Scroller.setSnooze(Scroller.readStorage("snooze", Scroller.snooze));		
 		Scroller.disableControls(true);
 	}
 
@@ -390,24 +311,18 @@ Scroller.flipConfig = function(e) {
 Scroller.wireup = function() {
 	Scroller.init();
 
-	$(window).scroll(Scroller.onScroll);
+	//$(window).scroll(Scroller.onScroll);
 	$('.play').click(Scroller.play);
-	$('.rate').change(Scroller.doSleep);
-	$('.snooze').change(Scroller.doSnooze);
-	$('#js-server').click(Scroller.flipConfig);
-	$('#top').click(Scroller.reset);
-	$('#js-big-play').click(Scroller.bigplay);
-	$('#refresh').click(Scroller.refresh);
-	$('#js-show-big-play a').click(Scroller.toggleBigplay);
+	$('.rate').change(Scroller.updateRate);  
+	$('.snooze').change(Scroller.updateSnooze);
 
-	//$('#reset').click(Scroller.reset);
+	$('#js-server').click(Scroller.flipConfig);
+	$('#refresh').click(Scroller.refresh);
 
 	if ($(".chord").length == 0) { // check if on song page
 		$(".controls").hide();
 		$(".tab-slide").hide();
 	}
-
-	Scroller.showHideBigplay();
 
 	if (Url.qs('play') != "") {
 		$('.play').click();
@@ -420,6 +335,4 @@ Scroller.wireup = function() {
 $(function() {
    Scroller.wireup();
 });
-
-
 
