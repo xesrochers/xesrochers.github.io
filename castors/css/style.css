@@ -146,6 +146,17 @@ i.zzz, i.zzz b.group {
 	margin: 0.3em 1em;
 }
 
+
+.config {
+	border: 1px dotted #fff;
+	border-radius: 3px;
+	margin: 5px 5px 5px 0;
+	padding: 5px;
+	display: inline-block;
+	font-size: .6em;
+	font-style: italic;
+}
+
 /**************************
  * Song tablature
  **************************/
@@ -298,6 +309,7 @@ input.searchbox {
 
 input.wide, select.wide {
 	width: 100%;
+	margin-bottom:0;
 }
 
 .partition {
@@ -337,8 +349,11 @@ input.wide, select.wide {
    color: orange;
 }
 
+.tab-slide div {
+	margin: 0 0 .5em 0;
+}
+
 .tab-slide label {
-	margin: 1em 0 .5em 0;
 }  
 
 .tab-slide input{
@@ -454,7 +469,7 @@ input.wide, select.wide {
 }
 
 .space {
-	margin-bottom: 6em;
+	margin-bottom: 1em;
 }
 
 /***************************

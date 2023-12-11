@@ -49,7 +49,7 @@ WebUtils.readQueryString = function(key) {
 WebUtils.hasDomConfig = function() {
     var result = false;
 
-    var config = $('#config');
+    var config = $('.config');
     if (config.length) {
        result = true;
     }
@@ -63,9 +63,9 @@ WebUtils.hasDomConfig = function() {
 WebUtils.readDomConfig = function(key, def) {
     var result = def;
 
-    var config = $('#config');
+    var config = $('#'+key);
     if (config.length) {
-        result = config.attr(key);
+        result = config.attr('value');
     }
 
     return result;
@@ -97,7 +97,7 @@ WebUtils.readStorage = function(key, def) {
  * saveStorage()
  ************************************************/
 WebUtils.saveStorage = function(key, val) {
-    var result = def;
+    var result = val;
     var key = WebUtils.getPath() + "-" + key;
     localStorage.setItem(key, val);
 }

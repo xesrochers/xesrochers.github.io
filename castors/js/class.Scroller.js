@@ -7,8 +7,8 @@ function Scroller() {
 /************************************************
  * Scroller attributes
  ************************************************/
-Scroller.rate = 5000; 
-Scroller.snooze = 5000;
+Scroller.sleep = 5000;
+Scroller.speed = 5000; 
 Scroller.wait  = 5000;
 Scroller.timeout = null;
 
@@ -16,7 +16,7 @@ Scroller.timeout = null;
  * getState()
  ************************************************/
 Scroller.getState = function(state) {
-	var playBtn = $('.play.button');
+	var playBtn = $('#js-play');
    return playBtn.attr('state');
 }
 
@@ -24,7 +24,7 @@ Scroller.getState = function(state) {
  * setState()
  ************************************************/
 Scroller.setState = function(state) {
-	var playBtn = $('.play.button');
+	var playBtn = $('#js-play');
    playBtn.attr('state', state);
    console.log('state changed to ' + state);
 
@@ -34,7 +34,7 @@ Scroller.setState = function(state) {
  * fillBar()
  ************************************************/
 Scroller.fillBar = function() {
-	var percent = (Scroller.wait/Scroller.snooze)*100;
+	var percent = (Scroller.wait/Scroller.sleep)*100;
 	$('.bar').css('width', ''+percent+'%');
 }
 
@@ -44,7 +44,7 @@ Scroller.fillBar = function() {
  ************************************************/
 Scroller.setControls = function(state) {
 
-	var playBtn = $('.play.button');
+	var playBtn = $('#js-play');
 	if (state == 'reset') {
 		playBtn.removeClass("blink");
 		playBtn.attr('title', 'play');
@@ -79,16 +79,16 @@ Scroller.setControls = function(state) {
 }
 
 /************************************************
- * snoozy()
+ * snooze()
  ************************************************/
-Scroller.snoozy = function() {
+Scroller.snooze = function() {
 
 	var rate = 2000;
 	if (Scroller.wait > 0) {
 		Scroller.setState('snoozing');
 		Scroller.setControls('snoozing');
 		Scroller.wait -= 1000;
-		Scroller.timeout = setTimeout(Scroller.snoozy, 2000);
+		Scroller.timeout = setTimeout(Scroller.snooze, 2000);
 	} else {
 		Scroller.start();
 	}
@@ -105,9 +105,9 @@ Scroller.play = function(e) {
 	console.log('current state is ' + state);
 
 	if (state == 'reset') {
-		Scroller.snoozy();
+		Scroller.snooze();
 	} else if (state == 'snoozing') {
-		Scroller.snoozy();
+		Scroller.snooze();
 	} else if (state == 'playing') {
 		Scroller.pause();
 	} else if (state == 'paused') {
@@ -131,9 +131,9 @@ Scroller.reset = function(e) {
  * start()
  ************************************************/
 Scroller.start = function() {
-	var max = parseInt($('input.rate').attr('max'));
-	console.log('rate is  ' + Scroller.rate);
-	var val = parseInt(max - Scroller.rate);
+	var max = parseInt($('#js-speed input').attr('max'));
+	console.log('speed is  ' + Scroller.speed);
+	var val = parseInt(max - Scroller.speed);
 	console.log('smooth scroller started ' + val);
 	SmoothScroller.setCallback(Scroller.completed);
 	SmoothScroller.setPace(val);
@@ -180,73 +180,75 @@ Scroller.clearTimeouts = function() {
 }
 
 /************************************************
- * updateSnooze()
+ * setSleep()
+ ************************************************/
+Scroller.setSleep = function(val) {
+	Scroller.sleep = val;
+	Scroller.wait = val;
+	console.log('sleep changed to ' + val);
+	$("#js-sleep label").html(Math.floor(val/1000) + " sec");
+	$('#js-sleep input').val(val);
+}
+
+/************************************************
+ * updateSleep()
  * 
  ************************************************/
-Scroller.updateSnooze = function(e) {
+Scroller.updateSleep = function(e) {
 	e.preventDefault();
-	var val = $('.snooze').val();
-	Scroller.setSnooze(val);
-	WebUtils.saveStorage('snooze', val);
+	var val = $(this).val();
+	Scroller.setSleep(val);
+	WebUtils.saveStorage('sleep', val);
+	e.stopPropagation();
 }
 
 /************************************************
- * setSnooze()
+ * setSpeed()
  ************************************************/
-Scroller.setSnooze = function(val) {
-	Scroller.snooze = val;
-	Scroller.wait = val;
-	console.log('snooze changed to ' + val);
-	$("#snooze").html(Math.floor(val/1000) + " sec");
-	$('.snooze').val(val);
+Scroller.setSpeed = function(val) {
+	console.log('speed changed to ' + val);
+	Scroller.speed = val;
+	$("#js-speed label").html(Math.floor(val/1000) + " pet");
+	$('#js-speed input').val(val);
 }
 
 /************************************************
- * updateRate()
+ * updateSpeed()
  ************************************************/
-Scroller.updateRate = function(e) {
+Scroller.updateSpeed = function(e) {
 	e.preventDefault();
-	var val = parseInt($('.rate').val());
-	Scroller.setRate(val);
-	WebUtils.saveStorage('rate', val);
-}
-
-/************************************************
- * setRate()
- ************************************************/
-Scroller.setRate = function(val) {
-	console.log('rate changed to ' + val);
-	Scroller.rate = val;
-	$("#rate").html(Math.floor(val/1000) + " pet");
-	$('.rate').val(val);
+	var val = parseInt($(this).val());
+	Scroller.setSpeed(val);
+	WebUtils.saveStorage('speed', val);
+	e.stopPropagation();
 }
 
 /************************************************
  * disableControls()
  ************************************************/
-Scroller.disableControls = function(view) {
+Scroller.disableControls = function(disable) {
 
-	if (view) {
-		$('.rate').removeAttr('disabled').removeClass('disabled');
-		$('.snooze').removeAttr('disabled').removeClass('disabled');
+	if (disable) {
+		$('#js-sleep input').attr('disabled',true).addClass('disabled');
+		$('#js-speed input').attr('disabled',true).addClass('disabled');
 	} else {
-		$('.rate').attr('disabled',true).addClass('disabled');
-		$('.snooze').attr('disabled',true).addClass('disabled');
+		$('#js-sleep input').removeAttr('disabled').removeClass('disabled');
+		$('#js-speed input').removeAttr('disabled').removeClass('disabled');
 	}
 
 }
 
 /************************************************
- * flipConfig()
+ * override()
  ************************************************/
-Scroller.flipConfig = function(e) {
+Scroller.override = function(e) {
 	if (this.checked) {
-		Scroller.setRate(WebUtils.readDomConfig("rate", Scroller.rate));
-		Scroller.setSnooze(WebUtils.readDomConfig("snooze", Scroller.snooze));
+		Scroller.setSleep(WebUtils.readStorage("sleep", Scroller.sleep));		
+		Scroller.setSpeed(WebUtils.readStorage("speed", Scroller.speed));
 		Scroller.disableControls(false);
 	} else {
-		Scroller.setRate(Scroller.readStorage("rate", Scroller.rate));
-		Scroller.setSnooze(Scroller.readStorage("snooze", Scroller.snooze));		
+		Scroller.setSleep(WebUtils.readDomConfig("sleep", Scroller.sleep));
+		Scroller.setSpeed(WebUtils.readDomConfig("speed", Scroller.speed));
 		Scroller.disableControls(true);
 	}
 
@@ -263,29 +265,28 @@ Scroller.songPage = function() {
  * init()
  ************************************************/
 Scroller.init = function() {
-	var rate = Scroller.rate;
-	var snooze = Scroller.snooze;
+	var sleep = Scroller.sleep;
+	var speed = Scroller.speed;
 
 	if (typeof(Storage) !== "undefined") {
-		rate = WebUtils.readStorage("rate", Scroller.rate);
-		snooze = WebUtils.readStorage("snooze", Scroller.snooze);
+		sleep = WebUtils.readStorage("sleep", Scroller.sleep);
+		speed = WebUtils.readStorage("speed", Scroller.speed);
 	} else {
-		$(".rate").hide(500);
+		$(".speed").hide(500);
 	}
 
-   var config = $('#config');
 	if (WebUtils.hasDomConfig()) {
-	   	rate  = WebUtils.readDomConfig("rate", Scroller.rate);
-	   	snooze = WebUtils.readDomConfig('snooze', Scroller.snooze);
-	   	console.log('rate and snooze restored from configuration');
-	   	Scroller.disableControls(false);
-	   	$('#js-server-option').show();
+	   	sleep = WebUtils.readDomConfig('sleep', Scroller.sleep);
+	   	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
+	   	console.log('using DOM configuration');
+	   	Scroller.disableControls(true);
+	   	$('#js-override').show();
 	} else {
-	   	$('#js-server-option').hide();
+	   	$('#js-override').hide();
 	}
 
-	Scroller.setRate(rate);
-	Scroller.setSnooze(snooze);
+	Scroller.setSleep(sleep);
+	Scroller.setSpeed(speed);
 }
 
 /************************************************
@@ -294,23 +295,17 @@ Scroller.init = function() {
 Scroller.wireup = function() {
 	Scroller.init();
 
-	$('.play').click(Scroller.play);
-	$('.rate').change(Scroller.updateRate);  
-	$('.snooze').change(Scroller.updateSnooze);
-
-	$('#js-server').click(Scroller.flipConfig);
-	$('#refresh').click(WebUtils.refresh);
-
-	if ($(".chord").length == 0) { // check if on song page
-		$(".controls").hide();
-		$(".tab-handle").hide();
-	} else {
-		$("#searchbox-js").hide();
-	}
+	$('#js-play').click(Scroller.play);
+	$('#js-sleep input').change(Scroller.updateSleep);
+	$('#js-speed input').change(Scroller.updateSpeed);  
+	$('#js-override input').click(Scroller.override);
+	$('#js-refresh').click(WebUtils.refresh);
 
 	if (Scroller.songPage()) {
-		if (AutoPlay.isActive()) $('.play').click();
+		if (AutoPlay.isActive()) $('#js-play').click();
 	} else {
+		$(".controls").hide();
+		$(".tab-handle").hide();
 		$('#filter').removeClass('hidden');
 	}
 }

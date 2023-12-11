@@ -47,15 +47,15 @@
 
 			<div class="row">
 			    <div class="twelve columns">
-					<h1><a href='javascript:history.back()'>Savez Vous Planter Des Choux</a></h1><div class='note'>[intro]</div> Version Guitare<p class='lyrics'>Pr&eacute;senter: T&ecirc;te, Manche, Rosace, Caisse (Chevalet, Talon, Frette, Sillet, Cheville) </p><p class='chord'>   C</p><p class='lyrics'>Savez-vous planter les choux</p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><p class='chord'>   C</p><p class='lyrics'>Savez-vous planter les choux</p><p class='chord'>   G              C</p><p class='lyrics'>À la mode de chez nous?</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>t&ecirc;te</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>cheville</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec le <span class='voix2'>manche</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>rosace</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>caisse</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><div id='config' snooze=1000 rate=5000 />
+					<h1><a href='javascript:history.back()'>Savez Vous Planter Des Choux</a></h1><div class='note'>[intro]</div> Version Guitare<p class='lyrics'>Pr&eacute;senter: T&ecirc;te, Manche, Rosace, Caisse (Chevalet, Talon, Frette, Sillet, Cheville) </p><p class='chord'>   C</p><p class='lyrics'>Savez-vous planter les choux</p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><p class='chord'>   C</p><p class='lyrics'>Savez-vous planter les choux</p><p class='chord'>   G              C</p><p class='lyrics'>À la mode de chez nous?</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>t&ecirc;te</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>cheville</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec le <span class='voix2'>manche</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>rosace</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><hr/><p class='chord'>   [sans guitare]</p><p class='lyrics voix'>On les plante avec la <span class='voix2'>caisse</span></p><p class='chord'>   G              C</p><p class='lyrics'>À la mode, à la mode</p><p class='config' id='sleep' value='1000'>&#64;sleep=1000</p><p class='config' id='speed' value='5000'>&#64;speed=5000</p>
 				</div>
 			</div>
 
 			<div class="controls">
 				<div class="row">
-					<div class="four columns"><a id="back" class='button' title='back' onclick="javascript:history.back()"><span class='icon'>back</span></a></div>
-					<div class="four columns"><a id="refresh" class='button' title='refresh' ><span class='icon'>reset</a></div>
-					<div class="four columns"><a class='play button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+					<div class="four columns"><a id='js-back' class='button' title='back' onclick="javascript:history.back()"><span class='icon'>back</span></a></div>
+					<div class="four columns"><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
+					<div class="four columns"><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
 				</div>
 			</div>
 
@@ -70,11 +70,9 @@
 		<a class="tab-handle" href="#">&lt;</a>
 		<div class="tab-slide">
 			<h2>Settings</h2>
-			<label id="js-server-option"><input id="js-server" type="checkbox" checked/>Use Common</label>		
-			<label>Snooze: <span id="snooze" class='number' /></label>
-				<input class="snooze" type="range" min=1000 max=30000 step=1000 />
-			<label>Scroll: <span id="rate" class='number' /></label>
-				<input class="rate" type="range" min=1000 max=10000 step=1000 />
+			<div id="js-override"><label><input type="checkbox"/>Override</label></div>		
+			<div id="js-sleep"><label></label><input class='disabled' disabled type="range" min=1000 max=30000 step=1000 /></div>
+			<div id="js-speed"><label></label><input class='disabled' disabled type="range" min=1000 max=10000 step=1000 /></div>
 			<label>Transpose:</label>
 			<div id="js-transpose" class="transpose">
 				<a class="hit down button"><b class='icon'>-</b></a><span id="key" class="center" data="0">A</span><a class="hit up button"><b class='icon'>+</b></a>
