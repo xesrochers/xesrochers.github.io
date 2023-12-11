@@ -13,6 +13,7 @@ SmoothScroller.stride = null;  // vertical pixels
 SmoothScroller.timeout = null;
 SmoothScroller.offset = 0;
 SmoothScroller.callback = null;
+SmoothScroller.lastPosition = 0;
 
 /************************************************
  * setCallback()
@@ -100,13 +101,15 @@ SmoothScroller.completed = function() {
 	var result = false;
 	var scrollHeight = $(document).height();
 	var scrollPosition = $(window).height() + $(window).scrollTop();
-	if ((scrollHeight - scrollPosition) < 50) {
-	    result = true;
-	}
+
+   result = (SmoothScroller.lastPosition == scrollPosition);
+	SmoothScroller.lastPosition = scrollPosition
 
 	if (result && (SmoothScroller.callback != null)) {
+		SmoothScroller.clearTimeout();
 		SmoothScroller.callback();
-	} 
+	}
+
 	return result;
 }
 

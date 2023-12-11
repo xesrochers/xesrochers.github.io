@@ -51,30 +51,30 @@ Scroller.setControls = function(state) {
 		playBtn.removeClass("blink");
 		playBtn.attr('title', 'play');
 		playBtn.find('.icon').removeClass('bar').html('start');
-		$('.tab-handle').show(300);
+		TabSlide.show();
 	} else if (state == 'snoozing') {
 		playBtn.addClass("blink");
 		playBtn.attr('title', 'pause');
-		playBtn.find('.icon').addClass('bar');
+		playBtn.find('.icon').addClass('bar').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 		Scroller.fillBar();
-		$('.tab-handle').hide(300);
+		TabSlide.hide();
 	} else if (state == 'paused') {
 		playBtn.removeClass("blink");
 		playBtn.attr('title', 'resume');
 		playBtn.find('.icon').removeClass('bar').html('resume');
-		$('.tab-handle').show(300);
+		TabSlide.show();
 	} else if (state == 'playing') {
 		playBtn.addClass('blink');
 		playBtn.attr('title', 'pause');
 		playBtn.find('.icon').removeClass('bar').html('pause');
-		$('.tab-handle').hide(300);
+		TabSlide.hide();
 		$('.tablature').addClass('hidden');
 		$('#harmony-control').addClass('hidden');
 	} else if (state == 'completed') {
 		playBtn.removeClass("blink");
 		playBtn.attr('title', 'top');
 		playBtn.find('.icon').removeClass('bar').html('top');
-		$('.tab-handle').show(300);
+		TabSlide.show();
 		$('.tablature').addClass('hidden');
 		$('#harmony-control').addClass('hidden');
 	}
@@ -383,7 +383,6 @@ Scroller.init = function() {
 Scroller.wireup = function() {
 	Scroller.init();
 
-	//$(window).scroll(Scroller.onScroll);
 	$('.play').click(Scroller.play);
 	$('.rate').change(Scroller.updateRate);  
 	$('.snooze').change(Scroller.updateSnooze);

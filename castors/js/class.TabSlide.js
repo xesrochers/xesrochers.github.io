@@ -11,28 +11,27 @@ TabSlide.height = 50;
 
 
 /************************************************
- * init()
+ * hide()
  ************************************************/
-TabSlide.init = function() {
-	$('.tab-slide').tabSlideOut({
-            tabHandle: '.tab-slide-handle',             //class of the element that will become your tab
-            //pathToTabImage: 'images/contact_tab.gif', //path to the image for the tab //Optionally can be set using css
-            imageHeight: '80px',                        //height of tab image           //Optionally can be set using css
-            imageWidth: '40px',                         //width of tab image            //Optionally can be set using css
-            tabLocation: 'right',                       //side of screen where tab lives, top, right, bottom, or left
-            speed: 300,                                 //speed of animation
-            action: 'click',                            //options: 'click' or 'hover', action to trigger animation
-            topPos: '40px',                              //position from the top/ use if tabLocation is left or right
-            leftPos: '20px',                            //position from left/ use if tabLocation is bottom or top
-            fixedPosition: true                         //options: true makes it stick(fixed position) on scroll
-        });
+TabSlide.hide = function() {
+   $('.tab-handle').html("&lt;").hide(300);
+   $('.tab-slide').hide(300);
 }
 
+/************************************************
+ * show()
+ ************************************************/
+TabSlide.show = function() {
+   $('.tab-handle').html("&lt;").show(300);
+   $('.tab-slide').hide(300); // make sue it's hidden 
+}
 
 /************************************************
  * toggle()
  ************************************************/
 TabSlide.toggle = function(e) {
+   e.preventDefault();
+
    $('.tab-slide').toggle(300);
    var hook = $('.tab-handle').html();
    if (hook == "&lt;") {
