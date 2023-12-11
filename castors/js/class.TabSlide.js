@@ -35,7 +35,7 @@ TabSlide.toggle = function(e) {
    $('.tab-slide').toggle(300);
    var hook = $('.tab-handle').html();
    if (hook == "&lt;") {
-      $('.tab-handle').html("X");
+      $('.tab-handle').html("&times;");
    } else {
       $('.tab-handle').html("&lt;");
    }
