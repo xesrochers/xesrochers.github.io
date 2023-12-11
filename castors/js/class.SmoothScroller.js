@@ -48,7 +48,7 @@ SmoothScroller.scroll = function() {
 	if (!SmoothScroller.completed()) {
 		if (SmoothScroller.active) {
 			SmoothScroller.offset += SmoothScroller.stride;	
-			$('html,body').animate({scrollTop: SmoothScroller.offset}, SmoothScroller.pace-1000);
+			$('html,body').animate({scrollTop: SmoothScroller.offset}, SmoothScroller.pace-1500);
 			SmoothScroller.timeout = setTimeout(SmoothScroller.scroll, SmoothScroller.pace);
 		}
 	}

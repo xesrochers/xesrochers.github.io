@@ -12,7 +12,6 @@ Scroller.snooze = 5000;
 Scroller.wait  = 5000;
 Scroller.timeout = null;
 
-
 /************************************************
  * getState()
  ************************************************/
@@ -30,7 +29,6 @@ Scroller.setState = function(state) {
    console.log('state changed to ' + state);
 
 }
-
 
 /************************************************
  * fillBar()
@@ -78,7 +76,6 @@ Scroller.setControls = function(state) {
 		$('.tablature').addClass('hidden');
 		$('#harmony-control').addClass('hidden');
 	}
-
 }
 
 /************************************************
@@ -96,8 +93,6 @@ Scroller.snoozy = function() {
 		Scroller.start();
 	}
 }
-
-
 
 /************************************************
  * play()
@@ -184,14 +179,6 @@ Scroller.clearTimeouts = function() {
 
 }
 
-
-/************************************************
- * getPath()
- ************************************************/
-Scroller.getPath = function() {
-	return window.location.pathname.replace(".html","");
-}
-
 /************************************************
  * updateSnooze()
  * 
@@ -200,7 +187,7 @@ Scroller.updateSnooze = function(e) {
 	e.preventDefault();
 	var val = $('.snooze').val();
 	Scroller.setSnooze(val);
-	localStorage.setItem(Scroller.getPath() +"-snooze", val);
+	WebUtils.saveStorage('snooze', val);
 }
 
 /************************************************
@@ -221,7 +208,7 @@ Scroller.updateRate = function(e) {
 	e.preventDefault();
 	var val = parseInt($('.rate').val());
 	Scroller.setRate(val);
-	localStorage.setItem(Scroller.getPath() +"-rate", val);
+	WebUtils.saveStorage('rate', val);
 }
 
 /************************************************
@@ -232,63 +219,6 @@ Scroller.setRate = function(val) {
 	Scroller.rate = val;
 	$("#rate").html(Math.floor(val/1000) + " pet");
 	$('.rate').val(val);
-}
-
-
-/************************************************
- * refresh()
- ************************************************/
-Scroller.refresh = function(e) {
-	e.preventDefault();
-	location.reload(true); // loads CSS and JS
-	window.location.replace(window.location.href); // go top
-}
-
-
-/************************************************
- * readServer()
- ************************************************/
-Scroller.readServer = function(key, def) {
-	var result = def;
-
-   var config = $('#config');
-	if (config.length) {
-	   result = config.attr(key);
-	}
-
-	return result;
-}
-
-
-/************************************************
- * readStorage()
- ************************************************/
-Scroller.readStorage = function(key, def) {
-	var result = def;
-	var key = Scroller.getPath() + "-" + key;
-	test = localStorage.getItem(key);
-	if (test !== null) {
-		result = test;
-	}
-	return result;
-}
-
-/************************************************
- * saveCookie()
- ************************************************/
-Scroller.saveCookie = function(key, def) {
-	var domainName = window.location.hostname;
-	document.cookie = key + '=' + def +'; path=/; domain=.' + domainName;
-}
-
-/************************************************
- * readCookie()
- ************************************************/
-Scroller.readCookie = function(key, def) {
- // Get name followed by anything except a semicolon
-  var cookiestring=RegExp(key+"=[^;]+").exec(document.cookie);
-  // Return everything after the equal sign, or an empty string if the cookie name not found
-  return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
 }
 
 /************************************************
@@ -306,14 +236,13 @@ Scroller.disableControls = function(view) {
 
 }
 
-
 /************************************************
  * flipConfig()
  ************************************************/
 Scroller.flipConfig = function(e) {
 	if (this.checked) {
-		Scroller.setRate(Scroller.readServer("rate", Scroller.rate));
-		Scroller.setSnooze(Scroller.readServer("snooze", Scroller.snooze));
+		Scroller.setRate(WebUtils.readDomConfig("rate", Scroller.rate));
+		Scroller.setSnooze(WebUtils.readDomConfig("snooze", Scroller.snooze));
 		Scroller.disableControls(false);
 	} else {
 		Scroller.setRate(Scroller.readStorage("rate", Scroller.rate));
@@ -324,28 +253,10 @@ Scroller.flipConfig = function(e) {
 }
 
 /************************************************
- * autoPlay()
+ * songPage()
  ************************************************/
-Scroller.autoPlay = function() {
-	var result = false;
-	var cookie = Scroller.readCookie('autoPlay');
-	if (cookie != null) {
-		result = cookie == 'true';
-	}
-
-	return result;
-}
-
-
-/************************************************
- * setAutoPlay()
- ************************************************/
-Scroller.setAutoPlay = function(e) {
-	if (this.checked) {
-		Scroller.saveCookie('autoPlay', 'true');
-	} else {
-		Scroller.saveCookie('autoPlay', 'false');		
-	}
+Scroller.songPage = function() {
+	return $('.chord').length >0;
 }
 
 /************************************************
@@ -356,16 +267,16 @@ Scroller.init = function() {
 	var snooze = Scroller.snooze;
 
 	if (typeof(Storage) !== "undefined") {
-		rate = Scroller.readStorage("rate", Scroller.rate);
-		snooze = Scroller.readStorage("snooze", Scroller.snooze);
+		rate = WebUtils.readStorage("rate", Scroller.rate);
+		snooze = WebUtils.readStorage("snooze", Scroller.snooze);
 	} else {
 		$(".rate").hide(500);
 	}
 
    var config = $('#config');
-	if (config.length) {
-	   	rate  = Scroller.readServer("rate", Scroller.rate);
-	   	snooze = Scroller.readServer('snooze', Scroller.snooze);
+	if (WebUtils.hasDomConfig()) {
+	   	rate  = WebUtils.readDomConfig("rate", Scroller.rate);
+	   	snooze = WebUtils.readDomConfig('snooze', Scroller.snooze);
 	   	console.log('rate and snooze restored from configuration');
 	   	Scroller.disableControls(false);
 	   	$('#js-server-option').show();
@@ -387,9 +298,8 @@ Scroller.wireup = function() {
 	$('.rate').change(Scroller.updateRate);  
 	$('.snooze').change(Scroller.updateSnooze);
 
-	$('#js-auto-play').click(Scroller.setAutoPlay);
 	$('#js-server').click(Scroller.flipConfig);
-	$('#refresh').click(Scroller.refresh);
+	$('#refresh').click(WebUtils.refresh);
 
 	if ($(".chord").length == 0) { // check if on song page
 		$(".controls").hide();
@@ -398,9 +308,10 @@ Scroller.wireup = function() {
 		$("#searchbox-js").hide();
 	}
 
-	if (Scroller.autoPlay()) {
-		$("#js-auto-play").attr('checked', 'checked');
-		$('.play').click();
+	if (Scroller.songPage()) {
+		if (AutoPlay.isActive()) $('.play').click();
+	} else {
+		$('#filter').removeClass('hidden');
 	}
 }
 
