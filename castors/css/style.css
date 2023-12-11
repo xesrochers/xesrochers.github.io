@@ -6,7 +6,6 @@ body {font-family:courier,monospace; background-color: rgba(22,22,22,.9);  color
 
 div#wrapper{ padding: .5em 2em; }
 
-
 div#content{ margin-bottom: 2em;}
 
 footer{ padding: 1em 0em 5em 0em; font-style: italic; }
@@ -235,6 +234,13 @@ i.zzz, i.zzz b.group {
 	padding: 0 2px;
 }
 
+.song b.icon {
+	display: inline-block;
+	font-size: 2em;
+	width: 2em;
+	height: 2em;
+}
+
 .note {
 	font-size: 0.6em;
 	font-style: italic;
@@ -303,24 +309,30 @@ select.wide {
 	font-size: .7em;
 }
 
-
-.tab-slide {
-	padding: 10px;
-	width: 250px;
-	background-color: #000;
-	border: 1px solid orange;
-	font-size: .8em;
-    z-index: 200;	
-}  
-
-.tab-slide-handle {
+.tab-handle {
+	position: fixed;
+	top: 25px;
+	right: 0px;
 	background-color: orange;
 	border-radius: 3px 0 0 3px;
 	border: 1px solid orange;
 	padding: 20px 7px 20px 7px;
 	color: #000;
 	font-weight: bold;
+    z-index: 210;	
 }
+
+.tab-slide {
+	position: fixed;
+	top: 25px;
+	right:0;
+	width: 250px;
+	padding: 10px 10px 30px 10px;
+	background-color: #000;
+	border: 1px solid orange;
+	font-size: .8em;
+    z-index: 200;	
+}  
 
 .tab-slide h2 {
    color: orange;
@@ -353,7 +365,7 @@ select.wide {
 
 .tab-slide .transpose a {
 	border: 2px solid orange;
-	padding: 6px 0px 0px 4px;
+	padding: 0px;
 	border-radius: 3px;
 	color: orange;
 }
@@ -363,38 +375,6 @@ select.wide {
 	text-align: center;
 	display: inline-block;
 }
-
-.tab-slide .show-big-play a {
-	color:  orange;
-	border-color: orange;
-}
-
-.tab-slide .show-big-play a.selected {
-	color:  black;
-	background-color: orange;
-}
-
-.big-play {
-	position: fixed;
-	top: 45%;
-	left: 33%;
-}
-
-.big-play .circle {
-	display: inline-block;
-	border: 4px solid #eee;
-	border-radius: 2em;
-    padding: .7em;
-	font-size: 300%;
-	background: rgb(90, 90, 90) transparent; /* default fallback */
-	background: rgba(90, 90, 90, 0.6);
-}
-
-.big-play i {
-	color: #eee;
-	margin-left: 0.4em;	
-}
-
 
 .controls {
 	position: fixed;
@@ -498,6 +478,15 @@ select.wide {
   -webkit-animation:fade 2000ms infinite;
 }
 
+.bar {
+	display: inline-block;
+	background-color: orange;
+}
+
+.auto-play {
+	float: right;
+	margin-top: 15px;
+}
 
 .bijou-spectacles-manue2019 .note {
 	font-size: .8em;
@@ -565,15 +554,8 @@ select.wide {
 	.song .tablature {font-size: .8em; }
 
 	.tab-slide {
-		width: 300px;
-		padding: 20px;
 		font-size: 1em;
 	}  
-
-	.tab-slide-handle {
-		border-radius: 5px 0 0 5px;
-		padding: 50px 15px 50px 15px;
-	}
 }
 
 /* Tablet and above */
