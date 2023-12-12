@@ -271,8 +271,6 @@ Scroller.init = function() {
 	if (typeof(Storage) !== "undefined") {
 		sleep = WebUtils.readStorage("sleep", Scroller.sleep);
 		speed = WebUtils.readStorage("speed", Scroller.speed);
-	} else {
-		$(".speed").hide(500);
 	}
 
 	if (WebUtils.hasDomConfig()) {
@@ -280,9 +278,6 @@ Scroller.init = function() {
 	   	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
 	   	console.log('using DOM configuration');
 	   	Scroller.disableControls(true);
-	   	$('#js-override').show();
-	} else {
-	   	$('#js-override').hide();
 	}
 
 	Scroller.setSleep(sleep);

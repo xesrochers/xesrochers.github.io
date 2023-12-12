@@ -338,7 +338,7 @@ input.wide, select.wide {
 	top: 5em;
 	right:0;
 	width: 250px;
-	padding: 10px 10px 30px 10px;
+	padding: 20px;
 	background-color: #000;
 	border: 1px solid orange;
 	font-size: .8em;
@@ -553,10 +553,8 @@ input.wide, select.wide {
 	.auto-play {display: none}
 	#harmony-control, #harmony-block { display: none; }
 	input.searchbox { display: none; }
-	.show-big-play { display: none; }
 	.big { font-size: 1.7em;}
-	.server h1 { margin-bottom: 1em;}
-
+	#js-back, #js-refresh {display: none}
 }
 
 /* Playbook vertical (and larger) */
