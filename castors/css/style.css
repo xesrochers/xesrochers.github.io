@@ -544,17 +544,17 @@ input.wide, select.wide {
 	hr { margin: 10px 0; }
 	h1,h2,h3 { font-size: 1.1em; margin: 1em 0;}
 	h1 a { display: inline-block;}
-	p, li, blockquote { font-size: .7em;}
+	p, li, blockquote { font-size: .8em;}
 	hr > hr { display: none; }
 	b.group { font-weight: normal;}
-	.chord { font-size: .6rem; }
-	.tab-slide { display: none; }
-	.tab-handle { display: none; }
+	.chord { font-size: .7rem; }
 	.auto-play {display: none}
 	#harmony-control, #harmony-block { display: none; }
-	input.searchbox { display: none; }
 	.big { font-size: 1.7em;}
 	#js-back, #js-refresh {display: none}
+
+	.tab-slide {font-size: 1em;}  
+
 }
 
 /* Playbook vertical (and larger) */
