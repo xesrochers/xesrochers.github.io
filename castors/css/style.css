@@ -245,13 +245,6 @@ i.zzz, i.zzz b.group {
 	padding: 0 2px;
 }
 
-.song b.icon {
-	display: inline-block;
-	font-size: 2em;
-	width: 2em;
-	height: 2em;
-}
-
 .note {
 	font-size: 0.6em;
 	font-style: italic;
@@ -320,10 +313,14 @@ input.wide, select.wide {
 	font-size: .7em;
 }
 
+/**************************
+ * TabSlide 
+ **************************/
 .tab-handle {
 	position: fixed;
 	top: 5em;
 	right: 0px;
+	text-decoration: none;
 	background-color: orange;
 	border-radius: 3px 0 0 3px;
 	border: 1px solid orange;
@@ -349,12 +346,13 @@ input.wide, select.wide {
    color: orange;
 }
 
+.tab-slide label {
+	color: #aaa;
+}  
+
 .tab-slide div {
 	margin: 0 0 .5em 0;
 }
-
-.tab-slide label {
-}  
 
 .tab-slide input{
 	width: 100%;
@@ -378,18 +376,24 @@ input.wide, select.wide {
 }
 
 .tab-slide .transpose a {
+	display: inline-block;
+	width: 2em;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 0;
 	border: 2px solid orange;
 	padding: 0px;
 	border-radius: 3px;
-	color: orange;
 }
 
-.tab-slide .transpose .center {
-	width: 100px;
-	text-align: center;
+.tab-slide .transpose #key {
 	display: inline-block;
+	width: 1em;
 }
 
+/**************************
+ * Song Controls
+ **************************/
 .controls {
 	position: fixed;
 	bottom: 0;
@@ -432,7 +436,6 @@ input.wide, select.wide {
 	color: grey;
 }
 
-
 .disabled {
 	opacity: .2;
 }
@@ -440,6 +443,10 @@ input.wide, select.wide {
 .gig {
 	padding-bottom: 3em;
 }
+
+/**************************
+ * General Stuff 
+ **************************/
 
 .song-list {
 	margin-left: 0em;

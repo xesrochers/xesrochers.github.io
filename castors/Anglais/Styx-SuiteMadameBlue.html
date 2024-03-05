@@ -22,7 +22,7 @@
 	    <script src="/castors/js/class.SmoothScroller.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Chords.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Search.js" type="text/javascript" ></script>
-		<title>Styx- Suite Madame Blue</title>
+		<title> Suite Madame Blue</title>
 	</head>
 	<body class='song bijou-anglais  top'>
 		<div class="container">
@@ -47,15 +47,62 @@
 
 			<div class="row">
 			    <div class="twelve columns">
-					<h1><a href='javascript:history.back()'>Sweet Madame Blue</a></h1><p class='lyrics'>Time after time</p><p class='lyrics'>I sit and I wait for your call</p><p class='lyrics'>I know I'm a fool</p><p class='lyrics'>But what can I say</p><p class='lyrics'>Whatever the price I'll pay</p><p class='lyrics'>For you Madame Blue</p><p class='lyrics'>Once long ago</p><p class='lyrics'>A word from your lips and the world turned around</p><p class='lyrics'>But somehow you've changed</p><p class='lyrics'>You're so far away</p><p class='lyrics'>I long for the past and dream of the day</p><p class='lyrics'>With you Madame Blue</p><p class='lyrics'>Sweet Madame Blue</p><p class='lyrics'>Gaze in your looking glass</p><p class='lyrics'>You're not a child anymore</p><p class='lyrics'>Sweet Madame Blue</p><p class='lyrics'>The future is all but past</p><p class='lyrics'>Dressed in your jewels</p><p class='lyrics'>You made your own rules</p><p class='lyrics'>You conquered the world and more</p><p class='lyrics'>... Heaven's door</p><p class='lyrics'>America, America...</p><p class='lyrics'>America, America...</p><p class='lyrics'>America, America...</p><p class='lyrics'>America, America...</p><p class='lyrics'>America, America...</p><p class='lyrics'>America, America...</p><p class='lyrics'>Red, white and blue</p><p class='lyrics'>Gaze in your looking glass</p><p class='lyrics'>You're not a child anymore</p><p class='lyrics'>Red, white and blue</p><p class='lyrics'>The future is all but past</p><p class='lyrics'>So lift up your heart</p><p class='lyrics'>And make a new start</p><p class='lyrics'>And lead us away from here</p>
-				</div>
-			</div>
-
-			<div class="controls">
-				<div class="row">
-					<div class="four columns"><a id='js-back' class='button' title='back' onclick="javascript:history.back()"><span class='icon'>back</span></a></div>
-					<div class="four columns"><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
-					<div class="four columns"><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+					<h1><a href='javascript:history.back()'>Sweet Madame Blue</a></h1>
+<p class='lyrics'>Time after time</p>
+<p class='lyrics'>I sit and I wait for your call</p>
+<p class='lyrics'>I know I'm a fool</p>
+<p class='lyrics'>But what can I say</p>
+<p class='lyrics'>Whatever the price I'll pay</p>
+<p class='lyrics'>For you Madame Blue</p>
+<p class='lyrics'>Once long ago</p>
+<p class='lyrics'>A word from your lips and the world turned around</p>
+<p class='lyrics'>But somehow you've changed</p>
+<p class='lyrics'>You're so far away</p>
+<p class='lyrics'>I long for the past and dream of the day</p>
+<p class='lyrics'>With you Madame Blue</p>
+<p class='lyrics'>Sweet Madame Blue</p>
+<p class='lyrics'>Gaze in your looking glass</p>
+<p class='lyrics'>You're not a child anymore</p>
+<p class='lyrics'>Sweet Madame Blue</p>
+<p class='lyrics'>The future is all but past</p>
+<p class='lyrics'>Dressed in your jewels</p>
+<p class='lyrics'>You made your own rules</p>
+<p class='lyrics'>You conquered the world and more</p>
+<p class='lyrics'>... Heaven's door</p>
+<p class='lyrics'>America, America...</p>
+<p class='lyrics'>America, America...</p>
+<p class='lyrics'>America, America...</p>
+<p class='lyrics'>America, America...</p>
+<p class='lyrics'>America, America...</p>
+<p class='lyrics'>America, America...</p>
+<p class='lyrics'>Red, white and blue</p>
+<p class='lyrics'>Gaze in your looking glass</p>
+<p class='lyrics'>You're not a child anymore</p>
+<p class='lyrics'>Red, white and blue</p>
+<p class='lyrics'>The future is all but past</p>
+<p class='lyrics'>So lift up your heart</p>
+<p class='lyrics'>And make a new start</p>
+<p class='lyrics'>And lead us away from here</p>
+<a class='tab-handle' href='#'>&lt;</a>
+<div class='tab-slide'>
+  <h2>Settings</h2>
+    <div id='js-override'><label><input type='checkbox'/>Override</label></div>		
+    <div id='js-sleep'><label></label><input class='disabled' disabled type='range' min=1000 max=30000 step=1000 /></div>
+    <div id='js-speed'><label></label><input class='disabled' disabled type='range' min=1000 max=10000 step=1000 /></div>
+    <label>Transpose:</label>
+    <div id='js-transpose' class='transpose'>
+      <span><a class='hit down button'><b class='icon'>-</b></a><span>
+      <span id='key' data='0'>A</span>
+      <span><a class='hit up button'><b class='icon'>+</b></a></span>
+    </div>
+</div>
+<div class='controls'>
+  <div class='row'>
+    <div class='four columns'><a id='js-back' class='button' title='back' onclick='javascript:history.back()'><span class='icon'>back</span></a></div>
+    <div class='four columns'><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
+    <div class='four columns'><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+  </div>
+</div>
 				</div>
 			</div>
 
@@ -67,17 +114,6 @@
 			</footer>
 		</div>
 
-		<a class="tab-handle" href="#">&lt;</a>
-		<div class="tab-slide">
-			<h2>Settings</h2>
-			<div id="js-override"><label><input type="checkbox"/>Override</label></div>		
-			<div id="js-sleep"><label></label><input class='disabled' disabled type="range" min=1000 max=30000 step=1000 /></div>
-			<div id="js-speed"><label></label><input class='disabled' disabled type="range" min=1000 max=10000 step=1000 /></div>
-			<label>Transpose:</label>
-			<div id="js-transpose" class="transpose">
-				<a class="hit down button"><b class='icon'>-</b></a><span id="key" class="center" data="0">A</span><a class="hit up button"><b class='icon'>+</b></a>
-			</div>
-		</div>
 	</body>
 
 </html>

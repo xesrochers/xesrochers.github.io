@@ -22,7 +22,7 @@
 	    <script src="/castors/js/class.SmoothScroller.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Chords.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Search.js" type="text/javascript" ></script>
-		<title>Noel- Douze Jour De Noel</title>
+		<title> Douze Jour De Noel</title>
 	</head>
 	<body class='song bijou-noel  top'>
 		<div class="container">
@@ -47,15 +47,54 @@
 
 			<div class="row">
 			    <div class="twelve columns">
-					<h1><a href='javascript:history.back()'>Les douze jours de noel</a></h1><p class='chord'>C                         G          C</p><p class='lyrics'>Le 1er jour de Noël mon amour m'a donné</p><p class='chord'>C                  G       C</p><p class='lyrics'>Un gros mess de poutine râpé</p><p class='chord'>                 G</p><p class='lyrics'>Le 2ieme... 2 becs toute mous</p><p class='chord'>                 G</p><p class='lyrics'>Le 3ieme... 3 six pack frettes</p><p class='chord'>                 G</p><p class='lyrics'>Le 4ieme... 4 harengs fumés</p><hr/><p class='chord'>C                         G          C</p><p class='lyrics'>Le 5ieme jour de Noël mon amour m'a donné</p><p class='chord'>G    D  D    G            </p><p class='lyrics'>5 pets de soeur</p><p class='chord'>C                  F      </p><p class='lyrics'>4 harengs fumés, 3 six pack frettes</p><p class='chord'>D              G            C              G         C</p><p class='lyrics'>2 becs toute mous, pis un gros mess de poutine r&acirc;p&eacute; </p><hr/><p class='chord'>C                         G          C</p><p class='lyrics'>Le 6ieme jour de Noël mon amour m'a donné</p><p class='lyrics'>Le 6ieme... 6 gros homards</p><p class='lyrics'>Le 7ieme... 7 rapures moles</p><p class='lyrics'>Le 8ieme... 8 morues sec</p><p class='lyrics'>Le 9ieme... 9 dîners bouillis</p><p class='lyrics'>Le 10ieme... 10 gros bous coqs</p><p class='lyrics'>Le 11ieme... 11 poutines a trous</p><p class='lyrics'>Le 12ieme... 12 beaux maquereaux</p>
-				</div>
-			</div>
-
-			<div class="controls">
-				<div class="row">
-					<div class="four columns"><a id='js-back' class='button' title='back' onclick="javascript:history.back()"><span class='icon'>back</span></a></div>
-					<div class="four columns"><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
-					<div class="four columns"><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+					<h1><a href='javascript:history.back()'>Les douze jours de noel</a></h1>
+<p class='chord'>C                         G          C</p>
+<p class='lyrics'>Le 1er jour de Noël mon amour m'a donné</p>
+<p class='chord'>C                  G       C</p>
+<p class='lyrics'>Un gros mess de poutine râpé</p>
+<p class='chord'>                 G</p>
+<p class='lyrics'>Le 2ieme... 2 becs toute mous</p>
+<p class='chord'>                 G</p>
+<p class='lyrics'>Le 3ieme... 3 six pack frettes</p>
+<p class='chord'>                 G</p>
+<p class='lyrics'>Le 4ieme... 4 harengs fumés</p><hr/>
+<p class='chord'>C                         G          C</p>
+<p class='lyrics'>Le 5ieme jour de Noël mon amour m'a donné</p>
+<p class='chord'>G    D  D    G            </p>
+<p class='lyrics'>5 pets de soeur</p>
+<p class='chord'>C                  F      </p>
+<p class='lyrics'>4 harengs fumés, 3 six pack frettes</p>
+<p class='chord'>D              G            C              G         C</p>
+<p class='lyrics'>2 becs toute mous, pis un gros mess de poutine r&acirc;p&eacute; </p><hr/>
+<p class='chord'>C                         G          C</p>
+<p class='lyrics'>Le 6ieme jour de Noël mon amour m'a donné</p>
+<p class='lyrics'>Le 6ieme... 6 gros homards</p>
+<p class='lyrics'>Le 7ieme... 7 rapures moles</p>
+<p class='lyrics'>Le 8ieme... 8 morues sec</p>
+<p class='lyrics'>Le 9ieme... 9 dîners bouillis</p>
+<p class='lyrics'>Le 10ieme... 10 gros bous coqs</p>
+<p class='lyrics'>Le 11ieme... 11 poutines a trous</p>
+<p class='lyrics'>Le 12ieme... 12 beaux maquereaux</p>
+<a class='tab-handle' href='#'>&lt;</a>
+<div class='tab-slide'>
+  <h2>Settings</h2>
+    <div id='js-override'><label><input type='checkbox'/>Override</label></div>		
+    <div id='js-sleep'><label></label><input class='disabled' disabled type='range' min=1000 max=30000 step=1000 /></div>
+    <div id='js-speed'><label></label><input class='disabled' disabled type='range' min=1000 max=10000 step=1000 /></div>
+    <label>Transpose:</label>
+    <div id='js-transpose' class='transpose'>
+      <span><a class='hit down button'><b class='icon'>-</b></a><span>
+      <span id='key' data='0'>A</span>
+      <span><a class='hit up button'><b class='icon'>+</b></a></span>
+    </div>
+</div>
+<div class='controls'>
+  <div class='row'>
+    <div class='four columns'><a id='js-back' class='button' title='back' onclick='javascript:history.back()'><span class='icon'>back</span></a></div>
+    <div class='four columns'><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
+    <div class='four columns'><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+  </div>
+</div>
 				</div>
 			</div>
 
@@ -67,17 +106,6 @@
 			</footer>
 		</div>
 
-		<a class="tab-handle" href="#">&lt;</a>
-		<div class="tab-slide">
-			<h2>Settings</h2>
-			<div id="js-override"><label><input type="checkbox"/>Override</label></div>		
-			<div id="js-sleep"><label></label><input class='disabled' disabled type="range" min=1000 max=30000 step=1000 /></div>
-			<div id="js-speed"><label></label><input class='disabled' disabled type="range" min=1000 max=10000 step=1000 /></div>
-			<label>Transpose:</label>
-			<div id="js-transpose" class="transpose">
-				<a class="hit down button"><b class='icon'>-</b></a><span id="key" class="center" data="0">A</span><a class="hit up button"><b class='icon'>+</b></a>
-			</div>
-		</div>
 	</body>
 
 </html>

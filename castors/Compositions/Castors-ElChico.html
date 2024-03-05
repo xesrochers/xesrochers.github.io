@@ -22,7 +22,7 @@
 	    <script src="/castors/js/class.SmoothScroller.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Chords.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Search.js" type="text/javascript" ></script>
-		<title>Castors- El Chico</title>
+		<title> El Chico</title>
 	</head>
 	<body class='song bijou-compositions  top'>
 		<div class="container">
@@ -47,15 +47,45 @@
 
 			<div class="row">
 			    <div class="twelve columns">
-					<h1><a href='javascript:history.back()'>El Chico</a></h1><p class='chord'>   guitare</p><p class='lyrics'>Introduction spagnole</p><p class='chord'>   trompette - 8 mesures </p><p class='lyrics'>Solo de trompette</p><p class='chord'>   paul voix - 8 mesures</p><p class='lyrics'>Chant espagnole goss&eacute;</p><p class='lyrics'></br></br></br></br></p><p class='lyrics'>- grignoter le borritos</p><p class='lyrics'>- pu de salsa</p><p class='lyrics'>- para une chiwawa cacahuetes</p><p class='lyrics'>- sansuel</p><p class='lyrics'>- sylvano delaroca</p><p class='lyrics'>- la liberationne du pantanlonne</p><p class='lyrics'>- simonne esta en actionne</p><p class='lyrics'>- elle perdia ces calcionne</p><p class='lyrics'>- padré esta une grande fuego</p><p class='lyrics'>- y'a fuego dans le bruito, trop de hallapeeno</p><p class='lyrics'>- il crachait des tostitos</p>
-				</div>
-			</div>
-
-			<div class="controls">
-				<div class="row">
-					<div class="four columns"><a id='js-back' class='button' title='back' onclick="javascript:history.back()"><span class='icon'>back</span></a></div>
-					<div class="four columns"><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
-					<div class="four columns"><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+					<h1><a href='javascript:history.back()'>El Chico</a></h1>
+<p class='chord'>   guitare</p>
+<p class='lyrics'>Introduction spagnole</p>
+<p class='chord'>   trompette - 8 mesures </p>
+<p class='lyrics'>Solo de trompette</p>
+<p class='chord'>   paul voix - 8 mesures</p>
+<p class='lyrics'>Chant espagnole goss&eacute;</p>
+<p class='lyrics'></br></br></br></br></p>
+<p class='lyrics'>- grignoter le borritos</p>
+<p class='lyrics'>- pu de salsa</p>
+<p class='lyrics'>- para une chiwawa cacahuetes</p>
+<p class='lyrics'>- sansuel</p>
+<p class='lyrics'>- sylvano delaroca</p>
+<p class='lyrics'>- la liberationne du pantanlonne</p>
+<p class='lyrics'>- simonne esta en actionne</p>
+<p class='lyrics'>- elle perdia ces calcionne</p>
+<p class='lyrics'>- padré esta une grande fuego</p>
+<p class='lyrics'>- y'a fuego dans le bruito, trop de hallapeeno</p>
+<p class='lyrics'>- il crachait des tostitos</p>
+<a class='tab-handle' href='#'>&lt;</a>
+<div class='tab-slide'>
+  <h2>Settings</h2>
+    <div id='js-override'><label><input type='checkbox'/>Override</label></div>		
+    <div id='js-sleep'><label></label><input class='disabled' disabled type='range' min=1000 max=30000 step=1000 /></div>
+    <div id='js-speed'><label></label><input class='disabled' disabled type='range' min=1000 max=10000 step=1000 /></div>
+    <label>Transpose:</label>
+    <div id='js-transpose' class='transpose'>
+      <span><a class='hit down button'><b class='icon'>-</b></a><span>
+      <span id='key' data='0'>A</span>
+      <span><a class='hit up button'><b class='icon'>+</b></a></span>
+    </div>
+</div>
+<div class='controls'>
+  <div class='row'>
+    <div class='four columns'><a id='js-back' class='button' title='back' onclick='javascript:history.back()'><span class='icon'>back</span></a></div>
+    <div class='four columns'><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
+    <div class='four columns'><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+  </div>
+</div>
 				</div>
 			</div>
 
@@ -67,17 +97,6 @@
 			</footer>
 		</div>
 
-		<a class="tab-handle" href="#">&lt;</a>
-		<div class="tab-slide">
-			<h2>Settings</h2>
-			<div id="js-override"><label><input type="checkbox"/>Override</label></div>		
-			<div id="js-sleep"><label></label><input class='disabled' disabled type="range" min=1000 max=30000 step=1000 /></div>
-			<div id="js-speed"><label></label><input class='disabled' disabled type="range" min=1000 max=10000 step=1000 /></div>
-			<label>Transpose:</label>
-			<div id="js-transpose" class="transpose">
-				<a class="hit down button"><b class='icon'>-</b></a><span id="key" class="center" data="0">A</span><a class="hit up button"><b class='icon'>+</b></a>
-			</div>
-		</div>
 	</body>
 
 </html>

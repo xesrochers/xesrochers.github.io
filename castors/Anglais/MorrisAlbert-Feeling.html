@@ -22,7 +22,7 @@
 	    <script src="/castors/js/class.SmoothScroller.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Chords.js" type="text/javascript" ></script>
 	    <script src="/castors/js/class.Search.js" type="text/javascript" ></script>
-		<title>Morris Albert- Feeling</title>
+		<title> Feeling</title>
 	</head>
 	<body class='song bijou-anglais  top'>
 		<div class="container">
@@ -47,15 +47,55 @@
 
 			<div class="row">
 			    <div class="twelve columns">
-					<h1><a href='javascript:history.back()'>Feeling</a></h1><p class='chord'>Em   A - Am - D - G</p><p class='lyrics'>C - Am - D - Bm - E - Am - D - G - (E)</p><p class='lyrics'>A - E - D - A</p><p class='lyrics'>A - E - Bm - C#m - D - E</p><p class='lyrics'>F#m - C#m - D  B</p><p class='lyrics'>A - D - E -</p><p class='lyrics'>A - C#m - Bm - D - E - A</p><hr/><p class='lyrics'>Feelings, nothing more than feelings,</p><p class='lyrics'>Trying to forget my feelings of love.</p><p class='lyrics'>Teardrops rolling down on my face,</p><p class='lyrics'>Trying to forget my feelings of love.</p><hr/><p class='lyrics'>Feelings, for all my life I'll feel it.</p><p class='lyrics'>I wish I've never met you, girl</p><p class='lyrics'>You'll never come again.</p><p class='lyrics'>Feelings, wo-o-o feelings,</p><p class='lyrics'>Wo-o-o, feel you again in my arms.</p><hr/><p class='lyrics'>Feelings, feelings like I've never lost you</p><p class='lyrics'>And feelings like I've never have you again in my heart.</p><hr/><p class='lyrics'>Feelings, for all my life I'll feel it.</p><p class='lyrics'>I wish I've never met you, girl; you'll never come again.</p><p class='lyrics'>Feelings, feelings like I've never lost you</p><p class='lyrics'>And feelings like I've never have you again in my life.</p><p class='lyrics'>Feelings, wo-o-o feelings,</p><p class='lyrics'>Wo-o-o, feelings again in my arms.</p><p class='lyrics'>Feelings</p><p class='lyrics'>Feelings, wo-o-o feelings,</p><p class='lyrics'>Wo-o-o, feelings again in my arms.</p><p class='lyrics'>Feelings...</p>
-				</div>
-			</div>
-
-			<div class="controls">
-				<div class="row">
-					<div class="four columns"><a id='js-back' class='button' title='back' onclick="javascript:history.back()"><span class='icon'>back</span></a></div>
-					<div class="four columns"><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
-					<div class="four columns"><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+					<h1><a href='javascript:history.back()'>Feeling</a></h1>
+<p class='chord'>Em   A - Am - D - G</p>
+<p class='lyrics'>C - Am - D - Bm - E - Am - D - G - (E)</p>
+<p class='lyrics'>A - E - D - A</p>
+<p class='lyrics'>A - E - Bm - C#m - D - E</p>
+<p class='lyrics'>F#m - C#m - D  B</p>
+<p class='lyrics'>A - D - E -</p>
+<p class='lyrics'>A - C#m - Bm - D - E - A</p><hr/>
+<p class='lyrics'>Feelings, nothing more than feelings,</p>
+<p class='lyrics'>Trying to forget my feelings of love.</p>
+<p class='lyrics'>Teardrops rolling down on my face,</p>
+<p class='lyrics'>Trying to forget my feelings of love.</p><hr/>
+<p class='lyrics'>Feelings, for all my life I'll feel it.</p>
+<p class='lyrics'>I wish I've never met you, girl</p>
+<p class='lyrics'>You'll never come again.</p>
+<p class='lyrics'>Feelings, wo-o-o feelings,</p>
+<p class='lyrics'>Wo-o-o, feel you again in my arms.</p><hr/>
+<p class='lyrics'>Feelings, feelings like I've never lost you</p>
+<p class='lyrics'>And feelings like I've never have you again in my heart.</p><hr/>
+<p class='lyrics'>Feelings, for all my life I'll feel it.</p>
+<p class='lyrics'>I wish I've never met you, girl; you'll never come again.</p>
+<p class='lyrics'>Feelings, feelings like I've never lost you</p>
+<p class='lyrics'>And feelings like I've never have you again in my life.</p>
+<p class='lyrics'>Feelings, wo-o-o feelings,</p>
+<p class='lyrics'>Wo-o-o, feelings again in my arms.</p>
+<p class='lyrics'>Feelings</p>
+<p class='lyrics'>Feelings, wo-o-o feelings,</p>
+<p class='lyrics'>Wo-o-o, feelings again in my arms.</p>
+<p class='lyrics'>Feelings...</p>
+<a class='tab-handle' href='#'>&lt;</a>
+<div class='tab-slide'>
+  <h2>Settings</h2>
+    <div id='js-override'><label><input type='checkbox'/>Override</label></div>		
+    <div id='js-sleep'><label></label><input class='disabled' disabled type='range' min=1000 max=30000 step=1000 /></div>
+    <div id='js-speed'><label></label><input class='disabled' disabled type='range' min=1000 max=10000 step=1000 /></div>
+    <label>Transpose:</label>
+    <div id='js-transpose' class='transpose'>
+      <span><a class='hit down button'><b class='icon'>-</b></a><span>
+      <span id='key' data='0'>A</span>
+      <span><a class='hit up button'><b class='icon'>+</b></a></span>
+    </div>
+</div>
+<div class='controls'>
+  <div class='row'>
+    <div class='four columns'><a id='js-back' class='button' title='back' onclick='javascript:history.back()'><span class='icon'>back</span></a></div>
+    <div class='four columns'><a id='js-refresh' class='button' title='refresh' ><span class='icon'>reset</a></div>
+    <div class='four columns'><a id='js-play' class='button' state='reset' title='play' href='#' ><span class='icon'>play</span></a></div>
+  </div>
+</div>
 				</div>
 			</div>
 
@@ -67,17 +107,6 @@
 			</footer>
 		</div>
 
-		<a class="tab-handle" href="#">&lt;</a>
-		<div class="tab-slide">
-			<h2>Settings</h2>
-			<div id="js-override"><label><input type="checkbox"/>Override</label></div>		
-			<div id="js-sleep"><label></label><input class='disabled' disabled type="range" min=1000 max=30000 step=1000 /></div>
-			<div id="js-speed"><label></label><input class='disabled' disabled type="range" min=1000 max=10000 step=1000 /></div>
-			<label>Transpose:</label>
-			<div id="js-transpose" class="transpose">
-				<a class="hit down button"><b class='icon'>-</b></a><span id="key" class="center" data="0">A</span><a class="hit up button"><b class='icon'>+</b></a>
-			</div>
-		</div>
 	</body>
 
 </html>
