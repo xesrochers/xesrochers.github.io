@@ -8,6 +8,8 @@ function SmoothScroller() {
  * SmoothScroller attributes
  ************************************************/
 SmoothScroller.active = true; 
+SmoothScroller.max = 100;      // max speed (from input)
+SmoothScroller.speed = 50;     // default speed 
 SmoothScroller.pace = 5000;    // sleep interval
 SmoothScroller.stride = null;  // vertical pixels
 SmoothScroller.animate = 1000; 
@@ -17,27 +19,33 @@ SmoothScroller.callback = null;
 SmoothScroller.lastPosition = 0;
 
 /************************************************
+ * setMax()
+ ************************************************/
+SmoothScroller.setMax = function(max) {
+	SmoothScroller.max = max + 1;
+}
+
+/************************************************
+ * setSpeed()
+ ************************************************/
+SmoothScroller.setSpeed = function(speed) {
+	SmoothScroller.speed = speed;
+	SmoothScroller.pace  = ((SmoothScroller.max - speed) * 80) + 500;
+	SmoothScroller.animate = (speed >= 85) ? 400 : 2000; 
+	SmoothScroller.stride = speed + 10;
+
+	console.log('*** speed is ' + SmoothScroller.speed);
+	console.log('*** pace is ' + SmoothScroller.pace);
+	console.log('*** animate is ' + SmoothScroller.animate);
+	console.log('*** stride is ' + SmoothScroller.stride);
+
+}
+
+/************************************************
  * setCallback()
  ************************************************/
 SmoothScroller.setCallback = function(callback) {
 	SmoothScroller.callback = callback;
-}
-
-/************************************************
- * setPace()
- ************************************************/
-SmoothScroller.setPace = function(pace) {
-	var speed   = 11000-pace; 
-	SmoothScroller.pace = (pace <= 0) ? 1000 : pace;
-	SmoothScroller.animate = 2000; 
-	SmoothScroller.stride = parseInt(speed/100) + 5;
-	if (speed >= 9000) {
-		SmoothScroller.animate = 500; 
-	}
-
-	// console.log('*** pace is ' + SmoothScroller.pace);
-	// console.log('*** animate is ' + SmoothScroller.animate);
-	// console.log('*** stride is ' + SmoothScroller.stride);
 }
 
 /************************************************
@@ -58,6 +66,7 @@ SmoothScroller.scroll = function() {
  * start()
  ************************************************/
 SmoothScroller.start = function() {
+	console.log('SmoothScroller started');
 	SmoothScroller.active = true;
 	SmoothScroller.scroll();
 }

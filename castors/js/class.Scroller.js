@@ -7,9 +7,9 @@ function Scroller() {
 /************************************************
  * Scroller attributes
  ************************************************/
-Scroller.sleep = 5000;
-Scroller.speed = 5000; 
-Scroller.wait  = 5000;
+Scroller.sleep = 5;
+Scroller.speed = 50; 
+Scroller.wait  = 5;
 Scroller.timeout = null;
 
 /************************************************
@@ -83,11 +83,10 @@ Scroller.setControls = function(state) {
  ************************************************/
 Scroller.snooze = function() {
 
-	var rate = 2000;
 	if (Scroller.wait > 0) {
 		Scroller.setState('snoozing');
 		Scroller.setControls('snoozing');
-		Scroller.wait -= 1000;
+		Scroller.wait -= 2;
 		Scroller.timeout = setTimeout(Scroller.snooze, 2000);
 	} else {
 		Scroller.start();
@@ -132,11 +131,9 @@ Scroller.reset = function(e) {
  ************************************************/
 Scroller.start = function() {
 	var max = parseInt($('#js-speed input').attr('max'));
-	console.log('speed is  ' + Scroller.speed);
-	var val = parseInt(max - Scroller.speed);
-	console.log('smooth scroller started ' + val);
+	SmoothScroller.setMax(max);
+	SmoothScroller.setSpeed(Scroller.speed);
 	SmoothScroller.setCallback(Scroller.completed);
-	SmoothScroller.setPace(val);
 	SmoothScroller.start();
 
 	Scroller.setState('playing');
@@ -186,7 +183,7 @@ Scroller.setSleep = function(val) {
 	Scroller.sleep = val;
 	Scroller.wait = val;
 	console.log('sleep changed to ' + val);
-	$("#js-sleep label").html(Math.floor(val/1000) + " sec");
+	$("#js-sleep label").html(val + " sec");
 	$('#js-sleep input').val(val);
 }
 
@@ -207,8 +204,9 @@ Scroller.updateSleep = function(e) {
  ************************************************/
 Scroller.setSpeed = function(val) {
 	console.log('speed changed to ' + val);
-	Scroller.speed = val;
-	$("#js-speed label").html(Math.floor(val/1000) + " pet");
+	Scroller.speed = parseInt(val); // passed in as string #@!$@
+	SmoothScroller.setSpeed(Scroller.speed)
+	$("#js-speed label").html(val + " pet");
 	$('#js-speed input').val(val);
 }
 
