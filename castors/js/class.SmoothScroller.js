@@ -10,6 +10,7 @@ function SmoothScroller() {
 SmoothScroller.active = true; 
 SmoothScroller.pace = 5000;    // sleep interval
 SmoothScroller.stride = null;  // vertical pixels
+SmoothScroller.animate = 1000; 
 SmoothScroller.timeout = null;
 SmoothScroller.offset = 0;
 SmoothScroller.callback = null;
@@ -26,18 +27,17 @@ SmoothScroller.setCallback = function(callback) {
  * setPace()
  ************************************************/
 SmoothScroller.setPace = function(pace) {
-	if (pace < 2000) {
-		// scroll is chunky so run this hack instead
-		SmoothScroller.pace = 2000;
-		SmoothScroller.stride = 200;
-	} else if (pace < 1000) {
-		// scroll is chunky so run this hack instead
-		SmoothScroller.pace = 2000;
-		SmoothScroller.stride = 400;
-	} else {
-		SmoothScroller.stride = 70;
-		SmoothScroller.pace = pace;
+	var speed   = 11000-pace; 
+	SmoothScroller.pace = (pace <= 0) ? 1000 : pace;
+	SmoothScroller.animate = 2000; 
+	SmoothScroller.stride = parseInt(speed/100) + 5;
+	if (speed >= 9000) {
+		SmoothScroller.animate = 500; 
 	}
+
+	// console.log('*** pace is ' + SmoothScroller.pace);
+	// console.log('*** animate is ' + SmoothScroller.animate);
+	// console.log('*** stride is ' + SmoothScroller.stride);
 }
 
 /************************************************
@@ -48,7 +48,7 @@ SmoothScroller.scroll = function() {
 	if (!SmoothScroller.completed()) {
 		if (SmoothScroller.active) {
 			SmoothScroller.offset += SmoothScroller.stride;	
-			$('html,body').animate({scrollTop: SmoothScroller.offset}, SmoothScroller.pace-1500);
+			$('html,body').animate({scrollTop: SmoothScroller.offset}, SmoothScroller.pace-SmoothScroller.animate);
 			SmoothScroller.timeout = setTimeout(SmoothScroller.scroll, SmoothScroller.pace);
 		}
 	}
