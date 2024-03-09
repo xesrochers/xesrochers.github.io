@@ -150,13 +150,16 @@ i.zzz, i.zzz b.group {
 	margin: 0.3em 1em;
 }
 
-
+/**************************
+ * Sleep/Speed config
+ **************************/
 .config {
+	display: block;
+	width: 70px;
 	border: 1px dotted #fff;
 	border-radius: 3px;
 	margin: 5px 5px 5px 0;
 	padding: 5px;
-	display: inline-block;
 	font-size: .6em;
 	font-style: italic;
 }
@@ -164,7 +167,6 @@ i.zzz, i.zzz b.group {
 /**************************
  * Song tablature
  **************************/
-
 .song h2 {
     padding: 0;
 }
