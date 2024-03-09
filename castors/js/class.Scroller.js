@@ -276,6 +276,7 @@ Scroller.init = function() {
 	   	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
 	   	console.log('using DOM configuration');
 	   	Scroller.disableControls(true);
+	   	TabSlide.setHandle("&lt;<br><span class='tiny'>"+speed+"</span>");
 	}
 
 	Scroller.setSleep(sleep);

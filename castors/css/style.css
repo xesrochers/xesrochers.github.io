@@ -336,6 +336,10 @@ input.wide, select.wide {
     z-index: 210;	
 }
 
+.tab-handle .tiny {
+	font-size: .5em;
+}
+
 .tab-slide {
 	position: fixed;
 	top: 5em;
