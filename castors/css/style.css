@@ -53,6 +53,10 @@ h1 a {
 	color: inherit;
 }
 
+.clear {
+	clear: both; /* to clear the floating divs */
+}
+
 .children ul { margin-left: 0 }
 .children li { margin-left: 0 }
 
@@ -150,19 +154,6 @@ i.zzz, i.zzz b.group {
 	margin: 0.3em 1em;
 }
 
-/**************************
- * Sleep/Speed config
- **************************/
-.config {
-	display: block;
-	width: 70px;
-	border: 1px dotted #fff;
-	border-radius: 3px;
-	margin: 5px 5px 5px 0;
-	padding: 5px;
-	font-size: .6em;
-	font-style: italic;
-}
 
 /**************************
  * Song tablature
@@ -172,71 +163,32 @@ i.zzz, i.zzz b.group {
 }
 
 /**************************
- * Tablature
+ * Config-block (sleep/speed)
  **************************/
-.song #tablature-control {
-	display: none;
-}
-
-.song #tablature-block {
-	position: relative;
-	clear: both;
-	float: none;
-	overflow: auto; /*This is what we added!*/
-}
-
-.song #tablature-block:after { /* clear float recepie */
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.song #harmony-block {
-	padding-bottom: 1em;
-    display: none;
-}
-
-.clear {
-	clear: both; /* to clear the floating divs */
-}
-
-.song .tablature {
-	color: orange;
+.config {
+	display: block;
+	width: 6em;
+	border: 1px dotted #fff;
+	border-radius: 3px;
+	margin: 5px 5px 5px 0;
+	padding: 5px;
 	font-size: .6em;
 	font-style: italic;
-	font: courier;
-	padding: 1em 2em 1em 0;
-	float: left;
 }
 
-.song .tablature h4{
-	font-weight: bold;
-	margin-bottom: .5em;
+/**************************
+ * Harmony-block
+ **************************/
+.harmony-block {
+	padding-bottom: 1em;
 }
 
-.song .tablature .small{
-	font-size: .8em;
-}
-
-.song .tablature .neck {
-	color: #555;
-	font-family: courier, monospace;
-	padding: 0 0 1px 0;
-	margin: 0;
-	white-space: pre;
-	font-style: normal;
-}
-
-.song .tablature .finger {
-	color: orange;
-}
-
-.song .harmony {
+.harmony-block .harmony {
 	color: orange;
 	margin: .2em 0;
 }
 
-.song .harmony span {
+.harmony-block .harmony span {
 	display: inline-block;
 	border-radius: 2px;
 	padding: .2em .3em;
@@ -246,10 +198,59 @@ i.zzz, i.zzz b.group {
 	font-size: .8em;
 }
 
-.song .harmony span i {
+.harmony-block .harmony span i {
 	display: inline-block;
 	padding: 0 2px;
 }
+
+/**************************
+ * Tablature-block
+ **************************/
+
+.tablature-block {
+	position: relative;
+	clear: both;
+	float: none;
+	overflow: auto; /*This is what we added!*/
+}
+
+.tablature-block:after { /* clear float recepie */
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.tablature-block .tablature {
+	color: orange;
+	font-size: .9em;
+	font-style: italic;
+	font: courier;
+	padding: 1em 2em 1em 0;
+	float: left;
+}
+
+.tablature-block .tablature h4{
+	font-weight: bold;
+	margin-bottom: .5em;
+}
+
+.tablature-block .tablature .small{
+	font-size: .8em;
+}
+
+.tablature-block .tablature .neck {
+	color: #555;
+	font-family: courier, monospace;
+	padding: 0 0 1px 0;
+	margin: 0;
+	white-space: pre;
+	font-style: normal;
+}
+
+.tablature-block .tablature .finger {
+	color: orange;
+}
+
 
 .note {
 	font-size: 0.6em;
@@ -566,7 +567,7 @@ input.wide, select.wide {
 	b.group { font-weight: normal;}
 	.chord { font-size: .7rem; }
 	.auto-play {display: none}
-	#harmony-control, #harmony-block { display: none; }
+	.harmony-block { display: none; }
 	.big { font-size: 1.7em;}
 	#js-back, #js-refresh {display: none}
 
@@ -583,6 +584,7 @@ input.wide, select.wide {
 	.controls .play { margin-bottom: inherit; }
 
 	.song .tablature {font-size: .8em; }
+	.song .tablature .small {font-size: .6em; }
 
 	.tab-slide {
 		font-size: 1em;
