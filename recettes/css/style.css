@@ -1,139 +1,48 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+html {color: lightskyblue; background: no-repeat top left #444; font-size: 20px;}
+body {font-family:courier,monospace; background-color: rgba(22,22,22,.9);  color: #aaa; }
+
+div#wrapper{ padding: .5em 2em; }
+
+div#content{ margin-bottom: 2em;}
+
+footer{ padding: 1em 0em 5em 0em; font-style: italic; font-size: .7em }
+footer p a {font-family: Orbitron; font-style: normal; text-decoration: none; border: none; padding: 0}
+footer p a:hover {text-decoration: underline; }
+
+a { padding: 10px; border: 1px solid lightskyblue; border-radius: 5px }
+
+hr { display: none }
+hr.keep { display: block; color: lightskyblue; padding: 0; margin: 10px 0}
+
+h1 { margin-bottom: 10px }
+h1 a { display: block;text-decoration:none;  border: none;}
+h2 { margin-top: 20px; }
+
+h1.brand { margin-bottom:: 0; font-size: 2em}
+h1.brand a { padding: 0 }
 
 main {
 	margin-top: 3.5em; /* hack */
 }
 
+li { font-size: .9em; padding-left: .5em; }
 
-/**************************
- * Static notice 
- **************************/
-.notice { 
-	display: none;
-	font-size: .7em;
-	font-style: italic;
+.html li, .rcp-collection li { list-style: none; padding-left: 10px;}
+
+.html li a, .rcp-collection li a { text-decoration: none; margin: 5px 0 ; display:inline-block; width: 70%;}
+
+
+/* iPhone V */
+@media (max-width: 320px) {
+	li { font-size: .7em;}
+   	h1 a { font-size: .9em;}
+   	.html li a { font-size: .8em;}
+   	.rcp-collection { font-size: .8em;}
 }
 
-.static .notice { 
-	display: inline;
-}
-
-
-/**************************
- * Hero section
- **************************/
-.hero {
-	color: #fff;
-	background: url(../img/western.jpg) no-repeat center center; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
-
-	height: 280px;
-}
-
-.hero .pane {
-	float: right;
-	margin: 5%;
-	width: 55%;
-	padding: .6em;
-	background-color: #111;
-	color: #fff;
-	opacity: .9;
-	border-radius: .4em;
-}
-
-.hero .pane h1 {
-	color: #fff;
-}
-
-
-.thumbnail img {
-	border: 1px solid #ccc;
-	margin-top: 1em;
-	border-radius: 3px;
-}
-
-.no-padding {
-	margin: 0;
-	padding: 0;
-}
-
-
-.link .btn {
-	margin: 1px;
-}
-
-
-@media (max-device-width: 480px)  { 
-	.link li a {
-		display: block;
-		overflow: hidden;
-	}
-
-	.link .btn-primary {
-		padding: 5px;
-	}
-}
-
-
-.recipes ul.no-padding li {
-	list-style: none;
-}
-
-.recipes li a {
-	display: block;
-	margin: 0;
-	padding: .5em;
-	color: #000;
-	border: 1px solid #ddd;
-	border-radius: .4em;
-	background-color: #e8e8e8;
-	margin: .5em 0;
-	
-	background-image: -webkit-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
-    background-image: -o-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
-    background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#e8e8e8));
-    background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
-    background-repeat: repeat-x;
-}
-
-.recipes a.link {
-	display: inline;
-	margin: auto;
-	padding: 0;
-	color: #428bca;
-	border: none;
-	border-radius: 0;
-	background: none;
-	text-decoration: underline;
-}
-
-.recipes li a:hover {
-	text-decoration: none;
-	background-image: none;
-	background-color: #ddd;
-}
-
-.recipes h1 {
-	font-size: 2em;
-}
-
-.recipes h2 {
-	font-size: 1.3em;
-}
-
-.rcp-collection, .rcp-home ul {
-	padding-left: 0;
-}
-
-.rcp-collection li, .rcp-home li {
-	list-style: none;
-}
 
 
 @media print {

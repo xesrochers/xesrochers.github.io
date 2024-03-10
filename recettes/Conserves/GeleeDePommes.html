@@ -3,45 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Xesrochers</title>
+    <title>Recettes</title>
     <link href="/recettes/img/fav.png" rel="icon" sizes="192x192" >
     <link href="/recettes/img/fav.png" rel="apple-touch-icon" >
     <link href="/recettes/img/fav-512.png" rel="apple-touch-icon" sizes="256x256" />
     <link href="/recettes/img/fav-512.png" rel="icon" sizes="256x256" />
     <link href="/recettes/img/fav.png" rel="icon" sizes="128x128" />
-    <link href="/recettes/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/recettes/css/bootstrap-theme.min.css" rel="stylesheet" >
+    <link href="/recettes/css/skeleton.css" rel="stylesheet">
     <link href="/recettes/css/style.css" rel="stylesheet" >
     <script src="/recettes/js/jquery.js"></script>
-    <script src="/recettes/js/bootstrap.min.js"></script>
-    <script src="/recettes/js/jquery.fastLiveFilter.js"></script>
-    <script src="/recettes/js/class.Analytics.js"></script>
-    <script src="/recettes/js/class.Search.js"></script>
   </head>
 
-  <body  class="rcp bijou-conserves ">
+  <body class='rcp bijou-conserves  top'>
+    <div class="container">
+      <header>
+        <div class="row">
+            <div class="twelve columns">
+                <h1 class="brand"><a href="/recettes/">xesrochers</a></h1>
+            </div>
+        </div>
+      </header>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/recettes/">xesrochers<span class="notice"> - local</span></a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class='nav navbar-nav'></ul>
-    </div>
-  </div>
-</div>
+      <hr class='keep' />
 
-
-    <main>
-      <div class="container recipes">
-        <h1>Gel&eacute;e de pommes</h1><h2>Ingr&eacute;dients</h2><ul><li> pelures de pommes</li><li> sucre</li></ul><h2>Faire le jus</h2><ol><li> Mettre les pelures dans une casserole.</li><li> Ajouter de l'eau (2cm au dessous du niveau des pelures).</li><li> Porter au point d'&eacute;bullition.</li><li> Cuire 60 minutes (niveau 6 - en remuant de temps en temps).</li><li> Retirer du feu.</li><li> Faire &eacute;gouter pendant quelques heures (r&eacute;cup&eacute;rant le jus).</li></ol><h2>Faire la gel&eacute;e</h2><ul><li> Pour chaque 4 tasses de jus (gros pot masson), ajouter 3 tasses de sucre.</li><li> Porter le jus sucr&eacute; au point d'&eacute;bullition.</li><li> Laisser bouillir (niveau 6.5) pendant 35 minutes.</li><li> Faire le test de la cuill&egrave;re - qui s'&eacute;tire.</li></ul><h2>Version porto (en test)</h2><ul><li> Ajouter 1oz (shooter) de porto dans le pot masson (pot grandeur confiture) avant d'y ajouter la gel&eacute;e.</li></ul><h2>Conserve</h2><ul><li> Mettre la gel&eacute;e en pot.</li><li> Faire bouillir 60 minutes de st&eacute;rilisation.</li></ul><p>  <!-- 
+      <div class="row">
+        <div class="twelve columns">
+          
+	<h1>Gel&eacute;e de pommes</h1>
+	<h2>Ingr&eacute;dients</h2><ul>
+	<li> pelures de pommes</li>
+	<li> sucre</li></ul>
+	<h2>Faire le jus</h2><ol>
+	<li> Mettre les pelures dans une casserole.</li>
+	<li> Ajouter de l'eau (2cm au dessous du niveau des pelures).</li>
+	<li> Porter au point d'&eacute;bullition.</li>
+	<li> Cuire 60 minutes (niveau 6 - en remuant de temps en temps).</li>
+	<li> Retirer du feu.</li>
+	<li> Faire &eacute;gouter pendant quelques heures (r&eacute;cup&eacute;rant le jus).</li></ol>
+	<h2>Faire la gel&eacute;e</h2><ul>
+	<li> Pour chaque 4 tasses de jus (gros pot masson), ajouter 3 tasses de sucre.</li>
+	<li> Porter le jus sucr&eacute; au point d'&eacute;bullition.</li>
+	<li> Laisser bouillir (niveau 6.5) pendant 35 minutes.</li>
+	<li> Faire le test de la cuill&egrave;re - qui s'&eacute;tire.</li></ul>
+	<h2>Version porto (en test)</h2><ul>
+	<li> Ajouter 1oz (shooter) de porto dans le pot masson (pot grandeur confiture) avant d'y ajouter la gel&eacute;e.</li></ul>
+	<h2>Conserve</h2><ul>
+	<li> Mettre la gel&eacute;e en pot.</li>
+	<li> Faire bouillir 60 minutes de st&eacute;rilisation.</li></ul><p>  <!-- 
 	## Vieux Porto qui marche pas
 	- Pour chaque 4 tasses de jus (gros pot masson), ajouter 2 tasses de sucre.
 	- Porter au point d'&eacute;bullition.
@@ -53,8 +61,17 @@
 	- Mettre en pot masson - faire bouillir 60 minutes de st&eacute;rilisation
   -->
 </p>
+        </div>
       </div>
-    </main>
+
+      <footer>
+        <div class="u-pull-right">  
+          <p>Powered by <a href='https://github.com/xesroche/bijou' target='_blank'>Bijou</a></p>
+        </div>
+        <div class="row u-cf">&nbsp;</div>
+      </footer>
+    </div>
 
   </body>
+
 </html>
