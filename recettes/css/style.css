@@ -35,8 +35,8 @@ li { font-size: .9em; padding-left: .5em; }
 .html li a, .rcp-collection li a { text-decoration: none; text-transform: lowercase;margin: 5px 0 ; display:block; width: 70%;}
 
 
-/* iPhone V */
-@media (max-width: 320px) {
+/* phone */
+@media (max-width: 400px) {
 	li { font-size: .8em;}
    	h1 a { font-size: .8em;}
    	.html li a { width: inherit;}
