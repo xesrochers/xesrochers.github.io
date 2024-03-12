@@ -24,7 +24,7 @@ h1.brand { font-size: 2em; margin-bottom:: 0;}
 h1.brand a { padding: 0 }
 
 main {
-	margin-top: 3.5em; /* hack */
+	margin-top: 1em; 
 }
 
 li { font-size: .9em; padding-left: .5em; }
