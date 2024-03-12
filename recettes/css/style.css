@@ -36,7 +36,7 @@ li { font-size: .9em; padding-left: .5em; }
 
 
 /* phone */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 	li { font-size: .8em;}
    	h1 a { font-size: .8em;}
    	.html li a { width: inherit;}
