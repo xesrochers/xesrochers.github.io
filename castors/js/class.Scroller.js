@@ -121,6 +121,7 @@ Scroller.play = function(e) {
  * reset()
  ************************************************/
 Scroller.reset = function(e) {
+	Scroller.wait = Scroller.sleep;
 	Scroller.setState('reset');
 	Scroller.setControls('reset');
 	$('html, body').animate({ scrollTop: 0 }, 1000);
