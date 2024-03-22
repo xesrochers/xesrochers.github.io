@@ -255,7 +255,6 @@ i.zzz, i.zzz b.group {
 	color: orange;
 }
 
-
 .note {
 	font-size: 0.6em;
 	font-style: italic;
@@ -460,6 +459,20 @@ input.wide, select.wide {
 }
 
 /**************************
+ * Metronome
+ **************************/
+hr.metronome {
+	color: orange;
+	background-color: orange;
+	position: fixed;
+	bottom: -1.3em;
+	right: 2%;
+	width: 96%;
+	height: 5px;
+}
+
+
+/**************************
  * General Stuff 
  **************************/
 
@@ -568,6 +581,7 @@ input.wide, select.wide {
 	h1 a { display: inline-block;}
 	p, li, blockquote { font-size: .8em;}
 	hr > hr { display: none; }
+	hr.metronome { display: inherit }
 	b.group { font-weight: normal;}
 	.chord { font-size: .7rem; }
 	.auto-play {display: none}

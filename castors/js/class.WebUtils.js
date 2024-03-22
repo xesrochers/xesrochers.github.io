@@ -68,7 +68,7 @@ WebUtils.readDomConfig = function(key, def) {
         result = config.attr('value');
     }
 
-    return result;
+    return parseInt(result);
 }
 
 
