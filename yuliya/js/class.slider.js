@@ -9,7 +9,7 @@
     $(".slider ul").css({"width":slideUlWidth, "margin-left": - slideWidth });
     $(".slider ul li:last-child").prependTo($(".slider ul"));
     
-    function moveLeft() {
+    function moveLeft() { 
       $(".slider ul").stop().animate({
         left: + slideWidth
       },700, function() {
