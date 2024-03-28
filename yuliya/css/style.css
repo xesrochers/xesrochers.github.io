@@ -54,12 +54,6 @@ p {
   width: 60%;
 } 
 
-#home {
-	position: absolute;
-	top: 0px;
-	left: 1%;
-} 
-
 #language {
 	position: absolute;
 	top: 0px;
@@ -131,6 +125,10 @@ html[lang="fr-ca"] .en-only {
 /* Generic */
 .center {
 	text-align: center;
+}
+
+.hidden {
+	display: none;
 }
 
 
