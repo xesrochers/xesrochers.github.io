@@ -66,8 +66,32 @@ p {
 	right: 1%;
 } 
 
-#bio, #contact {
+#contact {
 	padding: 10px 0;
+}
+
+#contact ul {
+	gagg-list-style-type: none;
+}
+
+#contact ul li {
+	display: inline-block;
+	font-size: .8em;
+}
+
+#contact ul li::after {
+	content: " - ";
+}
+
+#contact ul li:last-child::after {
+	content: "";
+}
+
+#lingo {
+	margin-top: 1em;
+	font-size: .8em;
+	font-style: italic;
+	text-align: center;
 }
 
 #copy  {
@@ -108,6 +132,18 @@ html[lang="fr-ca"] .en-only {
 .center {
 	text-align: center;
 }
+
+
+/* Print */
+.print-only {
+	display: none;
+}
+
+@media print {
+    .print-only { display: inherit; }
+    .no-print { display: none }
+}
+
 
 /* Mobile first queries */
 
