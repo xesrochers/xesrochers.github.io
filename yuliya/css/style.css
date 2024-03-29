@@ -56,7 +56,7 @@ p {
 
 #language {
 	position: absolute;
-	top: 5%;
+	top: 3%;
 	right: 5%;
 } 
 
@@ -103,7 +103,7 @@ ul.home {
 ul.home li {
 	display: inline-block;
 	float: left;
-	width: 30%;
+	width: 33%;
 	text-align: center;
 }
 
