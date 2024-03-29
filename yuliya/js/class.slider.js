@@ -4,6 +4,7 @@
 function Slider() {
 }
 
+
 Slider.active = 0;
 
 
@@ -50,7 +51,7 @@ Slider.run = function() {
   Slider.active = Slider.getActive(slides.length);
 
   // Auto run the slider
-  //setTimeout(Slider.run, 4000);
+  setTimeout(Slider.run, 9000);
 }
 
 
@@ -58,12 +59,13 @@ Slider.run = function() {
  * wireup()
  ************************************************/
 Slider.wireup = function() {
-   Slider.run();
+    alert("Slider starting ");
+    Slider.run();
 }
 
 /************************************************
  * jQuery.ready()
  ************************************************/
 $(function() {
-   Slider.wireup();
+    Slider.wireup();
 });
