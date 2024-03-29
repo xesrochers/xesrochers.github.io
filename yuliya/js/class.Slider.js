@@ -51,7 +51,7 @@ Slider.run = function() {
   Slider.active = Slider.getActive(slides.length);
 
   // Auto run the slider
-  setTimeout(Slider.run, 9000);
+  setTimeout(Slider.run, 5000);
 }
 
 
