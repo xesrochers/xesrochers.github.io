@@ -41,6 +41,3 @@ Language.wireup = function() {
 $(function() {
    Language.wireup();
 });
-
-
-

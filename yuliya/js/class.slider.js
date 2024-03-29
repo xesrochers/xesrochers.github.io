@@ -1,40 +1,67 @@
-	$(function() {
-  
-    var slideCount =  $(".slider ul li").length;
-    var slideWidth =  $(".slider ul li").width();
-    var slideHeight =  $(".slider ul li").height();
-    var slideUlWidth =  slideCount * slideWidth;
-    
-    $(".slider").css({"max-width":slideWidth, "height": slideHeight});
-    $(".slider ul").css({"width":slideUlWidth, "margin-left": - slideWidth });
-    $(".slider ul li:last-child").prependTo($(".slider ul"));
-    
-    function moveLeft() { 
-      $(".slider ul").stop().animate({
-        left: + slideWidth
-      },700, function() {
-        $(".slider ul li:last-child").prependTo($(".slider ul"));
-        $(".slider ul").css("left","");
-      });
+/************************************************
+ * Slider class definition
+ ************************************************/
+function Slider() {
+}
+
+Slider.active = 0;
+
+
+/************************************************
+ * getActive()
+ * Determine the index of the slide to show
+ ************************************************/
+Slider.getActive = function(length) {
+  result = Slider.active + 1;
+  if (result >= length) result = 0;
+  return result;
+}
+
+
+/************************************************
+ * run()
+ ************************************************/
+Slider.run = function() {
+  slides = $('.slide');
+
+  // Start fresh, hide all slides
+  slides.each(function(index) {
+    $(this).hide();
+  });
+
+
+  // Show the active slide 
+  slides.each(function( index ) {
+    if (Slider.active == index) $(this).show();
+  });
+
+  // Update the active tracer
+  $( ".dot" ).each(function( index ) {
+    if (Slider.active == index) {
+      $(this).addClass('active');
+    } else {
+      $(this).removeClass('active');      
     }
-    
-    function moveRight() {
-      $(".slider ul").stop().animate({
-        left: - slideWidth
-      },700, function() {
-        $(".slider ul li:first-child").appendTo($(".slider ul"));
-        $(".slider ul").css("left","");
-      });
-    }
-    
-    
-    $(".next").on("click",function(){
-      moveRight();
-    });
-    
-    $(".prev").on("click",function(){
-      moveLeft();
-    });
-    
-  
+  });
+
+  // Update the active slide
+  Slider.active = Slider.getActive(slides.length);
+
+  // Auto run the slider
+  setTimeout(Slider.run, 4000);
+}
+
+
+/************************************************
+ * wireup()
+ ************************************************/
+Slider.wireup = function() {
+   Slider.run();
+}
+
+/************************************************
+ * jQuery.ready()
+ ************************************************/
+$(function() {
+   Slider.wireup();
 });

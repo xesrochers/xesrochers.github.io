@@ -4,7 +4,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Color scheme
 #b18e50 (brown)
-#2a649  (blue)
+#1eaedb (blue)
 */
 
 body {
@@ -13,7 +13,7 @@ body {
 	background-color: white; 
 	color: #b18e50; 
 	font-family: Ubuntu; 
-	font-size: 20px; 
+	font-size: 18px; 
 }
 
 h1 {
@@ -27,7 +27,7 @@ h2 {
 	text-align: center;
 	font-size: 1.1rem;
 	padding: 10px 0;
-	color: #2a649;
+	color: #1eaedb;
 }
 
 img { 
@@ -35,7 +35,7 @@ img {
 }
 
 a {
-	color: #2a649;
+	color: #1eaedb;
 	text-decoration: none;
 }
 
@@ -89,6 +89,7 @@ p {
 }
 
 #copy  {
+	font-size: .8em;
 	padding: 40px 0 10px 0;
 }
 
@@ -146,7 +147,10 @@ html[lang="fr-ca"] .en-only {
 /* Mobile first queries */
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width: 400px) {
+	body { font-size: 20px }
+	.slider img { max-height: 300px }
+}
 
 /* Larger than phablet */
 @media (min-width: 550px) {}
