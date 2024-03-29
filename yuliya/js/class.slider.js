@@ -24,6 +24,8 @@ Slider.getActive = function(length) {
 Slider.run = function() {
   slides = $('.slide');
 
+  alert("showing "+Slider.active);
+
   // Start fresh, hide all slides
   slides.each(function(index) {
     $(this).hide();
@@ -48,7 +50,7 @@ Slider.run = function() {
   Slider.active = Slider.getActive(slides.length);
 
   // Auto run the slider
-  setTimeout(Slider.run, 4000);
+  //setTimeout(Slider.run, 4000);
 }
 
 
