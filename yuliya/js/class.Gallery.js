@@ -15,10 +15,10 @@ Gallery.applyFilter = function() {
    $(this).addClass('active');
 
    if (filter == '') {
-      $('#gallery .block').show();
+      $('#gallery .item').show(500);
    } else {
-      $('#gallery .block').hide();
-      $('#gallery .block.'+filter).show(); 
+      $('#gallery .item').hide();
+      $('#gallery .item.'+filter).show(500); 
    }
 
 }
@@ -26,15 +26,27 @@ Gallery.applyFilter = function() {
 /************************************************
  * show()
  ************************************************/
-Gallery.show = function() {
-   alert("Show Me!");
+Gallery.show = function(e) {
+   e.preventDefault();
+   var model = $(this).attr('href');
+   $(model).show(500);
+   //$('#gallery .modal.'+id).show(500);
+}
+
+/************************************************
+ * close()
+ ************************************************/
+Gallery.close = function(e) {
+   e.preventDefault();
+   $('#gallery .modal').hide(500);
 }
 
 /************************************************
  * wireup()
  ************************************************/
 Gallery.wireup = function() {
-   $('#gallery img').click(Gallery.show);
+   $('#gallery .view').click(Gallery.show);
+   $('#gallery .close').click(Gallery.close);
    $('#gallery #filters button').click(Gallery.applyFilter);
 }
 
