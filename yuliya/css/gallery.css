@@ -6,7 +6,14 @@
   box-sizing: border-box;
 }
 
+
+#gallery {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */  
+}
+
 #gallery .item {
+  display: table-cell;
   padding: 6px;
   float: left;
   width: 24.99999%;
@@ -18,7 +25,6 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   padding: 0;
-  height: 210px;
   overflow: hidden;
 }
 
@@ -46,7 +52,8 @@
 }
 
 #gallery .summary {
-  padding: .2em;
+  padding: .5em .5em 1em .5em;
+  height: 8em;
 }
 
 #gallery h2 {

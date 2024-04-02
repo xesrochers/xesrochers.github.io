@@ -140,11 +140,6 @@ html[lang="fr-ca"] .en-only {
 }
 
 
-/* Override gallery */
-#gallery .box {
-	height: 260px;
-}
-
 /* Print */
 .print-only {
 	display: none;
