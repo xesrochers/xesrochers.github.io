@@ -8,17 +8,19 @@ function Gallery() {
 /************************************************
  * applyFilter()
  ************************************************/
-Gallery.applyFilter = function() {
+Gallery.applyFilter = function(e) {
+   e.preventDefault()
+
    var filter = $(this).attr('filter');
 
    $('#gallery .button').removeClass('active');
    $(this).addClass('active');
 
    if (filter == '') {
-      $('#gallery .item').show(500);
+      $('#gallery .item').show();
    } else {
       $('#gallery .item').hide();
-      $('#gallery .item.'+filter).show(500); 
+      $('#gallery .item.'+filter).show(); 
    }
 
 }
