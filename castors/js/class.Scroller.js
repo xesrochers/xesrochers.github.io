@@ -89,6 +89,7 @@ Scroller.snooze = function() {
 		Scroller.wait -= 2;
 		Scroller.timeout = setTimeout(Scroller.snooze, 2000);
 	} else {
+		Metronome.stop();
 		Scroller.start();
 	}
 }
@@ -104,7 +105,6 @@ Scroller.play = function(e) {
 	console.log('current state is ' + state);
 
 	if (state == 'reset') {
-		Metronome.stop();
 		Scroller.snooze();
 	} else if (state == 'snoozing') {
 		Scroller.snooze();
