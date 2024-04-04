@@ -89,7 +89,6 @@ Scroller.snooze = function() {
 		Scroller.wait -= 2;
 		Scroller.timeout = setTimeout(Scroller.snooze, 2000);
 	} else {
-		Metronome.stop();
 		Scroller.start();
 	}
 }
@@ -109,6 +108,7 @@ Scroller.play = function(e) {
 	} else if (state == 'snoozing') {
 		Scroller.snooze();
 	} else if (state == 'playing') {
+		Metronome.stop();
 		Scroller.pause();
 	} else if (state == 'paused') {
 		Scroller.start();			
