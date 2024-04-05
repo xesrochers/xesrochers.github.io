@@ -288,11 +288,14 @@ form input {width: 50%;}
 /**************************
  * Search Box
  **************************/
-input.searchbox {
-	float: right;
+input#search-box {
+	display: block;
+	width: 100%;
+/*	float: right;
 	width: 80px;
 	height: 25px;
 	display: inline-block; /* to live next to the H1.brand */
+*/
 }
 
 /**************************
