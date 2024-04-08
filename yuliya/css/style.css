@@ -96,6 +96,11 @@ p {
 	padding: 40px 0 10px 0;
 }
 
+
+.press a {
+	font-size: .8em;
+}
+
 /* Top Navigation */
 ul.home {
 	list-style-type: none;

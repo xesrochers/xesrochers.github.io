@@ -8,11 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="/yuliya/css/skeleton.css" rel="stylesheet">
+    <link href="/yuliya/css/lightbox.css" rel="stylesheet" >
     <link href="/yuliya/css/slider.css" rel="stylesheet" >
     <link href="/yuliya/css/link.css" rel="stylesheet" >
     <link href="/yuliya/css/gallery.css" rel="stylesheet" >
     <link href="/yuliya/css/style.css" rel="stylesheet" >
-    <script src="/yuliya/js/jquery.js"></script>
+    <script src="/yuliya/js/jquery.min.js"></script>
+    <script src="/yuliya/js/lightbox.min.js"></script>
     <script src="/yuliya/js/class.Language.js"></script>
     <script src="/yuliya/js/class.Slider.js"></script>
     <script src="/yuliya/js/class.Gallery.js"></script>
@@ -49,7 +51,12 @@
           <div class="twelve columns">
             <script>
     function redirect() {
-      location.replace("/yuliya/en")
+      var lang = navigator.language.substring(0, 2);
+      if (lang=='en') {
+        location.replace("/yuliya/en");
+      } else {
+        location.replace("/yuliya/fr");        
+      }
     }
     redirect();
 </script>

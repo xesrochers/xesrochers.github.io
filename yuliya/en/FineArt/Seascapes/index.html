@@ -8,17 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="/yuliya/css/skeleton.css" rel="stylesheet">
+    <link href="/yuliya/css/lightbox.css" rel="stylesheet" >
     <link href="/yuliya/css/slider.css" rel="stylesheet" >
     <link href="/yuliya/css/link.css" rel="stylesheet" >
     <link href="/yuliya/css/gallery.css" rel="stylesheet" >
     <link href="/yuliya/css/style.css" rel="stylesheet" >
-    <script src="/yuliya/js/jquery.js"></script>
+    <script src="/yuliya/js/jquery.min.js"></script>
+    <script src="/yuliya/js/lightbox.min.js"></script>
     <script src="/yuliya/js/class.Language.js"></script>
     <script src="/yuliya/js/class.Slider.js"></script>
     <script src="/yuliya/js/class.Gallery.js"></script>
   </head>
 
-  <body class='html bijou-en-fineart-seascapes  top' >
+  <body class='md bijou-en-fineart-seascapes  top' >
     <a class='en-only' id='language' href='/yuliya/fr'>FR</a>
     <a class='fr-only' id='language' href='/yuliya/en'>EN</a>
 
@@ -47,38 +49,14 @@
       <main>
         <div class="row">
           <div class="twelve columns">
-            <div id='Seascapes'>
-	<div class='row'>
-		<div class='twelve colums'>
-			<h1>Seascapes</h1>
-		</div>
-	</div>
-
-	<div class='row'>
-		<div class='twelve colums'>
-			<p>I present you Water in oil and pastel. My love for The Sea feeds all of my seascapes. Oils are painted on linen and cotton canvas as its texture complements the image. Pastels are laying on a famous French pastel mat. The power of the waves is my favourite subject... The particular technique used in Russian School of Arts creates transparency, intensity and depth of the water in all its states and moods. Oil creates texture which seems to jet out of the canvas giving you desire to touch the painting. Meanwhile, pastel pure pigments give a very light texture to an image…</p>
-			<p>Custom painting is a unique gift for life's important events.</p>
-			<p>It is always possible to make a special order to keep my painting style. I can also show you a large range of images for your inspiration.</p>
-		</div>
-	</div>
-		
-	<div id='gallery'>
-		<div class='row'>
-			<div class='twelve colums'>
-				<div id="filters">
-				  <button class="button active" filter='' >Show all</button>
-				  <button class="button" filter='oil'>Oil</button>
-				  <button class="button" filter='pastel'>Pastel</button>
-				</div>
-	    	</div>
-	    </div>
-
-		<div class='row'>
-			<div class='item oil'>
+            
+	<h1>Seascapes</h1><p>I present you Water in oil and pastel. My love for The Sea feeds all of my seascapes. Oils are painted on linen and cotton canvas as its texture complements the image. Pastels are laying on a famous French pastel mat. The power of the waves is my favourite subject... The particular technique used in Russian School of Arts creates transparency, intensity and depth of the water in all its states and moods. Oil creates texture which seems to jet out of the canvas giving you desire to touch the painting. Meanwhile, pastel pure pigments give a very light texture to an image…
+</p><p>(Click on the image to view)
+</p><div id='gallery'>	<div id='filters'><a class='button button-primary' filter=''>Show all</a><a class='button' filter='oil'>Oil</a><a class='button' filter='pastel'>Pastel</a></div>	<div class='item oil'>
   <div class='box'>
-    <a class='view' filter='oil' href='#splash'>
+    <a class='view' filter='oil' href='/yuliya/img/gallery/splash.jpg' data-lightbox='Splash on the sea' data-title='Splash on the sea'>
       <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Splash on the sea' />
-      <p class='state'>SOLD</p>
+      <p class='state'>$1650</p>
     </a>
     <div class='summary'>
       <h2>Splash on the sea</h2>
@@ -87,107 +65,61 @@
     </div>
   </div>
 </div>
-
-
-<div id='splash' class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-content">
-    <img src="/yuliya/img/gallery/splash.jpg" style="width:100%">
-  </div>
-</div><div class='item oil'>
+<div class='item pastel'>
   <div class='box'>
-    <a class='view' filter='oil' href='#oil'>
-      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Back to sea' />
-      <p class='state'> $1800</p>
+    <a class='view' filter='pastel' href='/yuliya/img/gallery/splash.jpg' data-lightbox='Pastel Painting' data-title='Pastel Painting'>
+      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Pastel Painting' />
+      <p class='state'>$1099</p>
     </a>
     <div class='summary'>
-      <h2>Back to sea</h2>
-      <p>Oil on canvas</p>
-      <p>24in X 20in</p>
-    </div>
-  </div>
-</div>
-
-
-<div id='oil' class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-content">
-    <img src="/yuliya/img/gallery/splash.jpg" style="width:100%">
-  </div>
-</div><div class='item pastel'>
-  <div class='box'>
-    <a class='view' filter='pastel' href='#gaga'>
-      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Gaga' />
-      <p class='state'>$1350</p>
-    </a>
-    <div class='summary'>
-      <h2>Gaga</h2>
+      <h2>Pastel Painting</h2>
       <p>Pastel</p>
       <p>24in X 20in</p>
     </div>
   </div>
 </div>
-
-
-<div id='gaga' class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-content">
-    <img src="/yuliya/img/gallery/splash.jpg" style="width:100%">
-  </div>
-</div><div class='item pastel'>
+<div class='item oil'>
   <div class='box'>
-    <a class='view' filter='pastel' href='#gogo'>
-      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Gogo to the sea' />
+    <a class='view' filter='oil' href='/yuliya/img/gallery/splash.jpg' data-lightbox='Other Painting' data-title='Other Painting'>
+      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Other Painting' />
+      <p class='state'>$3020</p>
+    </a>
+    <div class='summary'>
+      <h2>Other Painting</h2>
+      <p>Oil on canvas</p>
+      <p>24in X 20in</p>
+    </div>
+  </div>
+</div>
+<div class='item oil'>
+  <div class='box'>
+    <a class='view' filter='oil' href='/yuliya/img/gallery/splash.jpg' data-lightbox='Ricky on the wave' data-title='Ricky on the wave'>
+      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Ricky on the wave' />
       <p class='state'>SOLD</p>
     </a>
     <div class='summary'>
-      <h2>Gogo to the sea</h2>
-      <p>Pastel</p>
-      <p>24in X 20in</p>
-    </div>
-  </div>
-</div>
-
-
-<div id='gogo' class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-content">
-    <img src="/yuliya/img/gallery/splash.jpg" style="width:100%">
-  </div>
-</div><div class='item oil'>
-  <div class='box'>
-    <a class='view' filter='oil' href='#gigi'>
-      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Gigi on the sea' />
-      <p class='state'>$1240</p>
-    </a>
-    <div class='summary'>
-      <h2>Gigi on the sea</h2>
+      <h2>Ricky on the wave</h2>
       <p>Oil on canvas</p>
       <p>24in X 20in</p>
     </div>
   </div>
 </div>
-
-
-<div id='gigi' class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-content">
-    <img src="/yuliya/img/gallery/splash.jpg" style="width:100%">
+<div class='item pastel'>
+  <div class='box'>
+    <a class='view' filter='pastel' href='/yuliya/img/gallery/splash.jpg' data-lightbox='Joe on the beach' data-title='Joe on the beach'>
+      <img class='thumb' src='/yuliya/img/gallery/splash.jpg' alt='Joe on the beach' />
+      <p class='state'>SOLD</p>
+    </a>
+    <div class='summary'>
+      <h2>Joe on the beach</h2>
+      <p>Pastel</p>
+      <p>24in X 20in</p>
+    </div>
   </div>
 </div>
-	    </div>
-	</div>
-
-	<div class='row'>
-		<div class='twelve colums'>
-			<p>Custom painting is a unique gift for life's important events.</p>
-			<p>It is always possible to make a special order to keep my painting style. I can also show you a large range of images for your inspiration.</p>
-		</div>
-	</div>
-
-
-</div>
-
+</div><p>Custom painting is a unique gift for life's important events.
+</p><p>It is always possible to make a special order to keep my painting style. I can also show you a large range of images for your inspiration.
+</p>
           </div>
         </div>
       </main>
