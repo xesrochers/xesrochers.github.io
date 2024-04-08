@@ -1,13 +1,13 @@
 /************************************************
- * Gallery class definition
+ * Filter class definition
  ************************************************/
-function Gallery() {
+function Filter() {
 }
 
 /************************************************
  * applyFilter()
  ************************************************/
-Gallery.applyFilter = function(e) {
+Filter.applyFilter = function(e) {
    e.preventDefault()
 
    var filter = $(this).attr('filter');
@@ -16,24 +16,23 @@ Gallery.applyFilter = function(e) {
    $(this).addClass('active');
 
    if (filter == '') {
-      $('#filters .item').show();
+      $('.filter-list .item').show();
    } else {
-      $('#filters .item').hide();
-      $('#filters .item.'+filter).show(); 
+      $('.filter-list .item').hide();
+      $('.filter-list .item[filter='+filter+']').show(); 
    }
 }
 
 /************************************************
  * wireup()
  ************************************************/
-Gallery.wireup = function() {
-   $('#filters .button').click(Gallery.applyFilter);
-   lightbox.option({'resizeDuration': 200,'wrapAround': true});
+Filter.wireup = function() {
+   $('#filters .button').click(Filter.applyFilter);
 }
 
 /************************************************
  * jQuery.ready()
  ************************************************/
 $(function() {
-   Gallery.wireup();
+   Filter.wireup();
 });
