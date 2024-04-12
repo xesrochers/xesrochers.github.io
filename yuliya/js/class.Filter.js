@@ -16,7 +16,7 @@ Filter.renderFilterBar = function() {
       $('[filter]').each(function() {
          var filter = $(this).attr('filter');
          if (!list.includes(filter)) {
-            buttons += "<a class='button active' filter='"+filter+"'>"+filter+"</a>";
+            buttons += "<a class='button' filter='"+filter+"'>"+filter+"</a>";
             list += " "+filter;
          } 
       });

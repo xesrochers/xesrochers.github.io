@@ -50,6 +50,16 @@ p {
 	padding: 10px 0;
 }
 
+form {
+	padding: 2em; 
+}
+
+form label, form input, form button {
+	display: block; 
+	margin: 4px 0 2px 0;
+}
+
+
 #home .event .date, #home .side {
 	display: none;
 }
