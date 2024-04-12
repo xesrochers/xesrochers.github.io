@@ -14,11 +14,7 @@
   border: 2px solid white;
 }
 
-.event:hover { 
-  border: 2px solid #ccc;
-}
-
-.event .icon div {
+.event .icon {
   position: absolute;
   left: 0px;
   top: 24px;
@@ -28,6 +24,10 @@
   padding: 9px;
   text-align: center;
   color: white;
+}
+
+.event:hover .icon { 
+  border: 2px solid black;
 }
 
 .event .date {
