@@ -1,0 +1,67 @@
+/*******************************************
+ * Product Lists Control
+ ******************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+
+.event {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  border: 2px solid white;
+}
+
+.event:hover { 
+  border: 2px solid #ccc;
+}
+
+.event .icon div {
+  position: absolute;
+  left: 10px;
+  top: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  padding: 9px;
+  text-align: center;
+  color: white;
+}
+
+.event .date {
+  position: absolute;
+  right: 5px;
+  top: 32px;
+  font-size: .7em;
+}
+
+.event .details {
+  padding-left: 2em;
+  margin-left: 4%;
+  width: 100%;
+}
+
+.event .details p {
+  padding: 5px 0;
+}
+
+.event .details .highlight {
+  margin-top: 2em;
+  color: dimgray;
+  font-size: .7em;
+  quotes: '"' '"';
+}
+
+@media only screen and (max-width: 700px) {
+  .event .date {
+    display: none;
+    position: inherit;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+}
+
+
