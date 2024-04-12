@@ -23,6 +23,7 @@
   border-radius: 100px;
   padding: 9px;
   text-align: center;
+  background-color: lightgray;
   color: white;
 }
 
@@ -38,12 +39,14 @@
 }
 
 .event .details {
-  padding-left: 2em;
-  margin-left: 4%;
+  padding-left: 10px;
+  margin-left: 20px;
   width: 100%;
 }
 
 .event .details p {
+  text-align: justify;
+  text-justify: inter-word;
   padding: 5px 20px 0 0;
 }
 

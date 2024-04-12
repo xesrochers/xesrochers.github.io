@@ -23,15 +23,17 @@ Random.Colors = [
  * Same as toggle, but does the adjacent node
  ************************************************/
 Random.randomColor = function() {
-   var color = colors[Math.floor(Math.random() * colors.length)];
-   this.style.backgroundColor = color;
+   return Random.Colors[Math.floor(Math.random() * Random.Colors.length)];
 }
 
 /************************************************
  * wireup()
  ************************************************/
 Random.wireup = function() {
-   $('.random.color').randomColor();
+   $('.random.color').each( function() {
+      var color = Random.randomColor();
+      $(this).css('background-color', color);
+   });
 }
 
 /************************************************
