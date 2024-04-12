@@ -141,6 +141,10 @@ p {
 	background-color: #1eaedb;
 }
 
+.small {
+	font-size: .8em;
+}
+
 .wide {
 	width: 100%;
 }
