@@ -5,21 +5,20 @@
 * {box-sizing: border-box;}
 
 #links {
-  position: relative;
   margin-bottom: 1em;
 }
 
 
 #links .item {
-  display: table; /* Make the container element behave like a table */
-  width: 100%; /* Set full-width to expand the whole page */  
-
+  position: relative;
+  width: 100%;  
   display: block;
   border: 1px solid #999;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 130px;
   border-radius: 4px;
   margin-bottom: 1em;
+  background-position: right;
 }
 
 #links .item:hover {
@@ -27,37 +26,18 @@
 }
 
 
-#links .title {
-  display: table-column;
-  width: 29.99999%;
-  float: right;
-  clear: right;
+#links .view {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: white;
+  background-color: rgb(0,0,0, .5);
+  padding: 5px;
+  border-radius: 2px;
+  width: 40%;
+  height: 100%;
 }
 
-#links .title img {
-  width: 100%;
-  height: 130px;
+#links h2 {
+  color: white;
 }
-
-#links .details {
-  display: table-column;
-  width: 69.99999%;
-  float:left;
-  padding: 10px 0 0 20px;
-}
-
-#links .details h2 {
-  padding-bottom: 10px;
-}
-
-#links .details p {
-  padding: 0px;
-}
-
-#links .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-

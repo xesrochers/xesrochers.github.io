@@ -1,0 +1,135 @@
+img:{$root}/img/gallery/floral/200-For my mom 9x10.jpg
+thumb:{$root}/img/gallery/floral/200-For my mom 9x10.thumb.jpg
+title:For my Mom
+medium:Oil on canvas board
+filter:oil
+dimensions:9in x 10in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/200-Lily Pond 16x16.jpg
+thumb:{$root}/img/gallery/floral/200-Lily Pond 16x16.thumb.jpg
+title:Lily Pond
+medium:Oil on canvas
+filter:oil
+dimensions:16in x 16in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/200-Summer Memories.jpg
+thumb:{$root}/img/gallery/floral/200-Summer Memories.thumb.jpg
+title:Summer Memories
+medium:Oil on canvas
+filter:oil
+dimensions:12in x 12in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/203-Flower Patch.jpg
+thumb:{$root}/img/gallery/floral/203-Flower Patch.thumb.jpg
+title:Flower Patch
+medium:Oil on canvas (framed)
+filter:oil
+dimensions:5in x 7in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/207-Toscana.jpg
+thumb:{$root}/img/gallery/floral/207-Toscana.thumb.jpg
+title:Toscana
+medium:Oil on canvas (framed)
+filter:oil
+dimensions:7in x 5in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/209-Daisies.jpg
+thumb:{$root}/img/gallery/floral/209-Daisies.thumb.jpg
+title:Daisies
+medium:Oil on canvas, framed
+filter:oil
+dimensions:14in x 10in
+state:300$
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/209-Red Poppies.jpg
+thumb:{$root}/img/gallery/floral/209-Red Poppies.thumb.jpg
+title:Red Poppies
+medium:Oil on canvas, framed
+filter:oil
+dimensions:10in x 8in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/301-Blooms for happiness1.jpg
+thumb:{$root}/img/gallery/floral/301-Blooms for happiness1.thumb.jpg
+title:Blooms for Happiness #1
+medium:Watercolors, framed
+filter:watercolors
+dimensions:8in x 10in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/302-Blooms for happiness2.jpg
+thumb:{$root}/img/gallery/floral/302-Blooms for happiness2.thumb.jpg
+title:Blooms for Happiness #2
+medium:Watercolors, framed
+filter:watercolors
+dimensions:8in x 10in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/303-Blooms for happiness3.jpg
+thumb:{$root}/img/gallery/floral/303-Blooms for happiness3.thumb.jpg
+title:Blooms for Happiness #3
+medium:Watercolors, framed
+filter:watercolors
+dimensions:8in x 10in
+state:SOLD
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/305-Blooms for happiness5.jpg
+thumb:{$root}/img/gallery/floral/305-Blooms for happiness5.thumb.jpg
+title:Blooms for Happiness #5
+medium:Watercolors, framed
+filter:watercolors
+dimensions:13in x 13in
+state:120$
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/306-Blooms for happiness6.jpg
+thumb:{$root}/img/gallery/floral/306-Blooms for happiness6.thumb.jpg
+title:Blooms for Happiness #6
+medium:Watercolors, framed
+filter:watercolors
+dimensions:13in x 13in
+state:110$
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/307-Blooms for happiness7.jpg
+thumb:{$root}/img/gallery/floral/307-Blooms for happiness7.thumb.jpg
+title:Blooms for Happiness #7
+medium:Watercolors, framed
+filter:watercolors
+dimensions:13in x 13in
+state:180$
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/310-Blooms for happiness10.jpg
+thumb:{$root}/img/gallery/floral/310-Blooms for happiness10.thumb.jpg
+title:Blooms for Happiness #10
+medium:Watercolors, framed
+filter:watercolors
+dimensions:20in x 11in
+state:300$
+---------------------------------------------------------
+
+img:{$root}/img/gallery/floral/310-Blooms for happiness9.jpg
+thumb:{$root}/img/gallery/floral/310-Blooms for happiness9.thumb.jpg
+title:Blooms for Happiness #9
+medium:Watercolors, framed
+filter:watercolors
+dimensions:20in x 11in
+state:SOLD
+---------------------------------------------------------
+

@@ -98,28 +98,25 @@ p {
 
 
 .more {
-	display: block;
+	display: none;
 	width: 100%;
-	text-align: center;
-	font-style: italic;
-	font-size: .8em;
 }
 
 .press a {
 	font-size: .8em;
 }
 
-/* Top Navigation */
-ul.home {
+/* Children Navigation */
+.children {
+	display: flex;
+	justify-content: space-evenly; 
+	gap:1em
 	list-style-type: none;
-	clear: both;
 	padding: 10px 0px;
 }
 
-ul.home li {
+.children li {
 	display: inline-block;
-	float: left;
-	width: 33%;
 	text-align: center;
 }
 
@@ -166,11 +163,11 @@ html[lang="fr-ca"] .en-only {
 	display: none;
 }
 
-
 /* Print */
 .print-only {
 	display: none;
 }
+
 
 @media print {
     .print-only { display: inherit; }
