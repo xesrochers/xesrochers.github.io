@@ -7,6 +7,20 @@ function Slider() {
 
 Slider.active = 0;
 
+/************************************************
+ * renderSliderTrace()
+ ************************************************/
+Slider.renderSliderTrace = function() {
+   if ($('#slider-trace').length >0 ){
+    var dots = "";
+    $('.slide').each(function() {
+        dots += "<span class='dot'></span>";
+    });
+
+    $("#slider-trace").html(dots);
+   }
+}
+
 
 /************************************************
  * getActive()
@@ -59,6 +73,7 @@ Slider.run = function() {
  * wireup()
  ************************************************/
 Slider.wireup = function() {
+    Slider.renderSliderTrace();
     Slider.run();
 }
 
