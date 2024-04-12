@@ -30,13 +30,14 @@
   height: 375px;
 }
 
-#gallery .box:hover {
-  border: 1px solid #777;
+#gallery img.thumb {
+  border: 2px solid #ccc;
+  width:100%;
+  height: auto;
 }
 
-#gallery img.thumb {
-    width:100%;
-    height: auto;
+#gallery img.thumb:hover {
+  border: 2px solid #444;
 }
 
 #gallery a {

@@ -9,7 +9,7 @@ function Toggle() {
  ************************************************/
 Toggle.toggle = function() {
 	var href = $(this).attr('href');
-	$(href).toggle();
+	$(href).toggle(500);
 }
 
 /************************************************
@@ -18,7 +18,7 @@ Toggle.toggle = function() {
  ************************************************/
 Toggle.toggleNext = function() {
    var href = $(this).parent().next();
-   $(href).toggle();
+   $(href).toggle(500);
 }
 
 /************************************************

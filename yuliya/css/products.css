@@ -22,14 +22,16 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.products .box:hover {
-  border: 1px solid #777;
+.products img {
+  border: 2px solid #ccc;
+  width: inherit;
+  height: auto;
 }
 
-.products img {
-    width: inherit;
-    height: auto;
+.products img:hover {
+  border: 2px solid #444;
 }
+
 
 .products .state {
   position: absolute;
