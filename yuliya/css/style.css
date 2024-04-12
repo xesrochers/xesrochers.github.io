@@ -100,7 +100,7 @@ form label, form input, form button {
 }
 
 #contact ul li::after {
-	content: " - ";
+	content: " &dot; ";
 }
 
 #contact ul li:last-child::after {
