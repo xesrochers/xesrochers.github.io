@@ -54,7 +54,7 @@ p {
 	display: none;
 }
 
-#home .event h2 {
+#home .event h2, #home .event .highlight {
 	text-align: center;
 }
 
