@@ -2,12 +2,17 @@
  * Image Control
  ******************************************/
 
+#image {
+	display: flex;
+	justify-content: space-between; 
+   	flex-wrap: wrap;
+}
+
 #image .item {
 	position: relative;
 	width: 47.99999%;
 	padding: 0;
 	margin: 1%;
-	float: left;
 }
 
 #image .item .caption {
