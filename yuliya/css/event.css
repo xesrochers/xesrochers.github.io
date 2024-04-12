@@ -20,8 +20,8 @@
 
 .event .icon div {
   position: absolute;
-  left: 10px;
-  top: 30px;
+  left: 0px;
+  top: 24px;
   width: 40px;
   height: 40px;
   border-radius: 100px;
