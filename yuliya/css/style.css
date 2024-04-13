@@ -91,20 +91,31 @@ form label, form input, form button {
 }
 
 #contact ul {
-	gagg-list-style-type: none;
+	list-style-type: circle;
 }
 
 #contact ul li {
+	list-style-type: circle;
 	display: inline-block;
 	font-size: .8em;
 }
 
 #contact ul li::after {
-	content: " &dot; ";
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 0px 0 8px;
+    display: inline-block;
+    background-color: #1eaedb;
+    vertical-align: middle;
 }
 
+
+
 #contact ul li:last-child::after {
-	content: "";
+		content: " ";
+  	background-color: white;
 }
 
 #lingo {
