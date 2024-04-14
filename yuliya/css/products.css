@@ -24,7 +24,7 @@
 
 .products img {
   border: 2px solid #ccc;
-  width: inherit;
+  width: 200px;
   height: auto;
 }
 
@@ -74,10 +74,6 @@
     display: block;
   }
 
-  .products img {
-    width: 100%;
-  }
-
   .products .summary {
     position: inherit;
     width: 100%;
@@ -86,6 +82,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .products img {
+    width: 100%;
+  }
 }
 
 

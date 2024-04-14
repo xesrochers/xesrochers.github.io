@@ -50,6 +50,11 @@ p {
 	padding: 10px 0;
 }
 
+ul li {
+	list-style-type: disc;
+	font-size: .8em;
+}
+
 form {
 	padding: 2em; 
 }
@@ -206,6 +211,14 @@ html[lang="fr-ca"] .en-only {
 	display: none;
 }
 
+/* Phone related */
+.phone-only {
+	display: inherit;
+}
+
+.no-phone, #contact ul li.no-phone {
+	display: none;
+}
 
 @media print {
     .print-only { display: inherit; }
@@ -219,6 +232,8 @@ html[lang="fr-ca"] .en-only {
 @media (min-width: 400px) {
 	body { font-size: 20px }
 	.slider img { max-height: 300px }
+	.phone-only { display: none }
+	.no-phone { display: block }
 }
 
 /* Larger than phablet */
