@@ -60,13 +60,13 @@
 }
 
 @media only screen and (max-width: 700px) {
+}
+
+@media only screen and (max-width: 500px) {
   .event .date {
     display: none;
     position: inherit;
   }
-}
-
-@media only screen and (max-width: 500px) {
 }
 
 
