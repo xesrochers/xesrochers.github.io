@@ -15,7 +15,7 @@ Login.login = function(e) {
    var usr = $('#usr').val();
    var pwd = $('#pwd').val();
 
-   if ((usr == 'yuliya') && (pwd == 'bijou')) {
+   if ((usr == 'Yuliya') && (pwd == 'bijou')) {
       $('#login').hide();
       $('#admin').show();   
    } else {
