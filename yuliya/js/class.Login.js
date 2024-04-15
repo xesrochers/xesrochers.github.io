@@ -19,7 +19,9 @@ Login.login = function(e) {
       $('#login').hide();
       $('#admin').show();   
    } else {
-      $('#login button').after( "<p class='error'>Invalid Username/Password</p>" );
+      if ($('.error').length == 0) {
+         $('#login button').after( "<p class='error'>Invalid Username/Password</p>" );
+      }
    }
 }
 
