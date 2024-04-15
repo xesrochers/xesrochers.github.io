@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-
 .event {
   position: relative;
   width: 100%;
@@ -40,7 +39,6 @@
 }
 
 .event .details {
-  padding-left: 10px;
   margin-left: 20px;
   width: 100%;
 }
@@ -49,11 +47,11 @@
   color: #b18e50;;
   text-align: justify;
   text-justify: inter-word;
-  padding: 5px 20px 0 0;
+  padding: 0;
 }
 
 .event .details .highlight {
-  margin-top: 2em;
+  margin-top: .5em;
   color: dimgray;
   font-size: .7em;
   quotes: '"' '"';
