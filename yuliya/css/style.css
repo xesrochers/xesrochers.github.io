@@ -139,6 +139,17 @@ form label, form input, form button {
 	color: red;
 }
 
+.code {
+	color: #1eaedb;	
+}
+
+.example {
+	color: #1eaedb;
+	font-size: .8em;
+	display: block;
+	margin: 0 0 .5em 2em;
+}
+
 .more {
 	display: none;
 	width: 100%;
