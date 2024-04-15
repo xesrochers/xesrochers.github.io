@@ -150,6 +150,18 @@ form label, form input, form button {
 	margin: 0 0 .5em 2em;
 }
 
+.bullet {
+	color: #1eaedb;
+	font-size: .8em;
+	display: block;
+	margin: 0 0 0 3em;
+}
+
+.bullet::before {
+	content: "- ";
+}
+
+
 .more {
 	display: none;
 	width: 100%;
