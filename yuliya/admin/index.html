@@ -18,6 +18,7 @@
     <link href="/yuliya/css/style.css" rel="stylesheet" >
     <script src="/yuliya/js/jquery.min.js"></script>
     <script src="/yuliya/js/lightbox.min.js"></script>
+    <script src="/yuliya/js/class.Login.js"></script>
     <script src="/yuliya/js/class.Language.js"></script>
     <script src="/yuliya/js/class.Slider.js"></script>
     <script src="/yuliya/js/class.Filter.js"></script>
@@ -55,8 +56,23 @@
       <main>
         <div class="row">
           <div class="twelve columns">
-            
-	<h1>Admin Console</h1><form><label>User</label><input id='usr' type='text' /><label>Password</label><input id='pwd' type='password' /><button id='login' class='button-primary'>Login</button></form>
+            <form id='login'><label>User</label><input id='usr' type='text' /><label>Password</label><input id='pwd' type='password' /><button class='button-primary'>Login</button></form><div id='admin' style='display: none'>
+	<h1>Admin Instructions</h1>
+	<h2>Changements d'image</h2><ol>
+	<li> Produire 2 images: exemple image.jpg et image.thumb.jpg</li>
+	<li> Ajouter l'image dans le repertoire: exemple img/gallery/seascape</li>
+	<li> Ajouter la description dans le fichier anglais: exemple en/fineart/seascapes/fichier.seascape</li>
+	<li> Ajouter la description dans le fichier francais: exemple fr/beauxart/marin/fichier.seascape</li>
+	<li> Produire une version locale du site: exemple make www</li>
+	<li> Valider les changements a l'aide d'un fureteur</li>
+	<li> Enregistrer les changements dans le gestionaire de changements (optionel): exemple make commit </li>
+	<li> Deployer le site en production: make deploy</li></ol>
+	<h2>Changements de page</h2><ol>
+	<li> Naviger vers la page et modifier le fichier.</li>
+	<li> Produire une version locale du site: exemple make www</li>
+	<li> Valider les changements a l'aide d'un fureteur</li>
+	<li> Enregistrer les changements dans le gestionaire de changements (optionel): exemple make commit </li>
+	<li> Deployer le site en production: make deploy</li></ol><b>IMPORTANT</b>: Porter une attention speciale au code qui a le format suivant</div>
           </div>
         </div>
       </main>

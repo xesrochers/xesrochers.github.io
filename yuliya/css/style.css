@@ -135,6 +135,9 @@ form label, form input, form button {
 	padding: 40px 0 10px 0;
 }
 
+.error {
+	color: red;
+}
 
 .more {
 	display: none;
