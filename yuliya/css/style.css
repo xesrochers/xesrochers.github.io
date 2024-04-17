@@ -91,21 +91,21 @@ form label, form input, form button {
 	right: 5%;
 } 
 
-#contact {
+#ribbon {
 	padding: 10px 0;
 }
 
-#contact ul {
+#ribbon ul {
 	list-style-type: circle;
 }
 
-#contact ul li {
+#ribbon ul li {
 	list-style-type: circle;
 	display: inline-block;
 	font-size: .8em;
 }
 
-#contact ul li::after {
+#ribbon ul li::after {
     content: "";
     width: 4px;
     height: 4px;
@@ -116,9 +116,7 @@ form label, form input, form button {
     vertical-align: middle;
 }
 
-
-
-#contact ul li:last-child::after {
+#ribbon ul li:last-child::after {
 		content: " ";
   	background-color: white;
 }
@@ -128,6 +126,15 @@ form label, form input, form button {
 	font-size: .8em;
 	font-style: italic;
 	text-align: center;
+}
+
+#social {
+	margin-top: 2em;
+}
+
+#social img{
+	width: 20px;
+	border-radius: 3px;
 }
 
 #copy  {
@@ -266,7 +273,7 @@ html[lang="fr-ca"] .en-only {
 	display: inherit;
 }
 
-.no-phone, #contact ul li.no-phone {
+.no-phone, #ribbon ul li.no-phone {
 	display: none;
 }
 

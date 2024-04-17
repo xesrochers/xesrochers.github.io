@@ -18,6 +18,7 @@
     <link href="/yuliya/css/style.css" rel="stylesheet" >
     <script src="/yuliya/js/jquery.min.js"></script>
     <script src="/yuliya/js/lightbox.min.js"></script>
+    <script src="/yuliya/js/class.Contact.js"></script>
     <script src="/yuliya/js/class.Login.js"></script>
     <script src="/yuliya/js/class.Language.js"></script>
     <script src="/yuliya/js/class.Slider.js"></script>
@@ -83,31 +84,42 @@
       <hr/>
 
       <footer>
-        <div id='contact' class="row">
+        <div id='ribbon' class="row">
           <div class='twelve columns'>
               <ul class='center en-only'>
                   <li><a href='/yuliya/en/About'>about</a></li>
                   <li><a href='/yuliya/en/Events'>events</a></li>
                   <li><a href='/yuliya/en/ProfessionalServices'>services</a></li>
-                  <li><a href='https://www.instagram.com/yuliyafineart' target='_blank'>instagram</a></li> 
-                  <li><a href='https://www.facebook.com/yuliyafineart' target='_blank'>facebook</a></li>
               </ul>
               <ul class='center fr-only'>
                   <li><a class='fr-only' href='/yuliya/fr/Bio'>bio</a></li>
                   <li><a href='/yuliya/fr/Expositions'>expositions</a></li>
                   <li><a href='/yuliya/fr/ServicesProfessionels'>services</a></li>
-                  <li><a href='https://www.instagram.com/yuliyafineart' target='_blank'>instagram</a></li> 
-                  <li><a href='https://www.facebook.com/yuliyafineart' target='_blank'>facebook</a></li>
               </ul>
               <p class='center print-only'>info@yuliyafineart.com</p>
               <p class='center print-only'>www.yuliyafineart.com</p>
           </div>              
+
+          <div id='social' class="row noprint">
+            <div class='twelve columns'>
+              <div class='center'>
+                <a href='https://www.instagram.com/yuliyafineart' target='_blank'>
+                  <img src='/yuliya/img/website/instagram.png'alt='instagram'/>
+                </a>
+                <a href='https://www.facebook.com/yuliyafineart' target='_blank'>
+                  <img src='/yuliya/img/website/facebook.png' alt='facebook'/>
+                </a>
+              </div>
+            </div>              
+          </div>
         </div>
 
         <div class="row">
           <div class='twelve columns'>
-              <p class='center en-only'><a class='button active wide' href='mailto:info@yuliyafineart.com'>contact me</a></p>
-              <p class='center fr-only'><a class='button active wide' href='mailto:info@yuliyafineart.com'>contactez moi</a></p>
+              <div id='contact'> 
+                <p class='center en-only'><a class='button active wide'>contact me</a></p>
+                <p class='center fr-only'><a class='button active wide'>contactez moi</a></p>
+              </div>
           </div>
         </div>
 
