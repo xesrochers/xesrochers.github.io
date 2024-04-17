@@ -192,6 +192,13 @@ form label, form input, form button {
 	content: "- ";
 }
 
+.read-toggle {
+	background-color: #1eaedb;
+	color: white;
+	padding: 2px 5px;
+	font-size: .5em;
+	border-radius: 4px;
+}
 
 .more {
 	display: none;
