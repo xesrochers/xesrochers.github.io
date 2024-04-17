@@ -64,6 +64,13 @@ form label, form input, form button {
 	margin: 4px 0 2px 0;
 }
 
+blockquote {
+	font-size: .8em;
+	font-style: italic;
+	background-color: #eee;
+	padding: 21px;
+	border-radius: 4px;
+}
 
 #home .event .date, #home .side {
 	display: none;
