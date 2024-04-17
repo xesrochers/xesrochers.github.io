@@ -37,10 +37,10 @@ Filter.applyFilter = function(e) {
    $(this).addClass('active');
 
    if (filter == '') {
-      $('.filter-list .item').show();
+      $('.filter-list [filter]').show();
    } else {
-      $('.filter-list .item').hide();
-      $('.filter-list .item[filter='+filter+']').show(); 
+      $('.filter-list [filter]').hide();
+      $('.filter-list [filter='+filter+']').show(); 
    }
 }
 
