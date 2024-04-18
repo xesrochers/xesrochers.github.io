@@ -82,7 +82,6 @@ Scroller.setControls = function(state) {
  * snooze()
  ************************************************/
 Scroller.snooze = function() {
-
 	if (Scroller.wait > 0) {
 		Scroller.setState('snoozing');
 		Scroller.setControls('snoozing');
@@ -92,6 +91,7 @@ Scroller.snooze = function() {
 		Scroller.start();
 	}
 }
+
 
 /************************************************
  * play()
@@ -104,11 +104,11 @@ Scroller.play = function(e) {
 	console.log('current state is ' + state);
 
 	if (state == 'reset') {
+		if (Metronome.active) Metronome.start();
 		Scroller.snooze();
 	} else if (state == 'snoozing') {
 		Scroller.snooze();
 	} else if (state == 'playing') {
-		Metronome.stop();
 		Scroller.pause();
 	} else if (state == 'paused') {
 		Scroller.start();			

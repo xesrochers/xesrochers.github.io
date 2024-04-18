@@ -7,15 +7,38 @@ function Metronome() {
 /************************************************
  * Metronome attributes
  ************************************************/
-Metronome.active = true; 
-Metronome.bpm = 50;       // default bpm 
-Metronome.animate = 1000; 
+Metronome.active  = true; 
+Metronome.bpm     = 60;     // default bpm 
+Metronome.animate = 1000;
+Metronome.show    = true;
+Metronome.sound   = 8;      // sound
+Metronome.audio   = new Audio("../../media/beep.mp3");
 
 /************************************************
  * setCallback()
  ************************************************/
 Metronome.setCallback = function(callback) {
 	Metronome.callback = callback;
+}
+
+/************************************************
+ * beep()
+ ************************************************/
+Metronome.beep = function() {
+  Metronome.audio.play();
+}
+
+/************************************************
+ * checkCookie()
+ ************************************************/
+Metronome.checkCookie = function() {
+	var result = false;
+	var cookie = WebUtils.readCookie('metronome');
+	if (cookie != null) {
+		result = cookie == 'true';
+	}
+
+	return result;
 }
 
 /************************************************
@@ -27,7 +50,14 @@ Metronome.init = function() {
 		// Calculate pace from bpm
 		Metronome.bpm = WebUtils.readDomConfig("metro", Metronome.bpm);
 		Metronome.pace = (30 * 1000) / Metronome.bpm; 
-		Metronome.pulse();
+
+		if ($('#js-metronome').size() > 0) {
+			if (Metronome.checkCookie()) {
+				$("#js-metronome input").attr('checked', 'checked');
+			}
+		}
+	} else {
+		$('#js-metronome').hide();
 	}
 }
 
@@ -36,7 +66,20 @@ Metronome.init = function() {
  ************************************************/
 Metronome.pulse = function() {
 	if (Metronome.active) {
-		$('hr.metronome').toggle();
+		if (Metronome.show) {
+			Metronome.show = false;
+			$('hr.metronome').show();
+			if (Metronome.sound > 0) {
+				Metronome.beep();
+				Metronome.sound--;
+			} else {
+				Metronome.stop();
+			}
+		} else {
+			Metronome.show = true;
+			$('hr.metronome').hide();
+		}
+		
 		Metronome.timeout = setTimeout(Metronome.pulse, Metronome.pace);
 	}
 }
@@ -75,12 +118,25 @@ Metronome.reset = function() {
 	Metronome.clearTimeout(); 
 }
 
+/************************************************
+ * setMetronome()
+ ************************************************/
+Metronome.setMetronome = function(e) {
+	Metronome.active = this.checked;
+	if (this.checked) {
+		WebUtils.saveCookie('metronome', 'true');
+	} else {
+		WebUtils.saveCookie('metronome', 'false');		
+	}
+}
+
 
 /************************************************
  * wireup()
  ************************************************/
 Metronome.wireup = function() {
 	Metronome.init();
+	$('#js-metronome input').click(Metronome.setMetronome);
 }
 
 /************************************************
