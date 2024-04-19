@@ -11,8 +11,8 @@ Metronome.active  = true;
 Metronome.bpm     = 60;     // default bpm 
 Metronome.animate = 1000;
 Metronome.show    = true;
-Metronome.sound   = 8;      // sound
-Metronome.audio   = new Audio("../media/beep.mp3");
+Metronome.sound   = 4;      // sound
+Metronome.audio   = null;
 
 /************************************************
  * setCallback()
@@ -25,7 +25,9 @@ Metronome.setCallback = function(callback) {
  * beep()
  ************************************************/
 Metronome.beep = function() {
-  Metronome.audio.play();
+	if (Metronome.audio != null) {
+	  Metronome.audio.play();
+	}
 }
 
 /************************************************
@@ -55,6 +57,11 @@ Metronome.init = function() {
 			if (Metronome.checkCookie()) {
 				$("#js-metronome input").attr('checked', 'checked');
 			}
+		}
+
+		if ($('#js-beep').size() > 0) {
+			var src = $('#js-beep').attr('src');
+			Metronome.audio = new Audio(src);
 		}
 	} else {
 		$('#js-metronome').hide();
