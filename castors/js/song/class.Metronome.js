@@ -7,11 +7,10 @@ function Metronome() {
 /************************************************
  * Metronome attributes
  ************************************************/
-Metronome.active  = true; 
-Metronome.bpm     = 60;     // default bpm 
-Metronome.animate = 1000;
+Metronome.active  = false; 
+Metronome.bpm     = 0;
 Metronome.show    = true;
-Metronome.sound   = 4;      // sound
+Metronome.measure = 4;    // one measure beeps
 Metronome.audio   = null;
 
 /************************************************
@@ -19,15 +18,6 @@ Metronome.audio   = null;
  ************************************************/
 Metronome.setCallback = function(callback) {
 	Metronome.callback = callback;
-}
-
-/************************************************
- * beep()
- ************************************************/
-Metronome.beep = function() {
-	if (Metronome.audio != null) {
-	  Metronome.audio.play();
-	}
 }
 
 /************************************************
@@ -47,24 +37,39 @@ Metronome.checkCookie = function() {
  * init()
  ************************************************/
 Metronome.init = function() {
-	// Use metronome if defined in the DOM (under @metro tag)
+	Metronome.active = Metronome.checkCookie();
+
+	// Set the checkbox 
+	if (Metronome.active) {
+		$("#js-metronome input").attr('checked', 'checked');
+	}
+
+	// Get metronome data defined in the DOM (under @metro tag)
 	if ($('#metro').size() > 0) { 
 		// Calculate pace from bpm
 		Metronome.bpm = WebUtils.readDomConfig("metro", Metronome.bpm);
-		Metronome.pace = (30 * 1000) / Metronome.bpm; 
+		Metronome.pace = (30 * 1000) / Metronome.bpm;
+	}
 
-		if ($('#js-metronome').size() > 0) {
-			if (Metronome.checkCookie()) {
-				$("#js-metronome input").attr('checked', 'checked');
-			}
-		}
+	// Load beep wave no matter what 
+	if ($('#js-beep').size() > 0) {
+		var media = $('#js-beep').attr('data');
+		Metronome.audio = new Audio(media);
+	}
 
-		if ($('#js-beep').size() > 0) {
-			var src = $('#js-beep').attr('src');
-			Metronome.audio = new Audio(src);
+}
+
+/************************************************
+ * beep()
+ ************************************************/
+Metronome.beep = function(measure) {
+	if (Metronome.audio != null && Metronome.active) {
+		if (Metronome.measure > 0) {
+			Metronome.audio.play();
+			if (measure) Metronome.measure--;
+		} else {
+			Metronome.stop();
 		}
-	} else {
-		$('#js-metronome').hide();
 	}
 }
 
@@ -72,16 +77,11 @@ Metronome.init = function() {
  * pulse()
  ************************************************/
 Metronome.pulse = function() {
-	if (Metronome.active) {
+	if (Metronome.active && Metronome.bpm > 0) { // we have metronome data and it's active
 		if (Metronome.show) {
 			Metronome.show = false;
 			$('hr.metronome').show();
-			if (Metronome.sound > 0) {
-				Metronome.beep();
-				Metronome.sound--;
-			} else {
-				Metronome.stop();
-			}
+			Metronome.beep(true);
 		} else {
 			Metronome.show = true;
 			$('hr.metronome').hide();
@@ -96,7 +96,6 @@ Metronome.pulse = function() {
  ************************************************/
 Metronome.start = function() {
 	console.log('Metronome started');
-	Metronome.active = true;
 	Metronome.pulse();
 }
 
