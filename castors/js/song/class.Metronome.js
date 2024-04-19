@@ -12,7 +12,7 @@ Metronome.bpm     = 60;     // default bpm
 Metronome.animate = 1000;
 Metronome.show    = true;
 Metronome.sound   = 8;      // sound
-Metronome.audio   = new Audio("../../media/beep.mp3");
+Metronome.audio   = new Audio("../media/beep.mp3");
 
 /************************************************
  * setCallback()
