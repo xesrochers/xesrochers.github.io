@@ -275,11 +275,11 @@ Scroller.init = function() {
 	}
 
 	if (WebUtils.hasDomConfig()) {
-	   	sleep = WebUtils.readDomConfig('sleep', Scroller.sleep);
-	   	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
-	   	console.log('using DOM configuration');
-	   	Scroller.disableControls(true);
-	   	TabSlide.appendHandle("<br><span class='tiny'>"+speed+"</span>");
+   	sleep = WebUtils.readDomConfig('sleep', Scroller.sleep);
+   	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
+   	console.log('using DOM configuration');
+   	Scroller.disableControls(true);
+   	TabSlide.appendHandle("<br><span class='tiny'>"+speed+"</span>");
 	}
 
 	Scroller.setSleep(sleep);

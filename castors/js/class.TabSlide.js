@@ -7,9 +7,8 @@ function TabSlide() {
 /************************************************
  * TabSlide attributes
  ************************************************/
-TabSlide.height = 50;
-TabSlide.open   = "&laquo;"
-TabSlide.close  = "&raquo;"
+TabSlide.open   = "&bull;"
+TabSlide.close  = "o"
 TabSlide.state  = "hide";
 
 /************************************************
@@ -59,6 +58,7 @@ TabSlide.toggle = function(e) {
  ************************************************/
 TabSlide.wireup = function() {
    $('.tab-slide').hide();
+   $('.tab-handle').html(TabSlide.open);
    $('.tab-handle').click(TabSlide.toggle);
 }
 

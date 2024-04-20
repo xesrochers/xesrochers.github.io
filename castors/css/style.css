@@ -27,9 +27,36 @@ a:hover {color: #fff;}
 ul { margin: 1em; list-style-type: none;}
 li { margin: 1em; list-style-type: none;}
 
+#castors  { 
+	width: 100%;
+	margin: 1em 0;
+}
+
+#castors li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+#castors li a {
+	display: inline-block;
+	padding: 4px;
+	margin: 4px;
+	border: 1px solid orange;
+	border-radius: 4px;
+	width: 45%;
+	overflow: hidden;
+}
+
+#castors li a:hover {
+	background-color: orange;
+}
+
 #stjean li {
 	list-style-type: decimal;
 }
+
+
 
 header{padding-top: 1em; border-bottom:  2px solid #444}
 header h1.brand { font-size: 2em; margin: 0 0 .3em 0; display: inline-block; }
@@ -285,17 +312,19 @@ form input {width: 50%;}
 	width: 95%;
 }
 
+input[type=checkbox] {
+  accent-color: orange;
+}
+
 /**************************
  * Search Box
  **************************/
 input#search-box {
 	display: block;
+	color: black;
+	font-weight: bold;
 	width: 100%;
-/*	float: right;
-	width: 80px;
-	height: 25px;
-	display: inline-block; /* to live next to the H1.brand */
-*/
+	border: 1px dotted orange;
 }
 
 /**************************
@@ -351,7 +380,7 @@ input.wide, select.wide {
 	position: fixed;
 	top: 5em;
 	right:0;
-	width: 250px;
+	width: 200px;
 	padding: 20px;
 	background-color: #000;
 	border: 1px solid orange;
@@ -457,8 +486,21 @@ input.wide, select.wide {
 	opacity: .2;
 }
 
+.strike {
+	text-decoration: line-through;
+}
+
 .gig {
-	padding-bottom: 3em;
+	background-color: #222;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 2em 0;
+    border: 1px dotted orange;
+}
+
+.gig h1 {
+	padding: 10px 0;
+	margin: 0;
 }
 
 /**************************
@@ -536,8 +578,13 @@ hr.metronome {
 }
 
 .auto-play {
-	float: right;
-	margin-top: 15px;
+    position: absolute;
+    top: 30px;
+    right: 0px;}
+
+.auto-play label {
+	display: inline-block;
+	padding-left: 5px;
 }
 
 .bijou-spectacles-manue2019 .note {
@@ -592,7 +639,10 @@ hr.metronome {
 	.big { font-size: 1.7em;}
 	#js-back, #js-refresh {display: none}
 
-	.tab-slide {font-size: 1em;}  
+	.tab-slide {font-size: 1em;} 
+
+	#castors li a { width: inherit; display: block; }
+ 
 
 }
 
