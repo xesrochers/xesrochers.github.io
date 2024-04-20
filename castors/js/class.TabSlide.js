@@ -8,8 +8,8 @@ function TabSlide() {
  * TabSlide attributes
  ************************************************/
 TabSlide.height = 50;
-TabSlide.open   = "&#x1F844;"
-TabSlide.close  = "&#x2BC8;"
+TabSlide.open   = "&laquo;"
+TabSlide.close  = "&raquo;"
 TabSlide.state  = "hide";
 
 /************************************************
