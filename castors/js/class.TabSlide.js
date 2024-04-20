@@ -8,14 +8,17 @@ function TabSlide() {
  * TabSlide attributes
  ************************************************/
 TabSlide.height = 50;
-TabSlide.handle = "&lt;";
+TabSlide.open   = "&#x1F844;"
+TabSlide.close  = "&#x2BC8;"
+TabSlide.state  = "hide";
 
 /************************************************
- * setHandle()
+ * appendHandle()
  ************************************************/
-TabSlide.setHandle = function(handle) {
-   TabSlide.handle = handle;
-   $('.tab-handle').html(TabSlide.handle);
+TabSlide.appendHandle = function(append) {
+   TabSlide.open  = TabSlide.open + append;
+   TabSlide.close = TabSlide.close + append;
+   $('.tab-handle').html(TabSlide.open);
 }
 
 
@@ -23,7 +26,8 @@ TabSlide.setHandle = function(handle) {
  * hide()
  ************************************************/
 TabSlide.hide = function() {
-   $('.tab-handle').html(TabSlide.handle).hide(300);
+   TabSlide.state = 'hide';
+   $('.tab-handle').html(TabSlide.open);
    $('.tab-slide').hide(300);
 }
 
@@ -31,8 +35,9 @@ TabSlide.hide = function() {
  * show()
  ************************************************/
 TabSlide.show = function() {
-   $('.tab-handle').html(TabSlide.handle).show(300);
-   $('.tab-slide').hide(300); // make sue it's hidden 
+   TabSlide.state = 'show';
+   $('.tab-handle').html(TabSlide.close);
+   $('.tab-slide').show(300); 
 }
 
 /************************************************
@@ -41,12 +46,10 @@ TabSlide.show = function() {
 TabSlide.toggle = function(e) {
    e.preventDefault();
 
-   $('.tab-slide').toggle(300);
-   var hook = $('.tab-handle').html();
-   if (hook == "X") {
-      $('.tab-handle').html(TabSlide.handle);
+   if (TabSlide.state == 'hide') {
+      TabSlide.show();
    } else {
-      $('.tab-handle').html("X");
+      TabSlide.hide();      
    }
 }
 
