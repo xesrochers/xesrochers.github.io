@@ -63,9 +63,11 @@ header h1.brand { font-size: 2em; margin: 0 0 .3em 0; display: inline-block; }
 header h1 a {text-decoration: none; }
 
 blockquote {
-	color: orange;
 	margin: .5em;
 	font-style: italic;
+	background-color: #222;
+	padding: 10px 0px;
+	border-radius: 4px 4px 0 0;
 }
 
 blockquote::before {
