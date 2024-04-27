@@ -49,7 +49,6 @@ Scroller.setControls = function(state) {
 		playBtn.removeClass("blink");
 		playBtn.attr('title', 'play');
 		playBtn.find('.icon').removeClass('bar').html('start');
-		TabSlide.show();
 	} else if (state == 'snoozing') {
 		playBtn.addClass("blink");
 		playBtn.attr('title', 'pause');
@@ -57,12 +56,11 @@ Scroller.setControls = function(state) {
 		Scroller.fillBar();
 		TabSlide.hide();
 	} else if (state == 'paused') {
-		playBtn.removeClass("blink");
+		playBtn.removeClass("blink").addClass('button-primary');
 		playBtn.attr('title', 'resume');
 		playBtn.find('.icon').removeClass('bar').html('resume');
-		TabSlide.show();
 	} else if (state == 'playing') {
-		playBtn.addClass('blink');
+		playBtn.addClass('blink').removeClass('button-primary');
 		playBtn.attr('title', 'pause');
 		playBtn.find('.icon').removeClass('bar').html('pause');
 		TabSlide.hide();
@@ -72,7 +70,6 @@ Scroller.setControls = function(state) {
 		playBtn.removeClass("blink");
 		playBtn.attr('title', 'top');
 		playBtn.find('.icon').removeClass('bar').html('top');
-		TabSlide.show();
 		$('.tablature').addClass('hidden');
 		$('#harmony-control').addClass('hidden');
 	}

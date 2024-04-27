@@ -456,6 +456,11 @@ input.wide, select.wide {
 	background-color: #000;
 }
 
+.controls .button.button-primary {
+	color: black;
+	background-color: orange;
+}
+
 .controls .button i {
 	font-size: 150%;
 }
