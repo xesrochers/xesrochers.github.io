@@ -7,7 +7,7 @@ function Scroller() {
 /************************************************
  * Scroller attributes
  ************************************************/
-Scroller.sleep = 5;
+Scroller.sleep = 10;
 Scroller.speed = 50; 
 Scroller.wait  = 5;
 Scroller.timeout = null;
