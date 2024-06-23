@@ -245,6 +245,9 @@ i.zzz, i.zzz b.group {
 	clear: both;
 	float: none;
 	overflow: auto; /*This is what we added!*/
+	width: 100%;
+	margin-top: 2em;
+	border-top: 2px solid #444;
 }
 
 .tablature-block:after { /* clear float recepie */
