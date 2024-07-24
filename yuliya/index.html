@@ -61,9 +61,9 @@
     function redirect() {
       var lang = navigator.language.substring(0, 2);
       if (lang=='en') {
-        location.replace("/yuliya/en");
+        location.replace("/yuliya/en/");
       } else {
-        location.replace("/yuliya/fr");        
+        location.replace("/yuliya/fr/");        
       }
     }
     redirect();
@@ -77,6 +77,17 @@
       <hr/>
 
       <footer>
+
+        <div id='ribbon' class="row">
+          <div class='twelve columns'>
+              <div class='center en-only'>
+                <a target='_blank' href='https://www.galerieoldchelsea.ca/yuliachernyshova'>Permanent Exposition at La Galerie Old Chelsea</a>
+              </div>
+              <div class='center fr-only'>
+                <a target='_blank' href='https://www.galerieoldchelsea.ca/yuliachernyshova1'>Exposition Permanente &agrave; la Galerie Old Chelsea</a>
+              </div>
+          </div>
+        </div>
         <div id='ribbon' class="row">
           <div class='twelve columns'>
               <ul class='center en-only'>

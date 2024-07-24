@@ -48,6 +48,7 @@ hr {
 
 p {
 	padding: 10px 0;
+	text-align: justify
 }
 
 ul li {
@@ -67,9 +68,15 @@ form label, form input, form button {
 blockquote {
 	font-size: .8em;
 	font-style: italic;
-	background-color: #eee;
-	padding: 21px;
-	border-radius: 4px;
+	padding: 1em;
+}
+
+blockquote::before {
+	content: "\00AB";
+}
+
+blockquote::after {
+	content: "\00BB";
 }
 
 #home .event .date, #home .side {
