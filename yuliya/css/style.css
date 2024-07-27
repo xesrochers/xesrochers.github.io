@@ -29,6 +29,10 @@ h2 {
 	color: #b18e50;
 }
 
+h3 {
+	padding-bottom: .5em;
+}
+
 p {
 	font-size: .9em;
 	line-height: 1.2em;
