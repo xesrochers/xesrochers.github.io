@@ -16,7 +16,7 @@
 }
 
 #slider .slide img {
-  max-height: 200px; /* Skeleton is Mobile first */
+  max-height: 400px; /* Skeleton is Mobile first */
   vertical-align: middle;
 }
 
