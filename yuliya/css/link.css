@@ -6,45 +6,47 @@
 
 #links {
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between; 
+  flex-wrap: wrap;  
 }
 
 
 #links .item {
-  position: relative;
-  width: 100%;  
-  display: block;
+  width: 30%;  
+  display: inline-block;
   border: 1px solid #999;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 180px;
   border-radius: 4px;
   margin-bottom: 1em;
-  background-position: right;
+  background-color: rgb(0,0,0, .5);
 }
 
 #links .item:hover {
   border: 1px solid #eee;
 }
 
+#links .item img {
+  height: 200px;
+}
 
 #links .view {
-  position: absolute;
-  top: 2px;
-  left: 2px;
   color: white;
-  background-color: rgb(0,0,0, .5);
-  padding: 5px;
-  border-radius: 2px;
-  width: 40%;
-  height: 100%;
+  padding: 20px 5px;
+  text-align: center;
 }
 
 #links h2 {
   color: white;
 }
 
-
 @media only screen and (max-width: 500px) {
-  #links .item {
+  #links .item img {
     height: 100px;
+  }
+
+  #links .view {
+    padding: 10px 0px;
+    font-size: .8em;
   }
 }
