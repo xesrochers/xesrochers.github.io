@@ -1,70 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-ca" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yuliya Fine Art</title>
-    <link href="/yuliya/img/website/fav.png" rel="icon" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="/yuliya/css/skeleton.css" rel="stylesheet">
-    <link href="/yuliya/css/style.css" rel="stylesheet" >
-  </head>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Xesrochers">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="xesrochers">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="recettes/css/skeleton.css" rel="stylesheet" />
+        <link href="recettes/css/style.css" rel="stylesheet" />
+		<title>xesrochers</title>
+	</head>
+	<body class="html">
+		<div class="container">
+			<header>
+				<div class="row">
+				    <div class="twelve columns">
+				        <h1 class="brand"><a href="/">xesrochers</a></h1>
+				    </div>
+				</div>
+			</header>
 
-  <body class='home html  top' >
-    <div class="container">
-      <header>
-        <div class="row">
-            <div class="twelve columns">
-              <a href='/yuliya/en'><img id='brand' src='/yuliya/img/website/brand.jpg' alt='brand'/></a>
-            </div>
-        </div>
-      </header>
+		    <hr class='keep' />
 
-      <main>
-        <div class="row">
-          <div class="twelve columns">
-            <script>
-    function redirect() {
-      var lang = navigator.language.substring(0, 2);
-      if (lang=='en') {
-        location.replace("/yuliya/en/");
-      } else {
-        location.replace("/yuliya/fr/");        
-      }
-    }
-    // redirect();
-</script>
+			<main>
+				<div class="row">
+				    <div class="twelve columns">
+						<ul><li><a href='recettes/'>Recettes</a></li></ul>
+				    </div>
+				</div>
+			</main>
+	
+			<footer>
+				<div class="u-pull-right">	
+					<p>Powered by <a href="#">git</a></p>
+				</div>
+				<div class="row u-cf">&nbsp;</div>
+			</footer>
 
-<div class="row">
-    <div class="twelve columns">
-      <img width='100%' src='/yuliya/img/slider/fineart.jpg' />
-    </div>
-</div>
-
-<div class="row">
-    <div class="six columns">
-      <a href='/yuliya/en/' class='button u-full-width'>English</a>
-    </div>
-    <div class="six columns">
-      <a href='/yuliya/fr/' class='button u-full-width'>Fran&ccedil;ais</a>
-    </div>
-</div>
-
-
-          </div>
-        </div>
-      </main>
-    
-      <footer>
-        <div id='copy' class="row">
-          <div class='twelve columns'>
-            <p>&copy; 2024 Yuliya Chernyshova</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-  </body>
-
+		</div>
+	</body>
 </html>
