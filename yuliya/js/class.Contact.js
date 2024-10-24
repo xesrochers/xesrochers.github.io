@@ -4,7 +4,7 @@
 function Contact() {
 }
 
-Contact.email = 'mailto::info@yuliyafineart.com';
+Contact.email = 'mailto:info@yuliyafineart.com';
 
 /************************************************
  * contact()
