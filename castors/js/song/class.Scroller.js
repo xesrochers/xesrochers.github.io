@@ -9,6 +9,7 @@ function Scroller() {
  ************************************************/
 Scroller.sleep = 10;
 Scroller.speed = 50; 
+Scroller.veto  = 0; 
 Scroller.wait  = 5;
 Scroller.timeout = null;
 
@@ -177,6 +178,20 @@ Scroller.clearTimeouts = function() {
 }
 
 /************************************************
+ * setVeto()
+ ************************************************/
+Scroller.setVeto = function(val) {
+	Scroller.veto = val;
+	console.log('veto changed to ' + val);
+	WebUtils.saveStorage('veto', val);
+	if (val == true) {
+		$('#js-override input').attr('checked', true);
+	} else {
+		$('#js-override input').removeAttr('checked');
+	}
+}
+
+/************************************************
  * setSleep()
  ************************************************/
 Scroller.setSleep = function(val) {
@@ -206,6 +221,7 @@ Scroller.setSpeed = function(val) {
 	console.log('speed changed to ' + val);
 	Scroller.speed = parseInt(val); // passed in as string #@!$@
 	SmoothScroller.setSpeed(Scroller.speed)
+	$(".tab-handle .tiny").html(val);
 	$("#js-speed label").html(val + " pet");
 	$('#js-speed input').val(val);
 }
@@ -241,10 +257,12 @@ Scroller.disableControls = function(disable) {
  ************************************************/
 Scroller.override = function(e) {
 	if (this.checked) {
+		Scroller.setVeto(1);
 		Scroller.setSleep(WebUtils.readStorage("sleep", Scroller.sleep));		
 		Scroller.setSpeed(WebUtils.readStorage("speed", Scroller.speed));
 		Scroller.disableControls(false);
 	} else {
+		Scroller.setVeto(0);
 		Scroller.setSleep(WebUtils.readDomConfig("sleep", Scroller.sleep));
 		Scroller.setSpeed(WebUtils.readDomConfig("speed", Scroller.speed));
 		Scroller.disableControls(true);
@@ -265,20 +283,28 @@ Scroller.songPage = function() {
 Scroller.init = function() {
 	var sleep = Scroller.sleep;
 	var speed = Scroller.speed;
-
-	if (typeof(Storage) !== "undefined") {
-		sleep = WebUtils.readStorage("sleep", Scroller.sleep);
-		speed = WebUtils.readStorage("speed", Scroller.speed);
-	}
+	var veto  = Scroller.veto;
 
 	if (WebUtils.hasDomConfig()) {
+   	console.log('using DOM configuration');
    	sleep = WebUtils.readDomConfig('sleep', Scroller.sleep);
    	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
-   	console.log('using DOM configuration');
    	Scroller.disableControls(true);
    	TabSlide.appendHandle("<br><span class='tiny'>"+speed+"</span>");
+	} 
+
+	if (typeof(Storage) !== "undefined") {
+		veto  = WebUtils.readStorage("veto", Scroller.veto);
+		if (veto == 1) {
+			console.log('using veto configuration');
+			sleep = WebUtils.readStorage("sleep", sleep);
+			speed = WebUtils.readStorage("speed", speed);			
+		} else {
+			console.log('using default configuration');			
+		}
 	}
 
+	Scroller.setVeto(veto);
 	Scroller.setSleep(sleep);
 	Scroller.setSpeed(speed);
 }
