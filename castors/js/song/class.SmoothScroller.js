@@ -31,7 +31,7 @@ SmoothScroller.setMax = function(max) {
 SmoothScroller.setSpeed = function(speed) {
 	SmoothScroller.speed = speed;
 	SmoothScroller.pace  = ((SmoothScroller.max - speed) * 80) + 500;
-	SmoothScroller.animate = (speed >= 85) ? 400 : 2000; 
+	SmoothScroller.animate = (SmoothScroller.pace <= 1000) ? SmoothScroller.pace/2 : 1000; // pace must be greater //(speed >= 85) ? 400 : 1000; 
 	SmoothScroller.stride = speed + 10;
 
 	console.log('*** speed is ' + SmoothScroller.speed);
@@ -56,7 +56,7 @@ SmoothScroller.scroll = function() {
 	if (!SmoothScroller.completed()) {
 		if (SmoothScroller.active) {
 			SmoothScroller.offset += SmoothScroller.stride;	
-			$('html,body').animate({scrollTop: SmoothScroller.offset}, SmoothScroller.pace-SmoothScroller.animate);
+			$('html,body').animate({scrollTop: SmoothScroller.offset}, SmoothScroller.animate); //SmoothScroller.pace-SmoothScroller.animate);
 			SmoothScroller.timeout = setTimeout(SmoothScroller.scroll, SmoothScroller.pace);
 		}
 	}
