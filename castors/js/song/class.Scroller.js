@@ -186,8 +186,10 @@ Scroller.setVeto = function(val) {
 	WebUtils.saveStorage('veto', val);
 	if (val == true) {
 		$('#js-override input').attr('checked', true);
+		Scroller.disableControls(false);
 	} else {
 		$('#js-override input').removeAttr('checked');
+		Scroller.disableControls(true);
 	}
 }
 
@@ -221,7 +223,7 @@ Scroller.setSpeed = function(val) {
 	console.log('speed changed to ' + val);
 	Scroller.speed = parseInt(val); // passed in as string #@!$@
 	SmoothScroller.setSpeed(Scroller.speed)
-	$(".tab-handle .tiny").html(val);
+	TabSlide.setExtra(val);
 	$("#js-speed label").html(val + " pet");
 	$('#js-speed input').val(val);
 }
@@ -290,7 +292,7 @@ Scroller.init = function() {
    	sleep = WebUtils.readDomConfig('sleep', Scroller.sleep);
    	speed  = WebUtils.readDomConfig("speed", Scroller.speed);
    	Scroller.disableControls(true);
-   	TabSlide.appendHandle("<br><span class='tiny'>"+speed+"</span>");
+   	TabSlide.setExtra(speed);
 	} 
 
 	if (typeof(Storage) !== "undefined") {

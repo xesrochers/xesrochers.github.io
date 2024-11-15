@@ -10,13 +10,15 @@ function TabSlide() {
 TabSlide.open   = "&bull;"
 TabSlide.close  = "o"
 TabSlide.state  = "hide";
+TabSlide.extra  = "";
 
 /************************************************
- * appendHandle()
+ * setExtra()
  ************************************************/
-TabSlide.appendHandle = function(append) {
-   TabSlide.open  = TabSlide.open + append;
-   TabSlide.close = TabSlide.close + append;
+TabSlide.setExtra = function(extra) {
+   var dom = "<br><span class='extra'>"+extra+"</span>"
+   TabSlide.open  = "&bull;" + dom;
+   TabSlide.close = "o" + dom;
    $('.tab-handle').html(TabSlide.open);
 }
 
