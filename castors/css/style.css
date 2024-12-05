@@ -610,6 +610,40 @@ hr.metronome {
 	margin: 0;
 }
 
+div.pr {
+	color: #b2b205;
+	padding: 5px 0;
+}
+
+div.pr:last-child {
+	margin-bottom: 15px;
+}
+
+div.alert {
+	color: red;
+	padding: 5px 0;
+}
+
+div.amis {
+	color: orange;
+	padding: 5px 0;
+	border-top: 1px dotted;
+    margin: 20px 0;
+    border-bottom: 1px dotted;
+}
+
+div.sketch, div.sommaire {
+	color: white;
+	background-color: #333;
+	padding: 10px ;
+	margin: 10px 0;
+	border-radius: 10px;
+}
+
+div.crossed {
+	text-decoration: line-through;
+}
+
 /***************************
  * Skeleton Media Queries
  * Skeleton is Mobile first
