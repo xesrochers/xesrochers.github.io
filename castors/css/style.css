@@ -683,9 +683,6 @@ div.crossed {
 	.harmony-block { display: none; }
 	.big { font-size: 1.7em;}
 	#js-back, #js-refresh {display: none}
-
-	.tab-slide {font-size: 1em;} 
-
 	#castors li a { width: inherit; display: block; }
  
 
@@ -701,10 +698,6 @@ div.crossed {
 
 	.song .tablature {font-size: .8em; }
 	.song .tablature .small {font-size: .6em; }
-
-	.tab-slide {
-		font-size: 1em;
-	}  
 }
 
 /* Tablet and above */
