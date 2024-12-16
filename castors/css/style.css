@@ -611,6 +611,12 @@ hr.metronome {
 	margin: 0;
 }
 
+.button.strong {
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #999;
+}
+
 div.pr {
 	color: #b2b205;
 	padding: 5px 0;
@@ -618,6 +624,12 @@ div.pr {
 
 div.pr:last-child {
 	margin-bottom: 15px;
+}
+
+div.adlib {
+	padding: .5em;
+	font-style: italic;
+	font-size: .7em;
 }
 
 div.alert {
