@@ -185,9 +185,11 @@ Scroller.setVeto = function(val) {
 	console.log('veto changed to ' + val);
 	WebUtils.saveStorage('veto', val);
 	if (val == true) {
+		TabSlide.overrideTag(true);
 		$('#js-override input').attr('checked', true);
 		Scroller.disableControls(false);
 	} else {
+		TabSlide.overrideTag(false);
 		$('#js-override input').removeAttr('checked');
 		Scroller.disableControls(true);
 	}

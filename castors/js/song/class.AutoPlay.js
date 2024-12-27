@@ -36,8 +36,10 @@ AutoPlay.setAutoPlay = function(e) {
 	AutoPlay.active = this.checked;
 	if (this.checked) {
 		WebUtils.saveCookie('autoPlay', 'true');
+		$("#js-autoplay-tag").show();
 	} else {
 		WebUtils.saveCookie('autoPlay', 'false');		
+		$("#js-autoplay-tag").hide();
 	}
 }
 
@@ -50,6 +52,9 @@ AutoPlay.init = function() {
 	if (AutoPlay.active) {
 		// set the UI
 		$("#js-auto-play").attr('checked', 'checked');
+		$("#js-autoplay-tag").show();
+	} else {
+		$("#js-autoplay-tag").hide();		
 	}
 }
 

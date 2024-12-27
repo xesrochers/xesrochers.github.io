@@ -22,6 +22,17 @@ TabSlide.setExtra = function(extra) {
    $('.tab-handle').html(TabSlide.open);
 }
 
+/************************************************
+ * setExtraoverrideTag()
+ ************************************************/
+TabSlide.overrideTag = function(active) {
+   if (active) {
+      $('.tab-handle').addClass('override-active');
+   } else {
+      $('.tab-handle').removeClass('override-active');
+   }
+}
+
 
 /************************************************
  * hide()
