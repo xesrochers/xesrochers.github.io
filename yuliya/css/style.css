@@ -56,6 +56,14 @@ p {
 	text-align: justify
 }
 
+b {
+	font-weight: bold;
+}
+
+ul {
+	margin-top: 1em;
+}
+
 ul li {
 	list-style-type: disc;
 	font-size: .8em;
