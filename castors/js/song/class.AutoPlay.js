@@ -30,19 +30,56 @@ AutoPlay.checkCookie = function() {
 }
 
 /************************************************
- * setAutoPlay()
+ * updateTag()
  ************************************************/
-AutoPlay.setAutoPlay = function(e) {
-	AutoPlay.active = this.checked;
-	if (this.checked) {
-		WebUtils.saveCookie('autoPlay', 'true');
+AutoPlay.updateTag = function(active) {
+	if (active) {
 		$("#js-autoplay-tag").show();
+		$(".config-block").hide();
+		$(".harmony-block").hide();
+		$.each($(".tablature-block"), function() {
+   	   $(this).hide();
+		});
 	} else {
-		WebUtils.saveCookie('autoPlay', 'false');		
 		$("#js-autoplay-tag").hide();
+		$(".config-block").show();
+		$(".harmony-block").show();
+		$.each($(".tablature-block"), function() {
+   	   $(this).show();
+		});
 	}
 }
 
+
+/************************************************
+ * setAutoPlay()
+ ************************************************/
+AutoPlay.setAutoPlay = function(active) {
+	AutoPlay.active = active;
+	if (AutoPlay.active) {
+		WebUtils.saveCookie('autoPlay', 'true');
+		AutoPlay.updateTag(true);
+	} else {
+		WebUtils.saveCookie('autoPlay', 'false');		
+		AutoPlay.updateTag(false);
+	}
+}
+
+/************************************************
+ * autoPlayClick()
+ ************************************************/
+AutoPlay.autoPlayClick = function(e) {
+	AutoPlay.setAutoPlay(this.checked);
+	location.reload(); // start it
+}
+
+/************************************************
+ * killAutoPlay()
+ ************************************************/
+AutoPlay.killAutoPlay = function(e) {
+	AutoPlay.setAutoPlay(false);
+	location.reload(); // stop it
+}
 
 /************************************************
  * init()
@@ -52,9 +89,9 @@ AutoPlay.init = function() {
 	if (AutoPlay.active) {
 		// set the UI
 		$("#js-auto-play").attr('checked', 'checked');
-		$("#js-autoplay-tag").show();
+		AutoPlay.updateTag(true);
 	} else {
-		$("#js-autoplay-tag").hide();		
+		AutoPlay.updateTag(false);
 	}
 }
 
@@ -63,7 +100,8 @@ AutoPlay.init = function() {
  ************************************************/
 AutoPlay.wireup = function() {
 	AutoPlay.init();
-	$('#js-auto-play').click(AutoPlay.setAutoPlay);
+	$('#js-auto-play').click(AutoPlay.autoPlayClick);
+	$("#js-autoplay-tag").click(AutoPlay.killAutoPlay);
 }
 
 /************************************************
