@@ -67,6 +67,7 @@ ul {
 ul li {
 	list-style-type: disc;
 	font-size: .8em;
+	padding-bottom: .5em;
 }
 
 form {
