@@ -6,51 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bijou - Unit Tests</title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Orbitron' />    
-    <link rel="stylesheet" href="/bijou/css/skeleton.css" />
-    <link rel="stylesheet" href="/bijou/css/lightbox.css" />
-    <link rel="stylesheet" href="/bijou/css/masonry.css" />
-    <link rel="stylesheet" href="/bijou/css/slider.css" />
-    <link rel="stylesheet" href="/bijou/css/gallery.css" />
-    <link rel="stylesheet" href="/bijou/css/link.css" />
-    <link rel="stylesheet" href="/bijou/css/topnav.css" />
-    <link rel="stylesheet" href="/bijou/css/style.css" />
+    <link rel="stylesheet" href="\bijou/css/unittests.css" />
+    <link rel="stylesheet" href="\bijou/css/skeleton.css" />
+    <link rel="stylesheet" href="\bijou/css/lightbox.css" />
+    <link rel="stylesheet" href="\bijou/css/masonry.css" />
+    <link rel="stylesheet" href="\bijou/css/slider.css" />
+    <link rel="stylesheet" href="\bijou/css/gallery.css" />
+    <link rel="stylesheet" href="\bijou/css/link.css" />
+    <link rel="stylesheet" href="\bijou/css/topnav.css" />
+    <link rel="stylesheet" href="\bijou/css/style.css" />
 
-    <script src="/bijou/js/jquery.min.js"></script>
-    <script src="/bijou/js/lightbox.min.js"></script>
-    <script src="/bijou/js/masonry.min.js"></script>
-    <script src="/bijou/js/class.Slider.js"></script>
-    <script src="/bijou/js/class.SearchBox.js"></script>
-    <script src="/bijou/js/class.SearchBox.js"></script>
-    <script src="/bijou/js/class.TopNav.js"></script>
-    <script src="/bijou/js/class.Filter.js"></script>
-    <script src="/bijou/js/class.Lightbox.js"></script>
-    <script src="/bijou/js/class.Masonry.js"></script>
+    <script src="\bijou/js/jquery.min.js"></script>
+    <script src="\bijou/js/lightbox.min.js"></script>
+    <script src="\bijou/js/masonry.min.js"></script>
+    <script src="\bijou/js/class.Slider.js"></script>
+    <script src="\bijou/js/class.SearchBox.js"></script>
+    <script src="\bijou/js/class.TopNav.js"></script>
+    <script src="\bijou/js/class.Filter.js"></script>
+    <script src="\bijou/js/class.Lightbox.js"></script>
+    <script src="\bijou/js/class.Masonry.js"></script>
   </head>
-  <body class="html bijou-unittests-html ">
+  <body class="md bijou-unittests ">
     <div id="wrapper">
       <header>
-        <h1><a href='/bijou/'>Bijou</a><span class='notice'> - local</span></h1>
+        <h1><a href='\bijou/'>Bijou</a><span class='notice'> - local</span></h1>
         <div id='topnav' class='inline'>
           <a class='hamburger' href='#'>=</a>
-<a href='/bijou/HowItWorks/'>How It Works</a>
-<a href='/bijou/Reference/'>Reference</a>
-<a href='/bijou/SubstitutionTags/'>Substitution Tags</a>
-<a href='/bijou/Tests/'>Tests</a>
-<a href='/bijou/UnitTests/'>Unit Tests</a>
-<a href='/bijou/Search/'>Search</a>
+<a href='\bijou/HowItWorks/'>How It Works</a>
+<a href='\bijou/Reference/'>Reference</a>
+<a href='\bijou/SubstitutionTags/'>Substitution Tags</a>
+<a href='\bijou/Tests/'>Tests</a>
+<a href='\bijou/UnitTests/'>Unit Tests</a>
+<a href='\bijou/Search/'>Search</a>
 
         </div>
       </header>
 
       <main>
-          <h1>Unit Tests</h1>
-
-<p>To run the unit tests, simply click on the following link:</p>
-<p><a href="/bijou/unittests.html" class="button semi-wide" target="_blank">Unit Tests</a></p>
-
-<p class="note">Make sure you ran "make all" on the command line.</p>
-
-
+          
+<h1> Unit Tests </h1>
+<p>To update/run the unit test results
+</p>
+<ul><li> make ut (in projects)</li><li> make www (in docker)</li>
+</ul><div id='test-results'>	<li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestAppendFolder  - FileUtils.AppendFolder() 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestAppendFolder  - FileUtils.AppendFolder() 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestAppendFolder  - FileUtils.AppendFolder() 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestAppendFolder  - FileUtils.AppendFolder() 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBuildRelativePath  - FileUtils.BuildRelativePath(0) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBuildRelativePath  - FileUtils.BuildRelativePath(1) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBuildRelativePath  - FileUtils.BuildRelativePath(2) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBuildRelativePath  - FileUtils.BuildRelativePath(3) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBuildRelativePath  - FileUtils.BuildRelativePath(-1) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestStripPrefix  - BijouUtils.StripPrefix(Gaga) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestStripPrefix  - BijouUtils.StripPrefix(01.Gaga) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestStripPrefix  - BijouUtils.StripPrefix(01.Gaga/02.Gogo) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestStripPrefix  - BijouUtils.StripPrefix(01.Gaga/Gogo) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestStripPrefix  - BijouUtils.StripPrefix(Gaga/Gogo) 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBuildHomeLinkUrl  -  NavUtils.BuildHomeLinkUrl - Static Version 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.IsNavigation for TestFolder 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.IsNavigation for 00.TestFolder 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.IsNavigation for 01.TestFolder 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.IsInvisible for 00.TestFolder 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.IsInvisible for 01.TestFolder 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.StripPrefix 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestBijouUtils  - BijouUtils.StripPrefix 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  - LinkUtils.StripExtension 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  - LinkUtils.ParseLinkName 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  - LinkUtils.ParseLinkName 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  - LinkUtils.ParseLinkName 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  - LinkUtils.ParseLinkName 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  - LinkUtils.ParseLinkName 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  -  LinkUtils.BuildLinkUrl - Level 0 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  -  LinkUtils.BuildLinkUrl - Leve1 1 
+</li><li>
+   <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  -  LinkUtils.BuildLinkUrl - Level 2 
+</li></div>
       </main>
 
       <footer>
