@@ -1,0 +1,256 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/**************************
+ * Color palette
+ * link- color: lightskyblue;
+ **************************/
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url('../font/fontawesome-webfont.ttf');
+}
+
+.fontawesome {
+	font-family: fontawesome;
+}
+
+.desktop-only {
+	display: block;
+}
+
+.phone-only {
+	display: none;
+}
+
+.browsehappy { position: absolute; top: 1em; background-color: rgba(22,22,22,.9); padding: 1em; border-radius: .3em; font-size:.8em;}
+
+html {color: #eee; background: url(../img/website/background.png) no-repeat top left #000;}
+body {font-family:arial,sans-serif; width: 90%; max-width: 960px; margin: 0.5em auto;  background-color: rgba(22,22,22,.9); color:#fff;  border-radius: .3em; padding-top: 1em;}
+main {min-height: 400px;}
+header{}
+header h1 { font-size: 2.5em; margin-bottom: 0;}
+header h1 a {text-decoration: none; }
+
+div#wrapper{ padding: 1em; background-color: #222; min-height: 400px;}
+
+footer{ padding: 1em; font-style: italic; text-align: right;}
+footer p a {font-family: Orbitron; font-style: normal; text-decoration: none;}
+footer p a:hover {text-decoration: underline;}
+
+h1,h2,h3{font-family: Orbitron;}
+h1 {font-size: 2.2em; padding: .2em; }
+h2 {font-size: 2.0em; padding: .2em 0; }
+h3 {font-size: 1.8em; padding: .2em 0; }
+
+p {margin: .3em 0 1em 0;}
+a {text-decoration: underline; color: #eee;}
+a:hover {color: #fff;}
+ul { margin: 1em 0; }
+legend {font-size: 2em; margin-bottom: .5em}
+form { padding-bottom: 1em; }
+form .properties label { float: left; width: 8em; }
+form .methods span {width: 8em;}
+form .methods input:before { contents:'<span>&nbsp</span>';}
+ul { margin-left: 2em;list-style-type: circle;}
+ol {margin-left: 2em;}
+
+.box {border: 1px solid #eee; margin: 1em 0; padding: 0 1em; border-radius: 6px;}
+
+div.red {color:red; padding: 5px}
+div.blu {color:blue; padding: 5px;}
+
+#breadcrumb { clear: left; width: 100%;}
+
+#search-box { width: 100%;}
+
+ul.bullet ul {
+	margin-top: 0;
+}
+
+table {
+	margin: .5em 0;
+	width: 100%;
+}
+
+table caption {
+	font-size: 2em;
+	padding: .5em 0;
+	text-align: left;
+}
+
+table th  {
+	font-weight: bold;
+	font-size: 1.1em;
+	padding: .5em;
+	background-color: #000;
+}
+
+table th, table td  {
+	text-align: left;
+	padding: .5em .7em;
+}
+
+table tr:nth-child(odd) {
+	background-color: #444;
+}
+
+a b.group {
+	color: lightskyblue;
+}
+
+.button.active {
+	background-color: lightskyblue;
+}
+
+.clear {
+	clear: both; /* to clear the floating divs */
+}
+
+/**************************
+ * Static notice 
+ **************************/
+.notice { 
+	display: none;
+	font-size: .7em;
+	font-style: italic;
+}
+
+.static .notice { 
+	display: inline;
+}
+
+/**************************
+ * Substitution page
+ **************************/
+.value {
+	color: lightskyblue;
+	font-size: .8em;
+	font-style: italic;
+}
+
+/**************************
+ * Undo Zurb Foundation
+ **************************/
+table tbody tr:nth-child(even) {
+    background-color: #555;
+}
+
+code {
+	color: lightskyblue;
+	background-color: inherit;
+	border-left: 4px solid white;
+}
+
+blockquote {
+	color: lightskyblue;
+	padding: 10px 5px;
+	border-radius: 5px;
+	background-color: #333;
+}
+
+
+
+/**************************
+ * Skeleton hack  
+ **************************/
+.four { 
+	width:33%;
+}
+
+/**************************
+ * General Stuff 
+ **************************/
+a.button {
+	display: block;
+	text-decoration: none;
+}
+
+.wide {
+	width: 100%;
+}
+
+.semi-wide {
+	width: 50%;
+}
+
+.note { 
+	font-size: .8em;
+	font-style: italic;
+}
+
+.disabled {
+	opacity: .2;
+}
+
+
+table tr:nth-child(even) {
+	background-color: #666;
+}
+
+dl {
+	padding: .5em 0 1em 0;
+}
+
+dt {
+	font-size: 1.4em;
+}
+
+dd {
+	margin: .5em 1em;
+	font-style: italic;
+}
+
+#reference b, #reference dt {
+	color: lightskyblue;
+}
+
+.old {
+ text-decoration:line-through;
+}
+
+.hidden {
+	display: none;	
+}
+
+#hierarchy b.current {
+	color: lightskyblue;
+}
+
+
+
+@media (max-width: 400px) {
+	body {font-size: 10px;}
+	header h1 { font-size: 1.5rem;}
+	h1,h2,h3 { font-size: .7rem;}
+	.phone-only{ display: block;}
+	.desktop-only {	display: none;}
+}
+
+@media (max-height: 500px) {
+	body {font-size: 13px;}
+	header h1 { font-size: 1.5em;}
+	h1,h2,h3 { font-size: 1.5em;}
+}
+
+
+/***************************
+ * Blink animation
+ **************************/
+@keyframes fade {
+    from { opacity: 1.0; }
+    30% { opacity: 0.3; }
+    to { opacity: 1.0; }
+}                                                                                                                                                                                                                                  
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    30% { opacity: 0.3; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+  animation:fade 2000ms infinite;
+  -webkit-animation:fade 2000ms infinite;
+}
+

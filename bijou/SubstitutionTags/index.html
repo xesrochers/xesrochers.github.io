@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bijou - Substitution Tags</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Orbitron' />    
+    <link rel="stylesheet" href="/bijou/css/skeleton.css" />
+    <link rel="stylesheet" href="/bijou/css/lightbox.css" />
+    <link rel="stylesheet" href="/bijou/css/masonry.css" />
+    <link rel="stylesheet" href="/bijou/css/slider.css" />
+    <link rel="stylesheet" href="/bijou/css/gallery.css" />
+    <link rel="stylesheet" href="/bijou/css/link.css" />
+    <link rel="stylesheet" href="/bijou/css/topnav.css" />
+    <link rel="stylesheet" href="/bijou/css/style.css" />
+
+    <script src="/bijou/js/jquery.min.js"></script>
+    <script src="/bijou/js/lightbox.min.js"></script>
+    <script src="/bijou/js/masonry.min.js"></script>
+    <script src="/bijou/js/class.Slider.js"></script>
+    <script src="/bijou/js/class.SearchBox.js"></script>
+    <script src="/bijou/js/class.SearchBox.js"></script>
+    <script src="/bijou/js/class.TopNav.js"></script>
+    <script src="/bijou/js/class.Filter.js"></script>
+    <script src="/bijou/js/class.Lightbox.js"></script>
+    <script src="/bijou/js/class.Masonry.js"></script>
+  </head>
+  <body class="html bijou-substitutiontags-html ">
+    <div id="wrapper">
+      <header>
+        <h1><a href='/bijou/'>Bijou</a><span class='notice'> - local</span></h1>
+        <div id='topnav' class='inline'>
+          <a class='hamburger' href='#'>=</a>
+<a href='/bijou/HowItWorks/'>How It Works</a>
+<a href='/bijou/Reference/'>Reference</a>
+<a href='/bijou/SubstitutionTags/'>Substitution Tags</a>
+<a href='/bijou/Tests/'>Tests</a>
+<a href='/bijou/UnitTests/'>Unit Tests</a>
+<a href='/bijou/Search/'>Search</a>
+
+        </div>
+      </header>
+
+      <main>
+          <div id="tags">
+	<h2>Substitution Tags</h2>
+	<dl>
+		<dt>&#123;$root&#125;</dt>
+		<dd>Used inject the root folder of the site (for styles &amp; scripts)</dd>
+		<dd class='value'>Current value: <span>/bijou</span></dd>
+
+		<dt>&#123;$home&#125;</dt>
+		<dd>Used to inject the home page link of the site</dd>
+		<dd class='value'>Current value: <span>/bijou/</span></dd>
+
+		<dt>&#123;$title&#125;</dt>
+		<dd>Used inject the page title (built from the folder name)</dd>
+		<dd class='value'>Current value: <span>Substitution Tags</span></dd>
+
+		<dt>&#123;$static&#125;</dt>
+		<dd>Used to inject the 'static' CCS class when the -i option is selected</dd>
+		<dd class='value'>Current value: <span></span></dd>
+
+		<dt>&#123;$blimp&#125;</dt>
+		<dd>Used to inject some text (or whatever) in the page from the command line (via the -b option)</dd>
+		<dd class='value'>Current value: <span></span></dd>
+
+		<dt>&#123;$url&#125;</dt>
+		<dd>Current page URL</dd>
+		<dd class='value'>Current value: <span>/bijou/SubstitutionTags/SubstitutionTags.html</span></dd>
+
+		<dt>&#123;$level&#125;</dt>
+		<dd>Used to inject the page level (for CSS styling options)</dd>
+		<dd class='value'>Current value: <span>1</span></dd>
+
+		<dt>&#123;$file&#125;</dt>
+		<dd>Used to identify the file associated to the page</dd>
+		<dd class='value'>Current value: <span>SubstitutionTags.html</span></dd>
+
+		<dt>&#123;$path&#125;</dt>
+		<dd>Used to identify the path to the page</dd>
+		<dd class='value'>Current value: <span>.../../../xesrochers.github.io/bijou/SubstitutionTags</span></dd>
+
+		<dt>&#123;$processor&#125;</dt>
+		<dd>Used to identify the page processor</dd>
+		<dd class='value'>Current value: <span>html</span></dd>
+
+		<dt>&#123;$class&#125;</dt>
+		<dd>Used to generate a CSS class based on the processor</dd>
+		<dd class='value'>Current value: <span>bijou-substitutiontags-html</span></dd>
+
+		<dt>&#123;$date&#125;</dt>
+		<dd>Current date (yyyy/mm/dd)</dd>
+		<dd class='value'>Current value: <span>2025-11-08</span></dd>
+
+		<dt>&#123;$time&#125;</dt>
+		<dd>Current time (hh:mm)</dd>
+		<dd class='value'>Current value: <span>11:52</span></dd>
+
+		<dt>&#123;$gmt&#125;</dt>
+		<dd>Current GMT datetime (yyyymmddThhmmssZ) </dd>
+		<dd class='value'>Current value: <span>20251108T115239Z</span></dd>
+
+		<dt>&#123;$image&#125;</dt>
+		<dd>Used inject the corresponding image filename (strictly used with the .pics processor)</a></dd>
+		<dd class='value'>Current value: <span>{$image}</span></dd>
+
+		<dt>&#123;$topnav&#125;</dt>
+		<dd>Used inject the top navigation menu structure</dd>
+		<dd class='value'>Current value: <span>not displayed</span></dd>
+
+		<dt>&#123;$breadcrumb&#125;</dt>
+		<dd>Used inject the breadcrumb</dd>
+		<dd class='value'>Current value: <span>not displayed</span></dd>
+
+		<dt>&#123;$searchbox&#125;</dt>
+		<dd>Used inject the search box tied to the FastLiveFilter (see below).  Will filter contents of $('.searchdata-js')</dd>
+		<dd class='value'>Current value: <span>not displayed</span></dd>
+
+		<dt>&#123;$searchdata&#125;</dt>
+		<dd>Used inject the search data in a search page. Designed for <a href='http://anthonybush.com/projects/jquery_fast_live_filter/'>jquery.fastlivefilter.js</a></dd>
+		<dd class='value'>Current value: <span>not displayed</span></dd>
+
+		<dt>&#123;$children&#125;</dt>
+		<dd>Used inject links of the direct children of the page.</dd>
+		<dd class='value'>Current value: <span>not displayed</span></dd>
+
+		<dt>&#123;$sections&#125;</dt>
+		<dd>Used inject accumulated sections in the file</dd>
+		<dd class='value'>Current value: <span>not displayed</span></dd>
+
+	</dl>
+
+</div>
+
+      </main>
+
+      <footer>
+        <div class='row'>
+          <div class='twelve columns'>
+            <p>Powered by <a href='https://github.com/xesroche/bijou' target='_blank'>Bijou</a></p>
+          </div>
+        </div>
+      </footer>
+  </div>
+  </body>
+</html>
+

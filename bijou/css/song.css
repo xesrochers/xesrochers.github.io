@@ -1,0 +1,328 @@
+/**************************
+ * Song processor styles
+ **************************/
+.button {
+	display: inline-block;
+	background-color: #111;
+	border: 1px lightskyblue solid;
+	border-radius: 10px;
+}
+
+.button:hover {
+	color: black;
+	background-color: #888;
+	transition: background-color 2s;
+}
+
+
+/**************************
+ * TabSlide 
+ **************************/
+.tab-handle {
+	position: fixed;
+	top: 5em;
+	right: 0px;
+	text-decoration: none;
+	background-color: lightskyblue;
+	border-radius: 3px 0 0 3px;
+	border: 1px solid lightskyblue;
+	padding: 20px 7px 20px 7px;
+	color: #000;
+	font-weight: bold;
+    z-index: 210;	
+}
+
+.tab-handle .tiny {
+	font-size: .5em;
+}
+
+.tab-slide {
+	position: fixed;
+	top: 5em;
+	right:0;
+	width: 250px;
+	padding: 20px;
+	background-color: #000;
+	border: 1px solid lightskyblue;
+	font-size: .8em;
+    z-index: 200;	
+}  
+
+.tab-slide h2 {
+	padding-bottom: 10px !important;
+	color: lightskyblue;
+}
+
+.tab-slide label {
+	color: #aaa;
+}
+
+.tab-slide div {
+	margin: 0 0 .5em 0;
+}
+
+.tab-slide input{
+	width: 100%;
+	margin-bottom: .5em;
+}  
+
+.tab-slide input[type=checkbox]{
+	width: 1em;
+	margin-right: .5em;
+	background-color: skyblue;
+}  
+
+.tab-slide .number {
+	color: lightskyblue;
+}
+
+.tab-slide .transpose {
+	width:  100%;
+	height: 1.5em;
+	margin-top: 1em;
+}
+
+.tab-slide .transpose a {
+	display: inline-block;
+	width: 2em;
+	font-weight: bold;
+	font-size: 1em;
+	margin: 0;
+	border: 2px solid lightskyblue;
+	padding: 0px;
+	border-radius: 3px;
+}
+
+.tab-slide .transpose #key {
+	display: inline-block;
+	width: 1em;
+}
+
+/**************************
+ * Song Controls 
+ **************************/
+.controls {
+	position: fixed;
+	bottom: 0;
+	right: 2%;
+	width: 96%;
+}
+
+.controls .button {
+	width: 100%;
+	color: lightskyblue;
+	border-color: lightskyblue;
+	background-color: #000;
+}
+
+.controls .button i {
+	font-size: 150%;
+}
+
+.controls #refresh, .controls #top, .controls #back { 
+	display: none; 
+}
+
+.controls .play { 
+	margin-bottom: 4px; 
+}
+
+.play {
+	color: green;
+}
+
+.play.scroll {
+	color: inherit;
+}
+
+.play.snoozing {
+	color: inherit;
+}
+
+.play.disabled {
+	color: grey;
+}
+
+.disabled {
+	opacity: .2;
+}
+
+.gig {
+	padding-bottom: 3em;
+}
+
+/**************************
+ * Metronome
+ **************************/
+hr.metronome {
+	color: lightskyblue;
+	background-color: lightskyblue;
+	position: fixed;
+	bottom: 0em;
+	right: 2%;
+	width: 96%;
+	height: 5px;
+}
+
+
+.song h2 {
+
+}
+
+.song p {
+	font-family: "Courier New", Courier, monospace;
+}
+
+.song .intro {
+}
+
+.song .chord {
+	color: lightskyblue;
+	font-size: .9em;
+	font-style: italic;
+	white-space: pre;
+}
+
+.song p.lyrics {
+	color: bisque;
+}
+
+.song .voix {
+	font-style: italic;
+}
+
+.song .voix2 {
+	color: white;
+}
+
+.song .voix3 {
+	color: white;
+}
+
+.song .play.scroll {
+	color: inherit;
+}
+ 
+.song .play.snoozing {
+	color: inherit;
+}
+
+.controls a.play.button {
+	background-color: transparent;
+}
+
+.song .play:hover {
+	color: inherit;
+}
+
+
+/**************************
+ * Song tablature
+ **************************/
+
+.song h2 {
+    padding: 0;
+}
+
+/**************************
+ * Config-block (sleep/speed)
+ **************************/
+.config {
+	display: block;
+	width: 8em;
+	border: 1px dotted #fff;
+	border-radius: 3px;
+	margin: 5px 5px 5px 0;
+	padding: 5px;
+	font-size: .6em;
+	font-style: italic;
+}
+
+/**************************
+ * Harmony-block
+ **************************/
+.harmony-block {
+	padding-bottom: 1em;
+}
+
+.harmony-block .harmony {
+	color: lightskyblue;
+	margin: .2em 0;
+}
+
+.harmony-block .harmony span {
+	display: inline-block;
+	border-radius: 2px;
+	padding: .2em .3em;
+	background-color: #333;
+	margin-right: .1em;
+	font-style: italic;
+	font-size: .8em;
+}
+
+.harmony-block .harmony span i {
+	display: inline-block;
+	padding: 0 2px;
+}
+
+/**************************
+ * Tablature-block
+ **************************/
+
+.tablature-block {
+	position: relative;
+	clear: both;
+	float: none;
+	overflow: auto; /*This is what we added!*/
+}
+
+.tablature-block .tablature-block:after { /* clear float recepie */
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.tablature-block .tablature {
+	color: lightskyblue;
+	font-size: .9em;
+	font-style: italic;
+	font: courier;
+	padding: 1em 2em 1em 0;
+	float: left;
+}
+
+.tablature-block .tablature h4{
+	font-weight: bold;
+	margin-bottom: .5em;
+}
+
+.tablature-block .tablature .small{
+	font-size: .8em;
+}
+
+.tablature-block .tablature .neck {
+	color: #555;
+	font-family: courier, monospace;
+	padding: 0 0 1px 0;
+	margin: 0;
+	white-space: pre;
+	font-style: normal;
+}
+
+.tablature-block .tablature .finger {
+	color: lightskyblue;
+}
+
+
+.song .note {
+	font-size: 1.1em;
+}
+
+b.group {
+	color: lightskyblue;
+}
+
+i.zzz, i.zzz b.group {
+	font-style: italic;
+	color: #444;
+}

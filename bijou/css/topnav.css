@@ -1,0 +1,45 @@
+/* Top Navigation */
+
+
+
+#topnav { 
+	width: 100%;
+	overflow: hidden;
+	background-color: black;
+	padding: 0px;
+	margin: 10px 0;
+}
+
+#topnav a {
+	float: left;
+	display: block;
+	padding: 1em .5em; 
+	text-decoration: none;
+	margin-left: .5em
+}
+
+#topnav a:hover {
+	background-color: #555
+}
+
+#topnav .hamburger {
+	display: none;
+}
+
+@media (max-width: 700px) {
+	#topnav a {
+		float: none;
+		display: none;
+	}
+
+	#topnav.expand  a {
+		display: block;
+	}
+
+	#topnav .hamburger { 
+		display: block;
+		width: 100%;
+	}
+
+}
+

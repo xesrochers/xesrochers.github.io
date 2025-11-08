@@ -1,0 +1,87 @@
+/*******************************************
+ * Gallery Control
+ ******************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+
+#gallery {
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */  
+}
+
+#gallery .item {
+  display: table-cell;
+  padding: 6px;
+  float: left;
+  width: 24.99999%;
+  font-size: .8em;
+  overflow: hidden;
+}
+
+#gallery .box {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#gallery .box:hover {
+  border: 1px solid #777;
+}
+
+#gallery img.thumb {
+    width:100%;
+    height: auto;
+}
+
+#gallery a {
+  position: relative;
+  display: inline-block;
+}
+
+#gallery .state {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: white;
+  background-color: rgb(0,0,0, .5);
+  padding: 5px;
+}
+
+#gallery .summary {
+  padding: .5em .5em 1em .5em;
+  height: 8em;
+}
+
+#gallery h2 {
+  font-size: 1.5em;
+}
+
+#gallery p {
+  padding: 0 3px;
+  margin: 0;
+}
+
+#gallery .clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 700px) {
+  #gallery .item {
+    width: 32.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #gallery .item {
+    width: 49.99999%;
+  }
+}
+
