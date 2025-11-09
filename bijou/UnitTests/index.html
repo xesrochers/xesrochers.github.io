@@ -25,6 +25,7 @@
     <script src="\bijou/js/class.Filter.js"></script>
     <script src="\bijou/js/class.Lightbox.js"></script>
     <script src="\bijou/js/class.Masonry.js"></script>
+    <script src="\bijou/js/class.UnitTests.js"></script>
   </head>
   <body class="md bijou-unittests ">
     <div id="wrapper">
@@ -48,7 +49,9 @@
 <p>To update/run the unit test results
 </p>
 <ul><li> make ut (in projects)</li><li> make www (in docker)</li>
-</ul><div id='unittests'><ul id='results'>	<li>
+</ul><div id='unittests'>
+<h3> Summary</h3><ul id='summary'>	<li><span class='badge pass'>pass</span><span id='js-pass-count'>none</span></li>	<li><span class='badge fail'>fail</span><span id='js-fail-count'>none</span></li>	<li><span class='badge skip'>skip</span><span id='js-skip-count'>none</span></li></ul>
+<h3> Results</h3><ul id='results'>	<li>
    <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestAppendFolder  - FileUtils.AppendFolder() 
 </li><li>
    <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestAppendFolder  - FileUtils.AppendFolder() 
@@ -110,8 +113,7 @@
    <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  -  LinkUtils.BuildLinkUrl - Leve1 1 
 </li><li>
    <span class="badge pass" title="elapsed 00:00:00.00">pass</span>TestLinkUtils  -  LinkUtils.BuildLinkUrl - Level 2 
-</li></ul>
-<h3> Use Javascript</h3><ul id='summary'>	<li><span class='badge pass'>pass</span>99</li>	<li><span class='badge fail'>fail</span>99</li>	<li><span class='badge skip'>skip</span>99</li></ul></div>
+</li></ul></div>
       </main>
 
       <footer>
