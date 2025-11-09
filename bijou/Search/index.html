@@ -34,11 +34,10 @@
         <h1><a href='\bijou/'>Bijou</a><span class='notice'> - local</span></h1>
         <div id='topnav' class='inline'>
           <a class='hamburger' href='#'>=</a>
-<a href='\bijou/HowItWorks/'>How It Works</a>
-<a href='\bijou/Reference/'>Reference</a>
-<a href='\bijou/SubstitutionTags/'>Substitution Tags</a>
+<a href='\bijou/Home/'>Home</a>
+<a href='\bijou/Options/'>Options</a>
+<a href='\bijou/Tags/'>Tags</a>
 <a href='\bijou/Tests/'>Tests</a>
-<a href='\bijou/UnitTests/'>Unit Tests</a>
 <a href='\bijou/Search/'>Search</a>
 
         </div>
@@ -84,56 +83,59 @@
     Well this is really experimental code. Use at you own risk.  Released under the MIT LICENSE.
     Copyright Sly Desrochers.
 
-</span></li><li><a href='\bijou/HowItWorks/HowItWorks.html'>How It Works</a><span class='hidden'>
-      {$title}
-      Well, it's pretty simple. Running bijou.exe simply recursively reads the content/ folder applies matching files from the templates/ folder and writes out the result in the site/ folder
-      
-            content/
-            	
-            		1.Menu1/  - Folders prefixed with numbers create the navigation hierarchy
-            			foo.html - Matches to the generic HTML template.
-            		
-                        2.FileList/ 
-                              file1.html - multiple files of the same template create a &lt;ul&gt; list 
-                              file2.html
-                              file3.html
-                        
-                        3.SectionList/
-                              _section1.html - (underscore prefixed files) assembles the file sections in one file 
-                              _section2.html
-                              _section3.html
-                        
-                        0.Invisible/ - Folders prefixed with '0.' are processed by the template engine but are excluded from the navigation hierarchy.
-                              default.rss - Matches to the generic RSS template.. 
-                        
-            		extra/  - Folders NOT prefixed with numbers are simply copied (and not processed via templates).
-            			logo.png
-            			main.js
-            			styles.css
-            		
-            	
-            
-            templates/ - Template files contain common markup repeated through the site and substitution placeholders for menu and content items.
-            	
-            		default.html - HTML generic template (simple substitution of body content)
-            		default.csv - CSV generic template (converts the CSV file to a table)
-            		default.md - Markdown generic template (incomplete Markdown implementation)
-                        default.rss - RSS Feed generic template (also produces an HTML version for the site)
-                        default.ics - iCalendar generic template (also produces an HTML version for the site)
-                        default.pics - picture generic template
-                        default.song - song generic template
-                        default.rcp - recipe generic template
-                        default.slides - presentation slide generic template
-            	
-            
-            site/
-            	
-            		The end result. This is where your static HTML site is created.
-            	
-            
-      
+</span></li><li><a href='\bijou/Home/HowItWorks.html'>How It Works</a><span class='hidden'>
 
-</span></li><li><a href='\bijou/Reference/Reference.html'>Reference</a><span class='hidden'>
+   {$title}
+   Well, it's pretty simple. Running bijou.exe simply recursively reads the content/ folder applies matching files from the templates/ folder and writes out the result in the www/ folder
+
+   
+
+   
+      content/
+         
+            1.Menu1/  - Folders prefixed with numbers create the navigation hierarchy
+               foo.html - Matches to the generic HTML template.
+       	
+            2.FileList/
+               file1.html - multiple files of the same template create a &lt;ul&gt; list 
+               file2.html
+               file3.html
+            
+            3.SectionList/
+               _section1.html - (underscore prefixed files) assembles the file sections in one file 
+               _section2.html
+               _section3.html
+            
+            0.Invisible/ - Folders prefixed with '0.' are processed by the template engine but are excluded from the navigation hierarchy.
+               default.rss - Matches to the generic RSS template.. 
+            
+            extra/  - Folders NOT prefixed with numbers are simply copied (and not processed via templates).
+   		   logo.png
+		   main.js
+		   styles.css
+            
+         
+      templates/ - Template files contain common markup repeated through the site and substitution placeholders for menu and content items.
+         
+            default.html - HTML generic template (simple substitution of body content)
+		default.csv - CSV generic template (converts the CSV file to a table)
+		default.md - Markdown generic template (incomplete Markdown implementation)
+            default.rss - RSS Feed generic template (also produces an HTML version for the site)
+            default.ics - iCalendar generic template (also produces an HTML version for the site)
+            default.pics - picture generic template
+            default.song - song generic template
+            default.rcp - recipe generic template
+            default.slides - presentation slide generic template
+         
+      
+      www/
+    	   
+            The end result. This is where your static HTML site is created.
+         
+      
+   
+
+</span></li><li><a href='\bijou/Options/Reference.html'>Reference</a><span class='hidden'>
 	{$title}
 	Command Line Options
 	
@@ -164,7 +166,7 @@
 	
 
 
-</span></li><li><a href='\bijou/SubstitutionTags/SubstitutionTags.html'>Substitution Tags</a><span class='hidden'>
+</span></li><li><a href='\bijou/Tags/SubstitutionTags.html'>Substitution Tags</a><span class='hidden'>
 	{$title}
 	
 		&#123;$root&#125;
@@ -264,7 +266,14 @@
 	
 
 
-</span></li><li><a href='\bijou/Tests/Hierarchy/Hierarchy.html'>Hierarchy</a><span class='hidden'>
+</span></li><li><a href='\bijou/Tests/UnitTests/'>index</a><span class='hidden'>
+ Unit Tests 
+To update/run the unit test results
+
+ make ut (in projects) make www (in docker)
+
+ Summary	passnone	failnone	skipnone
+ Results	{$ut}</span></li><li><a href='\bijou/Tests/Hierarchy/Hierarchy.html'>Hierarchy</a><span class='hidden'>
       Hierarchy Tests
       This file is there fo test out the menu hierarchy
       
@@ -589,14 +598,7 @@ function helloworld() {
 
 {$breadcrumb}
 
-</span></li><li><a href='\bijou/UnitTests/'>index</a><span class='hidden'>
- Unit Tests 
-To update/run the unit test results
-
- make ut (in projects) make www (in docker)
-
- Summary	passnone	failnone	skipnone
- Results	{$ut}</span></li>
+</span></li>
 </div>
 
       </main>

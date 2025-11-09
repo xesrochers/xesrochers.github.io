@@ -5,6 +5,9 @@
 
 #unittests li { 
 	padding: 4px 0;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;
 }
 
 #unittests .badge { 

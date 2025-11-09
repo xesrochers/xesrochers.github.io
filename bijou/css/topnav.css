@@ -26,7 +26,7 @@
 	display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 400px) {
 	#topnav a {
 		float: none;
 		display: none;
@@ -36,9 +36,12 @@
 		display: block;
 	}
 
-	#topnav .hamburger { 
+	#topnav .hamburger {
 		display: block;
 		width: 100%;
+		text-decoration: underline;
+		text-underline-offset: 1px;
+		text-underline-position: 1;
 	}
 
 }

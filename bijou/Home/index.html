@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bijou - Home</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Orbitron' />    
+    <link rel="stylesheet" href="\bijou/css/unittests.css" />
+    <link rel="stylesheet" href="\bijou/css/skeleton.css" />
+    <link rel="stylesheet" href="\bijou/css/lightbox.css" />
+    <link rel="stylesheet" href="\bijou/css/masonry.css" />
+    <link rel="stylesheet" href="\bijou/css/slider.css" />
+    <link rel="stylesheet" href="\bijou/css/gallery.css" />
+    <link rel="stylesheet" href="\bijou/css/link.css" />
+    <link rel="stylesheet" href="\bijou/css/topnav.css" />
+    <link rel="stylesheet" href="\bijou/css/style.css" />
+
+    <script src="\bijou/js/jquery.min.js"></script>
+    <script src="\bijou/js/lightbox.min.js"></script>
+    <script src="\bijou/js/masonry.min.js"></script>
+    <script src="\bijou/js/class.Slider.js"></script>
+    <script src="\bijou/js/class.SearchBox.js"></script>
+    <script src="\bijou/js/class.SearchBox.js"></script>
+    <script src="\bijou/js/class.TopNav.js"></script>
+    <script src="\bijou/js/class.Filter.js"></script>
+    <script src="\bijou/js/class.Lightbox.js"></script>
+    <script src="\bijou/js/class.Masonry.js"></script>
+    <script src="\bijou/js/class.UnitTests.js"></script>
+  </head>
+  <body class="html bijou-home-html ">
+    <div id="wrapper">
+      <header>
+        <h1><a href='\bijou/'>Bijou</a><span class='notice'> - local</span></h1>
+        <div id='topnav' class='inline'>
+          <a class='hamburger' href='#'>=</a>
+<a href='\bijou/Home/'>Home</a>
+<a href='\bijou/Options/'>Options</a>
+<a href='\bijou/Tags/'>Tags</a>
+<a href='\bijou/Tests/'>Tests</a>
+<a href='\bijou/Search/'>Search</a>
+
+        </div>
+      </header>
+
+      <main>
+          <div id="home">
+
+   <h2>Home</h2>
+   <p>Well, it's pretty simple. Running bijou.exe simply recursively reads the <b>content/</b> folder applies matching files from the <b>templates/</b> folder and writes out the result in the <b>www/</b> folder</p>
+
+   <hr/>
+
+   <ul class='folder'>
+      <li><b>content/</b>
+         <ul>
+            <li><b>1.Menu1/</b>  - Folders prefixed with numbers create the navigation hierarchy
+               <ul><li>foo.html - Matches to the generic HTML template.</li></ul>
+       	</li>
+            <li><b>2.FileList/</b>
+               <ul><li>file1.html - multiple files of the same template create a &lt;ul&gt; list </li></ul>
+               <ul><li>file2.html</li></ul>
+               <ul><li>file3.html</li></ul>
+            </li>
+            <li><b>3.SectionList/</b>
+               <ul><li>_section1.html - (underscore prefixed files) assembles the file sections in one file </li></ul>
+               <ul><li>_section2.html</li></ul>
+               <ul><li>_section3.html</li></ul>
+            </li>
+            <li><b>0.Invisible/</b> - Folders prefixed with '0.' are processed by the template engine but are excluded from the navigation hierarchy.
+               <ul><li>default.rss - Matches to the generic RSS template.. </li></ul>
+            </li>
+            <li><b>extra/</b>  - Folders NOT prefixed with numbers are simply copied (and not processed via templates).
+   		   <ul><li>logo.png</li></ul>
+		   <ul><li>main.js</li></ul>
+		   <ul><li>styles.css</li></ul>
+            </li>
+         </ul>
+      <li><b>templates/</b> - Template files contain common markup repeated through the site and substitution placeholders for menu and content items.
+         <ul>
+            <li>default.html - HTML generic template (simple substitution of body content)</li>
+		<li>default.csv - CSV generic template (converts the CSV file to a table)</li>
+		<li>default.md - Markdown generic template (incomplete Markdown implementation)</li>
+            <li>default.rss - RSS Feed generic template (also produces an HTML version for the site)</li>
+            <li>default.ics - iCalendar generic template (also produces an HTML version for the site)</li>
+            <li>default.pics - picture generic template</li>
+            <li>default.song - song generic template</li>
+            <li>default.rcp - recipe generic template</li>
+            <li>default.slides - presentation slide generic template</li>
+         </ul>
+      </li>
+      <li><b>www/</b>
+    	   <ul>
+            <li>The end result. This is where your static HTML site is created.</li>
+         </ul>
+      </li>
+   </ul>
+</div>
+
+      </main>
+
+      <footer>
+        <div class='row'>
+          <div class='twelve columns'>
+            <p>Powered by <a href='https://github.com/xesroche/bijou' target='_blank'>Bijou</a></p>
+          </div>
+        </div>
+      </footer>
+  </div>
+  </body>
+</html>
+
