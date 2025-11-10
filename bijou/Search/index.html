@@ -134,6 +134,32 @@
    www/ folder
    The end result. This is where your static HTML site is created.
 
+   
+   
+   Notes on the Section processor
+   The SectionProcessor is executed if no matching processor is kicked. The sections processor works using the following:
+
+   content/_filename.ext
+   
+      ttl:Title One
+      img:\bijou/img/picture1.jpg
+      -----------------------------
+      ttl:Title Two
+      img:\bijou/img/picture1.jpg
+   
+
+   content/index.md
+   
+      # Great Stuff
+      &lt;ul&gt;
+         {$ext}
+      &lt;/ul&gt;
+   
+
+   template/default.ext
+   
+      &lt;li&gt;{$ttl} - {$img}&lt;/li&gt;
+   
 
 </span></li><li style='display:none'><a href='\bijou/Options/Reference.html'>Reference</a><span class='hidden'>
 	Command Line Options

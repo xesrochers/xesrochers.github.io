@@ -95,6 +95,32 @@
    <h2><b>www/</b> folder</h2>
    <p class='note'>The end result. This is where your static HTML site is created.</p>
 
+   <hr/>
+   
+   <h2>Notes on the <b>Section</b> processor</h2>
+   <p class='note'>The SectionProcessor is executed if no matching processor is kicked. The sections processor works using the following:</p>
+
+   <h3><b>content/</b>_filename.<b>ext</b></h3>
+   <pre><code>
+      ttl:Title One
+      img:\bijou/img/picture1.jpg
+      -----------------------------
+      ttl:Title Two
+      img:\bijou/img/picture1.jpg
+   </code></pre>
+
+   <h3><b>content/</b>index.md</h3>
+   <pre><code>
+      # Great Stuff
+      &lt;ul&gt;
+         {$ext}
+      &lt;/ul&gt;
+   </code></pre>
+
+   <h3><b>template/</b>default.<b>ext</b></h3>
+   <pre><code>
+      &lt;li&gt;<b>{$ttl}</b> - <b>{$img}</b>&lt;/li&gt;
+   </code></pre>
 </div>
 
       </main>

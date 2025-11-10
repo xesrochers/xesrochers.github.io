@@ -153,6 +153,12 @@ ol {
 	margin-left: 2em;
 }
 
+pre, pre > code {
+	background-color: #333;
+	margin: 0;
+	padding: 0;
+}
+
 .box {
 	border: 1px solid #eee;
 	margin: 1em 0; 
