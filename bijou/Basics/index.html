@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bijou - Basics</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Orbitron' />    
+    <link rel="stylesheet" href="\bijou/css/unittests.css" />
+    <link rel="stylesheet" href="\bijou/css/skeleton.css" />
+    <link rel="stylesheet" href="\bijou/css/lightbox.css" />
+    <link rel="stylesheet" href="\bijou/css/masonry.css" />
+    <link rel="stylesheet" href="\bijou/css/slider.css" />
+    <link rel="stylesheet" href="\bijou/css/gallery.css" />
+    <link rel="stylesheet" href="\bijou/css/link.css" />
+    <link rel="stylesheet" href="\bijou/css/topnav.css" />
+    <link rel="stylesheet" href="\bijou/css/style.css" />
+
+    <script src="\bijou/js/jquery.min.js"></script>
+    <script src="\bijou/js/lightbox.min.js"></script>
+    <script src="\bijou/js/masonry.min.js"></script>
+    <script src="\bijou/js/class.Slider.js"></script>
+    <script src="\bijou/js/class.SearchBox.js"></script>
+    <script src="\bijou/js/class.SearchBox.js"></script>
+    <script src="\bijou/js/class.TopNav.js"></script>
+    <script src="\bijou/js/class.Filter.js"></script>
+    <script src="\bijou/js/class.Lightbox.js"></script>
+    <script src="\bijou/js/class.Masonry.js"></script>
+    <script src="\bijou/js/class.UnitTests.js"></script>
+  </head>
+  <body class="html bijou-basics-html ">
+    <div id="wrapper">
+      <header>
+        <h1><a href='\bijou/'>Bijou</a><span class='notice'> - local</span></h1>
+        <div id='topnav' class='inline'>
+          <a class='hamburger' href='#'>=</a>
+<a href='\bijou/Basics/'>Basics</a>
+<a href='\bijou/Options/'>Options</a>
+<a href='\bijou/Tags/'>Tags</a>
+<a href='\bijou/Tests/'>Tests</a>
+<a href='\bijou/Search/'>Search</a>
+
+        </div>
+      </header>
+
+      <main>
+          <div id="basics">
+
+   <h2>Basics</h2>
+   <p>Well, it's pretty simple. Running bijou.exe simply recursively reads the <b>content/</b> folder applies matching files from the <b>templates/</b> folder and writes out the result in the <b>www/</b> folder</p>
+
+   <hr/>
+
+   <h2><b>content/</b> folder</h2>
+   <p class='note'>The site content files. Where pages and sections are created.</p>
+   <dl>
+      <dt><b>1</b>.Menu1/</dt>
+      <dd>Folders prefixed with numbers create the navigation hierarchy</dd>
+      <dd>foo.html - Matches to the generic HTML template.</dd>
+
+      <dt>2.FileList/</dt>
+      <dd>multiple files of the same template create a &lt;ul&gt; list </dd>
+      <dd>file1.html</dd>
+      <dd>file2.html</dd>
+      <dd>file3.html</dd>
+
+      <dt>3.SectionList/</dt>
+      <dd>underscore prefixed files. assembles the file sections in one file </dd>
+      <dd><b>_</b>section1.html</dd>
+      <dd><b>_</b>section2.html</dd>
+      <dd><b>_</b>section3.html</dd>
+
+      <dt><b>0</b>.Invisible/</dt> 
+      <dd>Folders prefixed with '0.' are processed by the template engine but are excluded from the navigation hierarchy.</dd>
+      <dd>default.rss - Matches to the generic RSS template.. </dd>
+
+      <dt>extra/</dt>
+      <dd>Folders NOT prefixed with numbers are simply copied (and not processed via templates). Folders such as css, javascript, fonts, images...</dd>
+      <dd>logo.png</dd>
+      <dd>main.js</dd>
+      <dd>styles.css</dd>
+   </dl>
+
+   <h2><b>template/</b> folder</h2>
+   <p class='note'>Template files contain common markup repeated through the site and substitution placeholders for menu and content items. The Section Processor is executed if no processor is activated</p>  
+   <dl>
+      <dd><b>default.html</b> - HTML generic template (simple substitution of body content)</dd>
+      <dd><b>default.csv</b> - Kicks the CSV processor</dd>
+      <dd><b>default.md</b> - Kicks the Markdown processor</dd>
+      <dd><b>default.rss</b> - Kicks the RSS processor</dd>
+      <dd><b>default.song</b> - Kicks the Song processor</dd>
+      <dd><b>default.rcp</b> - Kicks Recipe processor</dd>
+   </dl>
+
+   <h2><b>www/</b> folder</h2>
+   <p class='note'>The end result. This is where your static HTML site is created.</p>
+
+</div>
+
+      </main>
+
+      <footer>
+        <div class='row'>
+          <div class='twelve columns'>
+            <p>Powered by <a href='https://github.com/xesroche/bijou' target='_blank'>Bijou</a></p>
+          </div>
+        </div>
+      </footer>
+  </div>
+  </body>
+</html>
+

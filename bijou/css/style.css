@@ -83,10 +83,6 @@ footer p a:hover {
 	text-decoration: underline;
 }
 
-/*h1,h2,h3 {
-	gagafont-family: Orbitron;
-}*/
-
 h1 {
 	font-size: 1.8em; 
 	padding: .2em; 
@@ -107,8 +103,12 @@ p {
 }
 
 a {
-	text-decoration: underline; 
-	color: #eee;
+	text-decoration: none; 
+	color: lightskyblue;
+}
+
+h1 a, #topnav a {
+	color: #fff;
 }
 
 a:hover {
@@ -177,6 +177,18 @@ div.blu {
 
 #search-box { 
 	width: 100%;
+}
+
+.search-data {
+    list-style: none;
+}
+
+.search-data li {
+    margin: .5em;
+}
+
+.search-data a {
+    text-decoration: none;
 }
 
 table {
@@ -337,18 +349,25 @@ hr {
 
 
 /***************************
- * Home
+ * Folder representation
  **************************/
-#home ul.folder { 
+ul.folder {
 	margin: 10px 0 0 0;
 	list-style: none;
 }
 
-#home ul.folder ul { 
+ul.folder li.root { 
+	margin: .5em 0 0 0;
+}
+
+ul.folder ul { 
 	margin: .5em 0 0 1em;
 	list-style: none;
 }
 
+#home ul.folder {
+	margin-left: 1em;
+}
 
 /***************************
  * Tests
