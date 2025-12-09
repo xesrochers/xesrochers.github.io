@@ -56,7 +56,21 @@ Metronome.init = function() {
 		var media = $('#js-beep').attr('data');
 		Metronome.audio = new Audio(media);
 	}
+}
 
+/************************************************
+ * displayTag()
+ ************************************************/
+Metronome.displayTag = function() {
+	// Get metronome data defined in the DOM (under @metro tag)
+	if ($('#metro').size() > 0) { 
+		// Calculate pace from bpm
+		Metronome.bpm = WebUtils.readDomConfig("metro", Metronome.bpm);
+		$("#js-metro-tag").html(Metronome.bpm + " bpm");
+		$("#js-metro-tag").show();
+	} else {
+		$("#js-metro-tag").hide();
+	}
 }
 
 /************************************************
@@ -141,6 +155,7 @@ Metronome.setMetronome = function(e) {
  * wireup()
  ************************************************/
 Metronome.wireup = function() {
+	Metronome.displayTag();
 	Metronome.init();
 	$('#js-metronome input').click(Metronome.setMetronome);
 }

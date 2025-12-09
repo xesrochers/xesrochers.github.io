@@ -66,7 +66,13 @@ header h1.brand {
 	font-size: 2em; 
 	margin: 0 0 .3em 0; 
 	display: inline-block;
+	width: 100%;
 }
+
+header h1.brand #js-metro-tag { 
+	margin-top: 20px;
+	font-size: .5em; 
+} 
 
 header h1 a {
 	text-decoration: none;
@@ -712,6 +718,9 @@ div.crossed {
 /* Thinner than phablet */
 @media (max-width: 550px) {
 	header h1.brand { font-size: 1.4em; margin: 0; display: inline-block;}
+	header h1.brand #js-metro-tag { margin-top: 10px; font-size: .5em; } 
+	header .tags span { font-size: .7em; }
+
 	hr { margin: 10px 0; }
 	h1,h2,h3 { font-size: 1.1em; margin: 1em 0;}
 	h1 a { display: inline-block;}
