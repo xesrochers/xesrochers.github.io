@@ -102,8 +102,6 @@ Scroller.play = function(e) {
 	console.log('current state is ' + state);
 
 	if (state == 'reset') {
-		Metronome.beep(false);
-		Metronome.start();
 		Scroller.snooze();
 	} else if (state == 'snoozing') {
 		Scroller.snooze();

@@ -549,20 +549,6 @@ input.wide, select.wide {
 }
 
 /**************************
- * Metronome
- **************************/
-hr.metronome {
-	color: orange;
-	background-color: orange;
-	position: fixed;
-	bottom: -1.3em;
-	right: 2%;
-	width: 96%;
-	height: 5px;
-}
-
-
-/**************************
  * General Stuff 
  **************************/
 

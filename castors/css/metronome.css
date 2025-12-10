@@ -1,0 +1,291 @@
+/* Metronome 'blinker' */
+
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+
+/**************************
+ * Metronome
+ **************************/
+hr.metronome {
+	color: orange;
+	background-color: orange;
+	position: fixed;
+	bottom: -1.3em;
+	right: 2%;
+	width: 96%;
+	height: 5px;
+}
+
+hr.metronome {
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction: alternate;
+}
+
+hr.metro30 {
+	-webkit-animation-duration: 2.000s; 
+}
+
+hr.metro32 {
+	-webkit-animation-duration: 1.875s; 
+}
+
+hr.metro34 {
+	-webkit-animation-duration: 1.764s; 
+}
+
+hr.metro36 {
+	-webkit-animation-duration: 1.666s; 
+}
+
+hr.metro38 {
+	-webkit-animation-duration: 1.579s; 
+}
+
+hr.metro40 {
+	-webkit-animation-duration: 1.500s; 
+}
+
+hr.metro42 {
+	-webkit-animation-duration: 1.429s; 
+}
+
+hr.metro44 {
+	-webkit-animation-duration: 1.364s; 
+}
+
+hr.metro46 {
+	-webkit-animation-duration: 1.304s; 
+}
+
+hr.metro48 {
+	-webkit-animation-duration: 1.250s; 
+}
+
+hr.metro50 {
+	-webkit-animation-duration: 1.200s; 
+}
+
+hr.metro52 {
+	-webkit-animation-duration: 1.154s; 
+}
+
+hr.metro54 {
+	-webkit-animation-duration: 1.111s; 
+}
+
+hr.metro56 {
+	-webkit-animation-duration: 1.071s; 
+}
+
+hr.metro58 {
+	-webkit-animation-duration: 1.034s; 
+}
+
+hr.metro60 {
+	-webkit-animation-duration: 1s; 
+}
+
+hr.metro62 {
+	-webkit-animation-duration: .967s; 
+}
+
+hr.metro64 {
+	-webkit-animation-duration: .9375s; 
+}
+
+hr.metro66 {
+	-webkit-animation-duration: .909s; 
+}
+
+hr.metro68 {
+	-webkit-animation-duration: .882s; 
+}
+
+hr.metro70 {
+	-webkit-animation-duration: .857s; 
+}
+
+hr.metro72 {
+	-webkit-animation-duration: .833s; 
+}
+
+hr.metro74 {
+	-webkit-animation-duration: .811s; 
+}
+
+hr.metro76 {
+	-webkit-animation-duration: .789s; 
+}
+
+hr.metro78 {
+	-webkit-animation-duration: .769s; 
+}
+
+hr.metro80 {
+	-webkit-animation-duration: .750s; 
+}
+
+hr.metro82 {
+	-webkit-animation-duration: .731s; 
+}
+
+hr.metro84 {
+	-webkit-animation-duration: .714s; 
+}
+
+hr.metro86 {
+	-webkit-animation-duration: .698s; 
+}
+
+hr.metro88 {
+	-webkit-animation-duration: .681s; 
+}
+
+hr.metro90 {
+	-webkit-animation-duration: .667s; 
+}
+
+hr.metro92 {
+	-webkit-animation-duration: .652s; 
+}
+
+hr.metro94 {
+	-webkit-animation-duration: .638s; 
+}
+
+hr.metro96 {
+	-webkit-animation-duration: .625s; 
+}
+
+hr.metro98 {
+	-webkit-animation-duration: .612s; 
+}
+
+hr.metro100 {
+	-webkit-animation-duration: .600s; 
+}
+
+hr.metro102 {
+	-webkit-animation-duration: .588s; 
+}
+
+hr.metro104 {
+	-webkit-animation-duration: .577s; 
+}
+
+hr.metro106 {
+	-webkit-animation-duration: .566s; 
+}
+
+hr.metro108 {
+	-webkit-animation-duration: .555s; 
+}
+
+hr.metro110 {
+	-webkit-animation-duration: .545s; 
+}
+
+hr.metro112 {
+	-webkit-animation-duration: .536s; 
+}
+
+hr.metro114 {
+	-webkit-animation-duration: .526s; 
+}
+
+hr.metro116 {
+	-webkit-animation-duration: .517s; 
+}
+
+hr.metro118 {
+	-webkit-animation-duration: .508s; 
+}
+
+hr.metro120 {
+	-webkit-animation-duration: .500s; 
+}
+
+hr.metro122 {
+	-webkit-animation-duration: .492s; 
+}
+
+hr.metro124 {
+	-webkit-animation-duration: .484s; 
+}
+
+hr.metro126 {
+	-webkit-animation-duration: .476s; 
+}
+
+hr.metro128 {
+	-webkit-animation-duration: .469s; 
+}
+
+hr.metro130 {
+	-webkit-animation-duration: .461s; 
+}
+
+hr.metro132 {
+	-webkit-animation-duration: .454s; 
+}
+
+hr.metro134 {
+	-webkit-animation-duration: .448s; 
+}
+
+hr.metro136 {
+	-webkit-animation-duration: .441s; 
+}
+
+hr.metro138 {
+	-webkit-animation-duration: .435s; 
+}
+
+hr.metro140 {
+	-webkit-animation-duration: .428s; 
+}
+
+hr.metro142 {
+	-webkit-animation-duration: .423s; 
+}
+
+hr.metro144 {
+	-webkit-animation-duration: .416s; 
+}
+
+hr.metro146 {
+	-webkit-animation-duration: .411s; 
+}
+
+hr.metro148 {
+	-webkit-animation-duration: .405s; 
+}
+
+hr.metro150 {
+	-webkit-animation-duration: .400s; 
+}
+
+hr.metro152 {
+	-webkit-animation-duration: .395s; 
+}
+
+hr.metro154 {
+	-webkit-animation-duration: .389s; 
+}
+
+hr.metro156 {
+	-webkit-animation-duration: .385s; 
+}
+
+hr.metro158 {
+	-webkit-animation-duration: .379s; 
+}
+
+hr.metro160 {
+	-webkit-animation-duration: .375s; 
+}
