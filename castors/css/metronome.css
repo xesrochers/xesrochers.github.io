@@ -289,3 +289,9 @@ hr.metro158 {
 hr.metro160 {
 	-webkit-animation-duration: .375s; 
 }
+
+
+/* Thinner than phablet */
+@media (max-width: 550px) {
+   hr.metronome { margin: 2em 0; }
+}
